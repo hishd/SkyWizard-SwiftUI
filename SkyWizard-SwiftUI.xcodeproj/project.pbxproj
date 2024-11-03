@@ -6,17 +6,20 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		FD32A9F12CB4484D002B8706 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD32A9EB2CB4484D002B8706 /* Preview Assets.xcassets */; };
+		FD32A9F22CB4484D002B8706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD32A9ED2CB4484D002B8706 /* Assets.xcassets */; };
+		FD32A9F32CB4484D002B8706 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD32A9EE2CB4484D002B8706 /* ContentView.swift */; };
+		FD32A9F42CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD32A9EF2CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		FD32A9D92CB446CF002B8706 /* SkyWizard-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SkyWizard-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD32A9EB2CB4484D002B8706 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FD32A9ED2CB4484D002B8706 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FD32A9EE2CB4484D002B8706 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FD32A9EF2CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyWizard_SwiftUIApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		FD32A9DB2CB446CF002B8706 /* SkyWizard-SwiftUI */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "SkyWizard-SwiftUI";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FD32A9D62CB446CF002B8706 /* Frameworks */ = {
@@ -32,7 +35,7 @@
 		FD32A9D02CB446CF002B8706 = {
 			isa = PBXGroup;
 			children = (
-				FD32A9DB2CB446CF002B8706 /* SkyWizard-SwiftUI */,
+				FD32A9F02CB4484D002B8706 /* SkyWizard-SwiftUI */,
 				FD32A9DA2CB446CF002B8706 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +46,57 @@
 				FD32A9D92CB446CF002B8706 /* SkyWizard-SwiftUI.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		FD32A9EC2CB4484D002B8706 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FD32A9EB2CB4484D002B8706 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FD32A9F02CB4484D002B8706 /* SkyWizard-SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				FD32A9F82CB4494B002B8706 /* Presentation */,
+				FD32A9F72CB44947002B8706 /* Data */,
+				FD32A9F62CB44943002B8706 /* Util */,
+				FD32A9F52CB4493E002B8706 /* Other */,
+				FD32A9EE2CB4484D002B8706 /* ContentView.swift */,
+			);
+			path = "SkyWizard-SwiftUI";
+			sourceTree = "<group>";
+		};
+		FD32A9F52CB4493E002B8706 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				FD32A9EF2CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift */,
+				FD32A9ED2CB4484D002B8706 /* Assets.xcassets */,
+				FD32A9EC2CB4484D002B8706 /* Preview Content */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		FD32A9F62CB44943002B8706 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		FD32A9F72CB44947002B8706 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FD32A9F82CB4494B002B8706 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +113,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				FD32A9DB2CB446CF002B8706 /* SkyWizard-SwiftUI */,
 			);
 			name = "SkyWizard-SwiftUI";
 			packageProductDependencies = (
@@ -109,6 +160,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD32A9F12CB4484D002B8706 /* Preview Assets.xcassets in Resources */,
+				FD32A9F22CB4484D002B8706 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +172,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD32A9F32CB4484D002B8706 /* ContentView.swift in Sources */,
+				FD32A9F42CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,15 +306,18 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SkyWizard-SwiftUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SkyWizard-SwiftUI/Other/Preview Content\"";
 				DEVELOPMENT_TEAM = ZMV4XYT773;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Sky Wizard";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -280,15 +338,18 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SkyWizard-SwiftUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SkyWizard-SwiftUI/Other/Preview Content\"";
 				DEVELOPMENT_TEAM = ZMV4XYT773;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Sky Wizard";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
