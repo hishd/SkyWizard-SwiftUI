@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD0841A32CD7202D00604BF3 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0841A22CD7202D00604BF3 /* Color+Extensions.swift */; };
+		FD0841AB2CD7307900604BF3 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD0841A72CD7307900604BF3 /* Montserrat-Light.ttf */; };
+		FD0841AC2CD7307900604BF3 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD0841A52CD7307900604BF3 /* Montserrat-Black.ttf */; };
+		FD0841AD2CD7307900604BF3 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD0841A62CD7307900604BF3 /* Montserrat-Bold.ttf */; };
+		FD0841AE2CD7307900604BF3 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD0841A82CD7307900604BF3 /* Montserrat-Medium.ttf */; };
+		FD0841AF2CD7307900604BF3 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD0841A92CD7307900604BF3 /* Montserrat-Regular.ttf */; };
+		FD0841B02CD7307900604BF3 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD0841AA2CD7307900604BF3 /* Montserrat-SemiBold.ttf */; };
+		FD0841B32CD732A400604BF3 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0841B22CD732A400604BF3 /* Font+Extensions.swift */; };
 		FD32A9F12CB4484D002B8706 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD32A9EB2CB4484D002B8706 /* Preview Assets.xcassets */; };
 		FD32A9F22CB4484D002B8706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD32A9ED2CB4484D002B8706 /* Assets.xcassets */; };
 		FD32A9F32CB4484D002B8706 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD32A9EE2CB4484D002B8706 /* ContentView.swift */; };
@@ -14,6 +22,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD0841A22CD7202D00604BF3 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		FD0841A52CD7307900604BF3 /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		FD0841A62CD7307900604BF3 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		FD0841A72CD7307900604BF3 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		FD0841A82CD7307900604BF3 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		FD0841A92CD7307900604BF3 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		FD0841AA2CD7307900604BF3 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		FD0841B12CD7308E00604BF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FD0841B22CD732A400604BF3 /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
 		FD32A9D92CB446CF002B8706 /* SkyWizard-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SkyWizard-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD32A9EB2CB4484D002B8706 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FD32A9ED2CB4484D002B8706 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -32,6 +49,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD0841A42CD7306E00604BF3 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FD0841A52CD7307900604BF3 /* Montserrat-Black.ttf */,
+				FD0841A62CD7307900604BF3 /* Montserrat-Bold.ttf */,
+				FD0841A72CD7307900604BF3 /* Montserrat-Light.ttf */,
+				FD0841A82CD7307900604BF3 /* Montserrat-Medium.ttf */,
+				FD0841A92CD7307900604BF3 /* Montserrat-Regular.ttf */,
+				FD0841AA2CD7307900604BF3 /* Montserrat-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		FD32A9D02CB446CF002B8706 = {
 			isa = PBXGroup;
 			children = (
@@ -59,11 +89,11 @@
 		FD32A9F02CB4484D002B8706 /* SkyWizard-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				FD0841B12CD7308E00604BF3 /* Info.plist */,
 				FD32A9F82CB4494B002B8706 /* Presentation */,
 				FD32A9F72CB44947002B8706 /* Data */,
 				FD32A9F62CB44943002B8706 /* Util */,
 				FD32A9F52CB4493E002B8706 /* Other */,
-				FD32A9EE2CB4484D002B8706 /* ContentView.swift */,
 			);
 			path = "SkyWizard-SwiftUI";
 			sourceTree = "<group>";
@@ -71,6 +101,7 @@
 		FD32A9F52CB4493E002B8706 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				FD0841A42CD7306E00604BF3 /* Fonts */,
 				FD32A9EF2CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift */,
 				FD32A9ED2CB4484D002B8706 /* Assets.xcassets */,
 				FD32A9EC2CB4484D002B8706 /* Preview Content */,
@@ -81,6 +112,8 @@
 		FD32A9F62CB44943002B8706 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				FD0841A22CD7202D00604BF3 /* Color+Extensions.swift */,
+				FD0841B22CD732A400604BF3 /* Font+Extensions.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -95,6 +128,7 @@
 		FD32A9F82CB4494B002B8706 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				FD32A9EE2CB4484D002B8706 /* ContentView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -161,6 +195,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD32A9F12CB4484D002B8706 /* Preview Assets.xcassets in Resources */,
+				FD0841AB2CD7307900604BF3 /* Montserrat-Light.ttf in Resources */,
+				FD0841AC2CD7307900604BF3 /* Montserrat-Black.ttf in Resources */,
+				FD0841AD2CD7307900604BF3 /* Montserrat-Bold.ttf in Resources */,
+				FD0841AE2CD7307900604BF3 /* Montserrat-Medium.ttf in Resources */,
+				FD0841AF2CD7307900604BF3 /* Montserrat-Regular.ttf in Resources */,
+				FD0841B02CD7307900604BF3 /* Montserrat-SemiBold.ttf in Resources */,
 				FD32A9F22CB4484D002B8706 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,6 +214,8 @@
 			files = (
 				FD32A9F32CB4484D002B8706 /* ContentView.swift in Sources */,
 				FD32A9F42CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift in Sources */,
+				FD0841B32CD732A400604BF3 /* Font+Extensions.swift in Sources */,
+				FD0841A32CD7202D00604BF3 /* Color+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +352,7 @@
 				DEVELOPMENT_TEAM = ZMV4XYT773;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SkyWizard-SwiftUI/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Sky Wizard";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -342,6 +385,7 @@
 				DEVELOPMENT_TEAM = ZMV4XYT773;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SkyWizard-SwiftUI/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Sky Wizard";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
