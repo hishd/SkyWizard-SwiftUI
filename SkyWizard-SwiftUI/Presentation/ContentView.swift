@@ -27,6 +27,18 @@ struct ContentView: View {
                 currentCityView
                 Spacer()
             }
+            .sheet(isPresented: .constant(true), content: {
+                Text("Hello World")
+                    .padding()
+                    .glass(cornerRadius: 25)
+                    .presentationDetents([.fraction(0.4), .fraction(0.5)])
+                    .presentationDragIndicator(.hidden)
+                    .presentationBackground(.clear)
+                    .presentationBackgroundInteraction(
+                        .enabled(upThrough: .fraction(0.4))
+                    )
+                    .interactiveDismissDisabled()
+            })
             .padding()
         }
         .animation(.easeInOut, value: currentWeatherData.currentWeatherType)

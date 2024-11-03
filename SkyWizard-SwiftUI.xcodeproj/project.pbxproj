@@ -15,6 +15,8 @@
 		FD0841AF2CD7307900604BF3 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD0841A92CD7307900604BF3 /* Montserrat-Regular.ttf */; };
 		FD0841B02CD7307900604BF3 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD0841AA2CD7307900604BF3 /* Montserrat-SemiBold.ttf */; };
 		FD0841B32CD732A400604BF3 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0841B22CD732A400604BF3 /* Font+Extensions.swift */; };
+		FD0841B62CD743CD00604BF3 /* GlassModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0841B52CD743CD00604BF3 /* GlassModifier.swift */; };
+		FD0841B92CD7483A00604BF3 /* HourlyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0841B82CD7483A00604BF3 /* HourlyWeatherView.swift */; };
 		FD32A9F12CB4484D002B8706 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD32A9EB2CB4484D002B8706 /* Preview Assets.xcassets */; };
 		FD32A9F22CB4484D002B8706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD32A9ED2CB4484D002B8706 /* Assets.xcassets */; };
 		FD32A9F32CB4484D002B8706 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD32A9EE2CB4484D002B8706 /* ContentView.swift */; };
@@ -31,6 +33,8 @@
 		FD0841AA2CD7307900604BF3 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		FD0841B12CD7308E00604BF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FD0841B22CD732A400604BF3 /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
+		FD0841B52CD743CD00604BF3 /* GlassModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassModifier.swift; sourceTree = "<group>"; };
+		FD0841B82CD7483A00604BF3 /* HourlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherView.swift; sourceTree = "<group>"; };
 		FD32A9D92CB446CF002B8706 /* SkyWizard-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SkyWizard-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD32A9EB2CB4484D002B8706 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FD32A9ED2CB4484D002B8706 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,6 +64,22 @@
 				FD0841AA2CD7307900604BF3 /* Montserrat-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FD0841B42CD743B900604BF3 /* View Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				FD0841B52CD743CD00604BF3 /* GlassModifier.swift */,
+			);
+			path = "View Modifiers";
+			sourceTree = "<group>";
+		};
+		FD0841B72CD7481400604BF3 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				FD0841B82CD7483A00604BF3 /* HourlyWeatherView.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		FD32A9D02CB446CF002B8706 = {
@@ -112,6 +132,7 @@
 		FD32A9F62CB44943002B8706 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				FD0841B42CD743B900604BF3 /* View Modifiers */,
 				FD0841A22CD7202D00604BF3 /* Color+Extensions.swift */,
 				FD0841B22CD732A400604BF3 /* Font+Extensions.swift */,
 			);
@@ -128,6 +149,7 @@
 		FD32A9F82CB4494B002B8706 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				FD0841B72CD7481400604BF3 /* Subviews */,
 				FD32A9EE2CB4484D002B8706 /* ContentView.swift */,
 			);
 			path = Presentation;
@@ -212,7 +234,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD0841B62CD743CD00604BF3 /* GlassModifier.swift in Sources */,
 				FD32A9F32CB4484D002B8706 /* ContentView.swift in Sources */,
+				FD0841B92CD7483A00604BF3 /* HourlyWeatherView.swift in Sources */,
 				FD32A9F42CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift in Sources */,
 				FD0841B32CD732A400604BF3 /* Font+Extensions.swift in Sources */,
 				FD0841A32CD7202D00604BF3 /* Color+Extensions.swift in Sources */,
