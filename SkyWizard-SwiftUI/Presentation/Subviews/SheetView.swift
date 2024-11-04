@@ -49,7 +49,7 @@ struct SheetView<Content: View>: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             }
             .frame(height: (height/2) + 200)
-            .offset(y: height - 200)
+            .offset(y: height - 300)
             .offset(y: offset)
             .gesture(DragGesture().updating($gestureOffset) { value, out, _ in
                 out = value.translation.height

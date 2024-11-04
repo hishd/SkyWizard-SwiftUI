@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var currentWeatherData: CurrentWeatherData = .init()
+    @State private var isPresented: Bool = false
     
     var body: some View {
         ZStack {
@@ -26,20 +27,12 @@ struct ContentView: View {
                 .frame(maxWidth: .infinity)
                 currentCityView
                 Spacer()
-            }
-            .sheet(isPresented: .constant(true), content: {
+            }.padding()
+            
+            SheetView(isBackgroundVisible: false, isPresented: $isPresented) {
                 HourlyWeatherView(hourlyData: currentWeatherData.hourlyWeatherData)
                     .padding(.horizontal, 25)
-                Spacer()
-                .presentationDetents([.fraction(0.4), .fraction(0.5)])
-                .presentationDragIndicator(.hidden)
-                .presentationBackground(.clear)
-                .presentationBackgroundInteraction(
-                    .enabled(upThrough: .fraction(0.4))
-                )
-                .interactiveDismissDisabled()
-            })
-            .padding()
+            }
         }
         .animation(.easeInOut, value: currentWeatherData.currentWeatherType)
     }

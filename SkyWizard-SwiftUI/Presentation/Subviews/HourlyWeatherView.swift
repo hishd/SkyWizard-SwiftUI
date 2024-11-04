@@ -54,9 +54,9 @@ struct HourlyWeatherView: View {
     var body: some View {
         VStack {
             RoundedRectangle(cornerRadius: 5)
-                .foregroundStyle(.gray)
+                .foregroundStyle(.sheetHandle)
                 .frame(width: 56, height: 4.5)
-                .padding(.top, 15)
+                .padding(.top, 4)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 20) {
                     ForEach(hourlyData) { data in
@@ -64,12 +64,12 @@ struct HourlyWeatherView: View {
                     }
                 }.padding(.horizontal, 10)
             }
+            .padding(.top, 10)
             .padding(.horizontal, 10)
-            .padding(.vertical, 8)
         }
         .frame(maxWidth: .infinity)
-        .frame(height: 160)
-        .glass(cornerRadius: 10, opacity: 0.3)
+        .frame(height: 150)
+        .glass(cornerRadius: 10, opacity: 0.5)
     }
 }
 
