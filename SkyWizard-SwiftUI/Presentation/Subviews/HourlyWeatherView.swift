@@ -43,7 +43,7 @@ struct HourlyWeatherItem: View {
                 Text("0")
                     .font(.getFont(type: .semibold, size: 10))
             }
-            .foregroundStyle(.daySubTitle)
+            .foregroundStyle(.dayTitle)
         }
     }
 }
@@ -69,7 +69,7 @@ struct HourlyWeatherView: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: 150)
-        .glass(cornerRadius: 10, opacity: 0.5)
+        .glass(cornerRadius: 10, opacity: 0.95)
     }
 }
 

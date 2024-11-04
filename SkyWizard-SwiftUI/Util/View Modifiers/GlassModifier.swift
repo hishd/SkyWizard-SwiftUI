@@ -24,7 +24,7 @@ struct GlassView: View {
     var body: some View {
         Rectangle()
             .foregroundStyle(fill.opacity(opacity))
-            .background(.ultraThinMaterial)
+//            .background(.ultraThinMaterial)
             .shadow(radius: shadowRadius)
             .clipShape(.rect(cornerRadius: cornerRadius))
     }
