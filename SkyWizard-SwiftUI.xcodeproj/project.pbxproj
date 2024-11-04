@@ -21,6 +21,7 @@
 		FD32A9F22CB4484D002B8706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD32A9ED2CB4484D002B8706 /* Assets.xcassets */; };
 		FD32A9F32CB4484D002B8706 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD32A9EE2CB4484D002B8706 /* ContentView.swift */; };
 		FD32A9F42CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD32A9EF2CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift */; };
+		FDE0B9662CD8082200017A6B /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE0B9652CD8082200017A6B /* SheetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		FD32A9ED2CB4484D002B8706 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD32A9EE2CB4484D002B8706 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FD32A9EF2CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyWizard_SwiftUIApp.swift; sourceTree = "<group>"; };
+		FDE0B9652CD8082200017A6B /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				FD0841B82CD7483A00604BF3 /* HourlyWeatherView.swift */,
+				FDE0B9652CD8082200017A6B /* SheetView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD0841B62CD743CD00604BF3 /* GlassModifier.swift in Sources */,
+				FDE0B9662CD8082200017A6B /* SheetView.swift in Sources */,
 				FD32A9F32CB4484D002B8706 /* ContentView.swift in Sources */,
 				FD0841B92CD7483A00604BF3 /* HourlyWeatherView.swift in Sources */,
 				FD32A9F42CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift in Sources */,

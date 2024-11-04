@@ -28,16 +28,16 @@ struct ContentView: View {
                 Spacer()
             }
             .sheet(isPresented: .constant(true), content: {
-                Text("Hello World")
-                    .padding()
-                    .glass(cornerRadius: 25)
-                    .presentationDetents([.fraction(0.4), .fraction(0.5)])
-                    .presentationDragIndicator(.hidden)
-                    .presentationBackground(.clear)
-                    .presentationBackgroundInteraction(
-                        .enabled(upThrough: .fraction(0.4))
-                    )
-                    .interactiveDismissDisabled()
+                HourlyWeatherView(hourlyData: currentWeatherData.hourlyWeatherData)
+                    .padding(.horizontal, 25)
+                Spacer()
+                .presentationDetents([.fraction(0.4), .fraction(0.5)])
+                .presentationDragIndicator(.hidden)
+                .presentationBackground(.clear)
+                .presentationBackgroundInteraction(
+                    .enabled(upThrough: .fraction(0.4))
+                )
+                .interactiveDismissDisabled()
             })
             .padding()
         }
@@ -123,12 +123,14 @@ class CurrentWeatherData: ObservableObject {
     @Published var lowestTemp: Int = 18
     @Published var currentCity: String = "Northampton"
     @Published var currentWeatherType: WeatherType = .day_sunny
+    @Published var hourlyWeatherData: [HourlyWeatherData] = (0...10).map { _ in
+            .sample
+    }
     
     func toggleWeatherType() {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)){
             let type: WeatherType = WeatherType.allCases.randomElement()!
             self.currentWeatherType = type
-            print("Changing to type: \(type)")
         }
     }
 }

@@ -14,7 +14,7 @@ struct GlassView: View {
     let opacity: CGFloat
     let shadowRadius: CGFloat
 
-    init(cornerRadius: CGFloat, fill: Color = .white, opacity: CGFloat = 0.25, shadowRadius: CGFloat = 10.0) {
+    init(cornerRadius: CGFloat, fill: Color = .white, opacity: CGFloat = 0.05, shadowRadius: CGFloat = 10.0) {
         self.cornerRadius = cornerRadius
         self.fill = fill
         self.opacity = opacity
@@ -22,10 +22,11 @@ struct GlassView: View {
     }
 
     var body: some View {
-        RoundedRectangle(cornerRadius: cornerRadius)
-            .fill(fill)
-            .opacity(opacity)
+        Rectangle()
+            .foregroundStyle(fill.opacity(opacity))
+            .background(.ultraThinMaterial)
             .shadow(radius: shadowRadius)
+            .clipShape(.rect(cornerRadius: cornerRadius))
     }
 }
 

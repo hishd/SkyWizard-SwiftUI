@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct HourlyWetherData: Identifiable {
+struct HourlyWeatherData: Identifiable {
     let id: UUID = .init()
     let timeText: String
     let imageName: String
     let temperature: Int
     
     #if DEBUG
-    static let sample: HourlyWetherData = .init(
+    static let sample: HourlyWeatherData = .init(
         timeText: "10 am",
         imageName: "forecast_ic_sunny",
         temperature: 20
@@ -23,9 +23,9 @@ struct HourlyWetherData: Identifiable {
 }
 
 struct HourlyWeatherItem: View {
-    let data: HourlyWetherData
+    let data: HourlyWeatherData
     
-    init(hourlyWeatherData: HourlyWetherData) {
+    init(hourlyWeatherData: HourlyWeatherData) {
         self.data = hourlyWeatherData
     }
     
@@ -49,13 +49,13 @@ struct HourlyWeatherItem: View {
 }
 
 struct HourlyWeatherView: View {
-    let hourlyData: [HourlyWetherData]
+    let hourlyData: [HourlyWeatherData]
     
     var body: some View {
         VStack {
             RoundedRectangle(cornerRadius: 5)
                 .foregroundStyle(.gray)
-                .frame(width: 64, height: 4)
+                .frame(width: 56, height: 4.5)
                 .padding(.top, 15)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 20) {
@@ -68,8 +68,8 @@ struct HourlyWeatherView: View {
             .padding(.vertical, 8)
         }
         .frame(maxWidth: .infinity)
-        .frame(height: 150)
-        .glass(cornerRadius: 10)
+        .frame(height: 160)
+        .glass(cornerRadius: 10, opacity: 0.3)
     }
 }
 
