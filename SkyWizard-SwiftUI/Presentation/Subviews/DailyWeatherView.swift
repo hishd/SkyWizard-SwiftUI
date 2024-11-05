@@ -26,7 +26,6 @@ struct DailyWeatherItem: View {
         HStack {
             Text(weatherItem.dateString)
                 .font(.getFont(type: .medium, size: 18))
-                .foregroundStyle(.dayTitle)
             Spacer()
             Image(weatherItem.icon)
                 .resizable()
@@ -34,6 +33,7 @@ struct DailyWeatherItem: View {
             tempLowView
             tempHighView
         }
+        .foregroundStyle(.dayTitle)
         .frame(maxWidth: .infinity)
         .padding(.horizontal, 18)
     }
