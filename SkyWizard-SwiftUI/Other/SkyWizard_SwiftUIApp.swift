@@ -11,7 +11,7 @@ import SwiftUI
 struct SkyWizard_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WeatherView()
         }
     }
 }

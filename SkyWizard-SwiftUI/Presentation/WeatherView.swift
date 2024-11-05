@@ -8,7 +8,7 @@
 import SwiftUI
 import Lottie
 
-struct ContentView: View {
+struct WeatherView: View {
     @StateObject private var currentWeatherData: CurrentWeatherData = .init()
     @State private var isPresented: Bool = false
     
@@ -48,7 +48,7 @@ struct ContentView: View {
     }
 }
 
-extension ContentView {
+extension WeatherView {
     private var backgroundColorGradient: LinearGradient {
         currentWeatherData.currentWeatherType.getWeatherTypeResource().backgroundGradient
     }
@@ -59,10 +59,6 @@ extension ContentView {
         currentWeatherData.currentWeatherType.getWeatherTypeResource().subTitleColor
     }
     private var weatherIcon: some View {
-//        currentWeatherData.currentWeatherType
-//            .getWeatherTypeResource().weatherIcon
-//            .resizable()
-//            .frame(width: 150, height: 150)
         VStack {
             LottieView(animation: .named(currentWeatherData.currentWeatherType.getWeatherTypeResource().weatherIconAnimationName))
                 .playing(loopMode: .loop)
@@ -289,5 +285,5 @@ enum WeatherType: CaseIterable {
 }
 
 #Preview {
-    ContentView()
+    WeatherView()
 }
