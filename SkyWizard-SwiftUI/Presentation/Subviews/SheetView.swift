@@ -85,7 +85,7 @@ struct SheetView<Content: View>: View {
     }
 }
 
-struct CustomCorner: Shape {
+private struct CustomCorner: Shape {
     var corners: UIRectCorner
     var radius: CGFloat
     
@@ -116,14 +116,3 @@ struct CustomCorner: Shape {
         }
     }
 }
-
-#if DEBUG
-struct StatePreviewWrapper<Value, Content: View>: View {
-    @State var value: Value
-    let content: (Binding<Value>) -> Content
-    
-    var body: some View {
-        content($value)
-    }
-}
-#endif
