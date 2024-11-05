@@ -7,47 +7,6 @@
 
 import SwiftUI
 
-struct HourlyWeatherData: Identifiable {
-    let id: UUID = .init()
-    let timeText: String
-    let imageName: String
-    let temperature: Int
-    
-    #if DEBUG
-    static let sample: HourlyWeatherData = .init(
-        timeText: "10 am",
-        imageName: "forecast_ic_sunny",
-        temperature: 20
-    )
-    #endif
-}
-
-struct HourlyWeatherItem: View {
-    let data: HourlyWeatherData
-    
-    init(hourlyWeatherData: HourlyWeatherData) {
-        self.data = hourlyWeatherData
-    }
-    
-    var body: some View {
-        VStack(spacing: 12) {
-            Text(data.timeText)
-                .font(.getFont(type: .medium, size: 18))
-                .foregroundStyle(.dayTitle)
-            Image(data.imageName)
-                .resizable()
-                .frame(width: 36, height: 36)
-            HStack(alignment: .top, spacing: 3) {
-                Text("\(data.temperature)")
-                    .font(.getFont(type: .semibold, size: 20))
-                Text("0")
-                    .font(.getFont(type: .semibold, size: 10))
-            }
-            .foregroundStyle(.dayTitle)
-        }
-    }
-}
-
 struct HourlyWeatherView: View {
     let hourlyData: [HourlyWeatherData]
     
