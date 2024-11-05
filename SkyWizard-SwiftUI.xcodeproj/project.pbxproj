@@ -31,6 +31,8 @@
 		FD8574752CD9C690003D9D29 /* sunny.json in Resources */ = {isa = PBXBuildFile; fileRef = FD85746F2CD9C690003D9D29 /* sunny.json */; };
 		FD8574762CD9C690003D9D29 /* night.json in Resources */ = {isa = PBXBuildFile; fileRef = FD85746B2CD9C690003D9D29 /* night.json */; };
 		FD8574782CD9CE2D003D9D29 /* StatePreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8574772CD9CE2D003D9D29 /* StatePreviewWrapper.swift */; };
+		FD85747D2CD9CEA4003D9D29 /* DailyWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD85747C2CD9CEA4003D9D29 /* DailyWeatherData.swift */; };
+		FD8574802CD9CEF9003D9D29 /* DailyWeatherItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD85747F2CD9CEF9003D9D29 /* DailyWeatherItem.swift */; };
 		FDE0B9662CD8082200017A6B /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE0B9652CD8082200017A6B /* SheetView.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,8 @@
 		FD85746E2CD9C690003D9D29 /* snow.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = snow.json; sourceTree = "<group>"; };
 		FD85746F2CD9C690003D9D29 /* sunny.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sunny.json; sourceTree = "<group>"; };
 		FD8574772CD9CE2D003D9D29 /* StatePreviewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePreviewWrapper.swift; sourceTree = "<group>"; };
+		FD85747C2CD9CEA4003D9D29 /* DailyWeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherData.swift; sourceTree = "<group>"; };
+		FD85747F2CD9CEF9003D9D29 /* DailyWeatherItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherItem.swift; sourceTree = "<group>"; };
 		FDE0B9652CD8082200017A6B /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,9 +103,8 @@
 		FD0841B72CD7481400604BF3 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				FDE0B9652CD8082200017A6B /* SheetView.swift */,
-				FD73C1AF2CD89EE4004DA8A7 /* DailyWeatherView.swift */,
-				FD0841B82CD7483A00604BF3 /* HourlyWeatherView.swift */,
+				FD85747E2CD9CEC6003D9D29 /* Daily Weather */,
+				FD8574792CD9CE5D003D9D29 /* Sheet View */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -168,6 +171,8 @@
 		FD32A9F72CB44947002B8706 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				FD85747B2CD9CE8C003D9D29 /* Services */,
+				FD85747A2CD9CE86003D9D29 /* Model */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 			children = (
 				FD0841B72CD7481400604BF3 /* Subviews */,
 				FD32A9EE2CB4484D002B8706 /* ContentView.swift */,
+				FD0841B82CD7483A00604BF3 /* HourlyWeatherView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -193,6 +199,38 @@
 				FD85746F2CD9C690003D9D29 /* sunny.json */,
 			);
 			path = Animations;
+			sourceTree = "<group>";
+		};
+		FD8574792CD9CE5D003D9D29 /* Sheet View */ = {
+			isa = PBXGroup;
+			children = (
+				FDE0B9652CD8082200017A6B /* SheetView.swift */,
+			);
+			path = "Sheet View";
+			sourceTree = "<group>";
+		};
+		FD85747A2CD9CE86003D9D29 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FD85747C2CD9CEA4003D9D29 /* DailyWeatherData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FD85747B2CD9CE8C003D9D29 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FD85747E2CD9CEC6003D9D29 /* Daily Weather */ = {
+			isa = PBXGroup;
+			children = (
+				FD73C1AF2CD89EE4004DA8A7 /* DailyWeatherView.swift */,
+				FD85747F2CD9CEF9003D9D29 /* DailyWeatherItem.swift */,
+			);
+			path = "Daily Weather";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,7 +327,9 @@
 				FD0841B62CD743CD00604BF3 /* GlassModifier.swift in Sources */,
 				FDE0B9662CD8082200017A6B /* SheetView.swift in Sources */,
 				FD32A9F32CB4484D002B8706 /* ContentView.swift in Sources */,
+				FD85747D2CD9CEA4003D9D29 /* DailyWeatherData.swift in Sources */,
 				FD0841B92CD7483A00604BF3 /* HourlyWeatherView.swift in Sources */,
+				FD8574802CD9CEF9003D9D29 /* DailyWeatherItem.swift in Sources */,
 				FD32A9F42CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift in Sources */,
 				FD0841B32CD732A400604BF3 /* Font+Extensions.swift in Sources */,
 				FD0841A32CD7202D00604BF3 /* Color+Extensions.swift in Sources */,
