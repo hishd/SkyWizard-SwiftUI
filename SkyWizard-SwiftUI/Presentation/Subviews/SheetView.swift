@@ -25,7 +25,7 @@ struct SheetView<Content: View>: View {
     var body: some View {
         GeometryReader { proxy in
             let height = proxy.frame(in: .global).height
-            let maximumOffset: CGFloat = (height/3) + 100
+            let maximumOffset: CGFloat = (height/5) + 100
             
             ZStack {
                 if isBackgroundVisible {
@@ -61,7 +61,7 @@ struct SheetView<Content: View>: View {
                     withAnimation {
                         if -offset > 100 {
                             isPresented = true
-                            offset = -(height / 3)
+                            offset = -(height / 5)
                         } else {
                             offset = 0
                         }
@@ -72,7 +72,7 @@ struct SheetView<Content: View>: View {
             )
             .onChange(of: isPresented) { value in
                 withAnimation {
-                    offset = value ? -(height / 3) : 0
+                    offset = value ? -(height / 5) : 0
                 }
             }
         }

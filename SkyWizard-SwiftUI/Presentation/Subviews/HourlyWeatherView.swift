@@ -69,7 +69,7 @@ struct HourlyWeatherView: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: 150)
-        .glass(cornerRadius: 10, opacity: 0.95)
+        .glass(cornerRadius: 10, opacity: 0.9)
     }
 }
 

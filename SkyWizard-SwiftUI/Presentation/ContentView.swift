@@ -30,11 +30,21 @@ struct ContentView: View {
             }.padding()
             
             SheetView(isBackgroundVisible: false, isPresented: $isPresented) {
-                HourlyWeatherView(hourlyData: currentWeatherData.hourlyWeatherData)
-                    .padding(.horizontal, 25)
+                VStack {
+                    HourlyWeatherView(hourlyData: currentWeatherData.hourlyWeatherData)
+                        .padding(.horizontal, 25)
+                    DailyWeatherView(weatherData: currentWeatherData.dailyWeatherData)
+                        .padding(.horizontal, 25)
+                }
             }
         }
         .animation(.easeInOut, value: currentWeatherData.currentWeatherType)
+        .onTapGesture {
+            guard isPresented else { return }
+            withAnimation {
+                isPresented.toggle()
+            }
+        }
     }
 }
 
@@ -81,7 +91,7 @@ extension ContentView {
         HStack {
             Text(currentWeatherData.currentCity)
                 .font(.getFont(type: .medium, size: 26))
-                .padding(.trailing, 10)
+                .padding(.trailing, 5)
             Button {
                 currentWeatherData.toggleWeatherType()
             } label: {
@@ -117,6 +127,9 @@ class CurrentWeatherData: ObservableObject {
     @Published var currentCity: String = "Northampton"
     @Published var currentWeatherType: WeatherType = .day_sunny
     @Published var hourlyWeatherData: [HourlyWeatherData] = (0...10).map { _ in
+            .sample
+    }
+    @Published var dailyWeatherData: [DailyWeatherData] = (0..<5).map { _ in
             .sample
     }
     
