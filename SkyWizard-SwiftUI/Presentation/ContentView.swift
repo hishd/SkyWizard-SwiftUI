@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Lottie
 
 struct ContentView: View {
     @StateObject private var currentWeatherData: CurrentWeatherData = .init()
@@ -16,15 +17,14 @@ struct ContentView: View {
             backgroundColorGradient
                 .ignoresSafeArea()
             houseImage
+            weatherIcon
             VStack(alignment: .leading, spacing: 0) {
                 HStack {
                     temperatureView
                     Spacer()
-                    weatherIcon
-                        .resizable()
-                        .frame(width: 150, height: 150)
                 }
                 .frame(maxWidth: .infinity)
+                .padding(.bottom, 16)
                 currentCityView
                 Spacer()
             }.padding()
@@ -58,8 +58,19 @@ extension ContentView {
     private var subTitleColor: Color {
         currentWeatherData.currentWeatherType.getWeatherTypeResource().subTitleColor
     }
-    private var weatherIcon: Image {
-        currentWeatherData.currentWeatherType.getWeatherTypeResource().weatherIcon
+    private var weatherIcon: some View {
+//        currentWeatherData.currentWeatherType
+//            .getWeatherTypeResource().weatherIcon
+//            .resizable()
+//            .frame(width: 150, height: 150)
+        VStack {
+            LottieView(animation: .named(currentWeatherData.currentWeatherType.getWeatherTypeResource().weatherIconAnimationName))
+                .playing(loopMode: .loop)
+                .resizable()
+                .frame(width: 180, height: 180)
+            Spacer()
+        }
+        .frame(maxWidth: .infinity, alignment: .trailing)
     }
     private var houseImage: some View {
         currentWeatherData.currentWeatherType.getWeatherTypeResource().houseIcon
@@ -173,7 +184,7 @@ enum WeatherType: CaseIterable {
                     ),
                     houseIcon: Image(.houseDaySunny),
                     weatherIcon: Image(.weatherDaySunny),
-                    weatherIconAnimationName: "weather_day_sunny.json",
+                    weatherIconAnimationName: "sunny.json",
                     mainTitleColor: .dayTitle,
                     subTitleColor: .daySubTitle
                 )
@@ -189,7 +200,7 @@ enum WeatherType: CaseIterable {
                     ),
                     houseIcon: Image(.houseDayCloudy),
                     weatherIcon: Image(.weatherDayCloudy),
-                    weatherIconAnimationName: "weather_day_sunny.json",
+                    weatherIconAnimationName: "cloudy_sun.json",
                     mainTitleColor: .dayTitle,
                     subTitleColor: .daySubTitle
                 )
@@ -205,7 +216,7 @@ enum WeatherType: CaseIterable {
                     ),
                     houseIcon: Image(.houseDayRainy),
                     weatherIcon: Image(.weatherDayRainy),
-                    weatherIconAnimationName: "weather_day_sunny.json",
+                    weatherIconAnimationName: "rainy.json",
                     mainTitleColor: .dayTitle,
                     subTitleColor: .daySubTitle
                 )
@@ -221,7 +232,7 @@ enum WeatherType: CaseIterable {
                     ),
                     houseIcon: Image(.houseNightClear),
                     weatherIcon: Image(.weatherNightClear),
-                    weatherIconAnimationName: "weather_day_sunny.json",
+                    weatherIconAnimationName: "night.json",
                     mainTitleColor: .nightTitle,
                     subTitleColor: .nightSubTitle
                 )
@@ -237,7 +248,7 @@ enum WeatherType: CaseIterable {
                     ),
                     houseIcon: Image(.houseNightCloudy),
                     weatherIcon: Image(.weatherNightCloudy),
-                    weatherIconAnimationName: "weather_day_sunny.json",
+                    weatherIconAnimationName: "cloudy.json",
                     mainTitleColor: .nightTitle,
                     subTitleColor: .nightSubTitle
                 )
@@ -253,7 +264,7 @@ enum WeatherType: CaseIterable {
                     ),
                     houseIcon: Image(.houseNightRainy),
                     weatherIcon: Image(.weatherNightRainy),
-                    weatherIconAnimationName: "weather_day_sunny.json",
+                    weatherIconAnimationName: "night_rainy.json",
                     mainTitleColor: .nightTitle,
                     subTitleColor: .nightSubTitle
                 )
@@ -269,7 +280,7 @@ enum WeatherType: CaseIterable {
                     ),
                     houseIcon: Image(.houseSnow),
                     weatherIcon: Image(.weatherSnow),
-                    weatherIconAnimationName: "weather_day_sunny.json",
+                    weatherIconAnimationName: "snow.json",
                     mainTitleColor: .dayTitle,
                     subTitleColor: .daySubTitle
                 )
