@@ -9,7 +9,7 @@ import SwiftUI
 import Lottie
 
 struct WeatherView: View {
-    @StateObject private var currentWeatherData: CurrentWeatherData = .init()
+    @StateObject private var currentWeatherData: WeatherViewData = .init()
     @State private var isPresented: Bool = false
     
     var body: some View {
@@ -109,42 +109,6 @@ extension WeatherView {
 
         }
         .foregroundStyle(subTitleColor)
-    }
-}
-
-fileprivate struct SubTemperatureView: View {
-    var isHighTemp: Bool
-    @Binding var temperature: Int
-    
-    var body: some View {
-        HStack(alignment: .top, spacing: 2) {
-            Text("\(isHighTemp ? "H" : "L") \(temperature)")
-                .font(.getFont(type: .medium, size: 20))
-                .padding(.top, 5)
-            Text("0")
-                .font(.getFont(type: .medium, size: 10))
-        }
-    }
-}
-
-class CurrentWeatherData: ObservableObject {
-    @Published var currentTemperature: Int = 20
-    @Published var highestTemp: Int = 24
-    @Published var lowestTemp: Int = 18
-    @Published var currentCity: String = "Northampton"
-    @Published var currentWeatherType: WeatherType = .day_sunny
-    @Published var hourlyWeatherData: [HourlyWeatherData] = (0...10).map { _ in
-            .sample
-    }
-    @Published var dailyWeatherData: [DailyWeatherData] = (0..<5).map { _ in
-            .sample
-    }
-    
-    func toggleWeatherType() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)){
-            let type: WeatherType = WeatherType.allCases.randomElement()!
-            self.currentWeatherType = type
-        }
     }
 }
 
