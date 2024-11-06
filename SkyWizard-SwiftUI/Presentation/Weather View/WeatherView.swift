@@ -125,6 +125,18 @@ extension WeatherView {
                     .padding(.horizontal, 25)
                 DailyWeatherView(weatherData: currentWeatherData.dailyWeatherData)
                     .padding(.horizontal, 25)
+                Button {
+                    
+                } label: {
+                    Text("Application Settings")
+                        .font(.getFont(type: .semibold, size: 16))
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 50)
+                        .foregroundStyle(.dayTitle)
+                        .background(.white)
+                        .clipShape(.rect(cornerRadius: 10))
+                        .padding(.horizontal, 25)
+                }
             }
         }
     }

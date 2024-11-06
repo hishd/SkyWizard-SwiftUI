@@ -25,7 +25,10 @@ struct SheetView<Content: View>: View {
     var body: some View {
         GeometryReader { proxy in
             let height = proxy.frame(in: .global).height
-            let maximumOffset: CGFloat = (height/5) + 100
+            let initialOffset: CGFloat = height - 300
+            let maximumGestureOffset: CGFloat = (height/5) + 100
+            let maximumExpandedOffset: CGFloat = -(height / 4)
+            let expansionTriggerOffset: CGFloat = 100
             
             ZStack {
                 if isBackgroundVisible {
@@ -49,19 +52,19 @@ struct SheetView<Content: View>: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             }
             .frame(height: (height/2) + 220)
-            .offset(y: height - 300)
+            .offset(y: initialOffset)
             .offset(y: offset)
             .gesture(DragGesture().updating($gestureOffset) { value, out, _ in
                 out = value.translation.height
-                if -value.translation.height < maximumOffset && -offset < maximumOffset {
+                if -value.translation.height < maximumGestureOffset && -offset < maximumGestureOffset {
                     onChange()
                 }
             }
                 .onEnded({ value in
                     withAnimation {
-                        if -offset > 100 {
+                        if -offset > expansionTriggerOffset {
                             isPresented = true
-                            offset = -(height / 5)
+                            offset = maximumExpandedOffset
                         } else {
                             offset = 0
                         }
@@ -72,7 +75,7 @@ struct SheetView<Content: View>: View {
             )
             .onChange(of: isPresented) { value in
                 withAnimation {
-                    offset = value ? -(height / 5) : 0
+                    offset = value ? maximumExpandedOffset : 0
                 }
             }
         }
