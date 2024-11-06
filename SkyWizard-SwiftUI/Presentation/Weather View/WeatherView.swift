@@ -77,10 +77,13 @@ extension WeatherView {
         var view = HouseViewRepresentable(lightIntensity: currentWeatherData.currentWeatherType.getWeatherTypeResource().lightIntensity)
         view.onRenderFinished = {
             print("Render finished")
-            isSceneLoading = false
+            withAnimation {
+                isSceneLoading = false
+            }
         }
         
         return view
+            .opacity(isSceneLoading ? 0 : 1)
             .padding(.top, 30)
     }
     
