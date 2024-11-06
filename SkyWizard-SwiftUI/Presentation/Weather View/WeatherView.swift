@@ -32,14 +32,7 @@ struct WeatherView: View {
                 Spacer()
             }.padding()
             
-            SheetView(isBackgroundVisible: false, isPresented: $isPresented) {
-                VStack {
-                    HourlyWeatherView(hourlyData: currentWeatherData.hourlyWeatherData)
-                        .padding(.horizontal, 25)
-                    DailyWeatherView(weatherData: currentWeatherData.dailyWeatherData)
-                        .padding(.horizontal, 25)
-                }
-            }
+            sheetView
         }
         .animation(.easeInOut, value: currentWeatherData.currentWeatherType)
         .onTapGesture {
@@ -123,6 +116,17 @@ extension WeatherView {
 
         }
         .foregroundStyle(subTitleColor)
+    }
+    
+    private var sheetView: some View {
+        SheetView(isBackgroundVisible: false, isPresented: $isPresented) {
+            VStack {
+                HourlyWeatherView(hourlyData: currentWeatherData.hourlyWeatherData)
+                    .padding(.horizontal, 25)
+                DailyWeatherView(weatherData: currentWeatherData.dailyWeatherData)
+                    .padding(.horizontal, 25)
+            }
+        }
     }
 }
 
