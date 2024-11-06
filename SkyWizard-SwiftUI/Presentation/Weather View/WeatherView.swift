@@ -7,16 +7,19 @@
 
 import SwiftUI
 import Lottie
+import SceneKit
 
 struct WeatherView: View {
     @StateObject private var currentWeatherData: WeatherViewData = .init()
     @State private var isPresented: Bool = false
+    @State private var isSceneLoading: Bool = true
     
     var body: some View {
         ZStack {
             backgroundColorGradient
                 .ignoresSafeArea()
             houseImage
+                .ignoresSafeArea()
             weatherIcon
             VStack(alignment: .leading, spacing: 0) {
                 HStack {
@@ -45,6 +48,13 @@ struct WeatherView: View {
                 isPresented.toggle()
             }
         }
+        .overlay {
+            ProgressView()
+                .tint(.daySubTitle)
+                .controlSize(.large)
+                .isVisible(isVisible: isSceneLoading)
+                .animation(.easeOut(duration: 0.3), value: isSceneLoading)
+        }
     }
 }
 
@@ -69,11 +79,15 @@ extension WeatherView {
         .frame(maxWidth: .infinity, alignment: .trailing)
     }
     private var houseImage: some View {
-        currentWeatherData.currentWeatherType.getWeatherTypeResource().houseIcon
-            .resizable()
-            .frame(maxWidth: .infinity)
-            .frame(height: 340)
-            .padding()
+        //Disabled house image
+//        currentWeatherData.currentWeatherType.getWeatherTypeResource().houseIcon
+        var view = HouseViewRepresentable(lightIntensity: currentWeatherData.currentWeatherType.getWeatherTypeResource().lightIntensity)
+        view.onRenderFinished = {
+            print("Render finished")
+            isSceneLoading = false
+        }
+        
+        return view
             .padding(.top, 30)
     }
     
@@ -128,6 +142,7 @@ enum WeatherType: CaseIterable {
         let weatherIconAnimationName: String
         let mainTitleColor: Color
         let subTitleColor: Color
+        let lightIntensity: CGFloat
     }
     
     func getWeatherTypeResource() -> WeatherTypeResource {
@@ -146,7 +161,8 @@ enum WeatherType: CaseIterable {
                     weatherIcon: Image(.weatherDaySunny),
                     weatherIconAnimationName: "sunny.json",
                     mainTitleColor: .dayTitle,
-                    subTitleColor: .daySubTitle
+                    subTitleColor: .daySubTitle,
+                    lightIntensity: 600
                 )
         case .day_cloudy:
                 .init(
@@ -162,7 +178,8 @@ enum WeatherType: CaseIterable {
                     weatherIcon: Image(.weatherDayCloudy),
                     weatherIconAnimationName: "cloudy_sun.json",
                     mainTitleColor: .dayTitle,
-                    subTitleColor: .daySubTitle
+                    subTitleColor: .daySubTitle,
+                    lightIntensity: 250
                 )
         case .day_rainy:
                 .init(
@@ -178,7 +195,8 @@ enum WeatherType: CaseIterable {
                     weatherIcon: Image(.weatherDayRainy),
                     weatherIconAnimationName: "rainy.json",
                     mainTitleColor: .dayTitle,
-                    subTitleColor: .daySubTitle
+                    subTitleColor: .daySubTitle,
+                    lightIntensity: 400
                 )
         case .night_clear:
                 .init(
@@ -194,7 +212,8 @@ enum WeatherType: CaseIterable {
                     weatherIcon: Image(.weatherNightClear),
                     weatherIconAnimationName: "night.json",
                     mainTitleColor: .nightTitle,
-                    subTitleColor: .nightSubTitle
+                    subTitleColor: .nightSubTitle,
+                    lightIntensity: 600
                 )
         case .night_cloudy:
                 .init(
@@ -210,7 +229,8 @@ enum WeatherType: CaseIterable {
                     weatherIcon: Image(.weatherNightCloudy),
                     weatherIconAnimationName: "cloudy.json",
                     mainTitleColor: .nightTitle,
-                    subTitleColor: .nightSubTitle
+                    subTitleColor: .nightSubTitle,
+                    lightIntensity: 200
                 )
         case .night_rainy:
                 .init(
@@ -226,7 +246,8 @@ enum WeatherType: CaseIterable {
                     weatherIcon: Image(.weatherNightRainy),
                     weatherIconAnimationName: "night_rainy.json",
                     mainTitleColor: .nightTitle,
-                    subTitleColor: .nightSubTitle
+                    subTitleColor: .nightSubTitle,
+                    lightIntensity: 100
                 )
         case .snow:
                 .init(
@@ -242,7 +263,8 @@ enum WeatherType: CaseIterable {
                     weatherIcon: Image(.weatherSnow),
                     weatherIconAnimationName: "snow.json",
                     mainTitleColor: .dayTitle,
-                    subTitleColor: .daySubTitle
+                    subTitleColor: .daySubTitle,
+                    lightIntensity: 600
                 )
         }
     }

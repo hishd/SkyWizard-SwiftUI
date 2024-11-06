@@ -37,6 +37,9 @@
 		FD8574852CD9CF8F003D9D29 /* HourlyWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8574842CD9CF8F003D9D29 /* HourlyWeatherData.swift */; };
 		FD8574882CD9D040003D9D29 /* SubTemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8574872CD9D040003D9D29 /* SubTemperatureView.swift */; };
 		FD85748A2CD9D08E003D9D29 /* WeatherViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8574892CD9D08E003D9D29 /* WeatherViewData.swift */; };
+		FDB65E732CDC030300E4A52E /* wizard_house.scn in Resources */ = {isa = PBXBuildFile; fileRef = FDB65E722CDC030300E4A52E /* wizard_house.scn */; };
+		FDB65E762CDC033C00E4A52E /* HouseViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E752CDC033C00E4A52E /* HouseViewRepresentable.swift */; };
+		FDB65E782CDC28D400E4A52E /* IsVisibleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E772CDC28D400E4A52E /* IsVisibleModifier.swift */; };
 		FDE0B9662CD8082200017A6B /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE0B9652CD8082200017A6B /* SheetView.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +75,9 @@
 		FD8574842CD9CF8F003D9D29 /* HourlyWeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherData.swift; sourceTree = "<group>"; };
 		FD8574872CD9D040003D9D29 /* SubTemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTemperatureView.swift; sourceTree = "<group>"; };
 		FD8574892CD9D08E003D9D29 /* WeatherViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewData.swift; sourceTree = "<group>"; };
+		FDB65E722CDC030300E4A52E /* wizard_house.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = wizard_house.scn; sourceTree = "<group>"; };
+		FDB65E752CDC033C00E4A52E /* HouseViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewRepresentable.swift; sourceTree = "<group>"; };
+		FDB65E772CDC28D400E4A52E /* IsVisibleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsVisibleModifier.swift; sourceTree = "<group>"; };
 		FDE0B9652CD8082200017A6B /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				FD0841B52CD743CD00604BF3 /* GlassModifier.swift */,
+				FDB65E772CDC28D400E4A52E /* IsVisibleModifier.swift */,
 			);
 			path = "View Modifiers";
 			sourceTree = "<group>";
@@ -157,6 +164,7 @@
 		FD32A9F52CB4493E002B8706 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				FDB65E712CDC02FF00E4A52E /* Objects */,
 				FD8574682CD9C5A8003D9D29 /* Animations */,
 				FD0841A42CD7306E00604BF3 /* Fonts */,
 				FD32A9EF2CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift */,
@@ -189,6 +197,7 @@
 		FD32A9F82CB4494B002B8706 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				FDB65E742CDC031C00E4A52E /* Representables */,
 				FD0841B72CD7481400604BF3 /* Subviews */,
 				FD8574862CD9D000003D9D29 /* Weather View */,
 			);
@@ -259,6 +268,22 @@
 				FD8574892CD9D08E003D9D29 /* WeatherViewData.swift */,
 			);
 			path = "Weather View";
+			sourceTree = "<group>";
+		};
+		FDB65E712CDC02FF00E4A52E /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				FDB65E722CDC030300E4A52E /* wizard_house.scn */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		FDB65E742CDC031C00E4A52E /* Representables */ = {
+			isa = PBXGroup;
+			children = (
+				FDB65E752CDC033C00E4A52E /* HouseViewRepresentable.swift */,
+			);
+			path = Representables;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +357,7 @@
 				FD0841AD2CD7307900604BF3 /* Montserrat-Bold.ttf in Resources */,
 				FD0841AE2CD7307900604BF3 /* Montserrat-Medium.ttf in Resources */,
 				FD0841AF2CD7307900604BF3 /* Montserrat-Regular.ttf in Resources */,
+				FDB65E732CDC030300E4A52E /* wizard_house.scn in Resources */,
 				FD0841B02CD7307900604BF3 /* Montserrat-SemiBold.ttf in Resources */,
 				FD8574702CD9C690003D9D29 /* snow.json in Resources */,
 				FD8574712CD9C690003D9D29 /* rainy.json in Resources */,
@@ -353,9 +379,11 @@
 			files = (
 				FD8574832CD9CF6A003D9D29 /* HourlyWeatherItem.swift in Sources */,
 				FD85748A2CD9D08E003D9D29 /* WeatherViewData.swift in Sources */,
+				FDB65E762CDC033C00E4A52E /* HouseViewRepresentable.swift in Sources */,
 				FD8574782CD9CE2D003D9D29 /* StatePreviewWrapper.swift in Sources */,
 				FD8574882CD9D040003D9D29 /* SubTemperatureView.swift in Sources */,
 				FD0841B62CD743CD00604BF3 /* GlassModifier.swift in Sources */,
+				FDB65E782CDC28D400E4A52E /* IsVisibleModifier.swift in Sources */,
 				FDE0B9662CD8082200017A6B /* SheetView.swift in Sources */,
 				FD32A9F32CB4484D002B8706 /* WeatherView.swift in Sources */,
 				FD85747D2CD9CEA4003D9D29 /* DailyWeatherData.swift in Sources */,
