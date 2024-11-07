@@ -9,7 +9,7 @@ import Foundation
 import CoreLocation
 
 protocol GeocodingService {
-    typealias TaskType = Task<GeocodeResult, Error>
+    typealias TaskType = Task<GeocodeData, Error>
     func geocode(with location: CLLocationCoordinate2D) async throws -> TaskType
 }
 

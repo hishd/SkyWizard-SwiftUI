@@ -20,7 +20,7 @@ final class GeocodingServiceRemote: GeocodingService {
     func geocode(with location: CLLocationCoordinate2D) async throws -> TaskType {
         let task = Task {
             let task = await dataTransferService.request(with: GeocodingEndpoints.getGeocoding(latitude: location.latitude, longitude: location.longitude))
-            let value: GeocodeResult = try await task.value.mapToGeocodeResult()
+            let value: GeocodeData = try await task.value.mapToGeocodeResult()
             return value
         }
         

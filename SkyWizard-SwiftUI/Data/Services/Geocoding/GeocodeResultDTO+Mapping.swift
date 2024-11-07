@@ -25,7 +25,7 @@ extension GeocodeResultDTO {
 }
 
 extension GeocodeResultDTO {
-    func mapToGeocodeResult() throws -> GeocodeResult {
+    func mapToGeocodeResult() throws -> GeocodeData {
         guard let feature = features.first else {
             throw GeoCodeMappingError.invalidResponse(message: "No feature found in the response")
         }

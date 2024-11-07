@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct GeocodeResult {
+struct GeocodeData {
     let country: String
     let city: String
 }
 
-extension GeocodeResult: Codable {
+extension GeocodeData: Codable {
     #if DEBUG
     static let sample: Self = .init(country: "United Kingdom", city: "Northampton")
     #endif
