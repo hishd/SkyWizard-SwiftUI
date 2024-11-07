@@ -41,6 +41,12 @@
 		FD949A402CDC8C3B00F8CF48 /* WeatherService+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A3F2CDC8C3B00F8CF48 /* WeatherService+Dependencies.swift */; };
 		FD949A422CDC8DD800F8CF48 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A412CDC8DD800F8CF48 /* Application.swift */; };
 		FD949A5C2CDC935E00F8CF48 /* WeatherServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A5B2CDC935E00F8CF48 /* WeatherServiceTests.swift */; };
+		FD949A5F2CDC9FA300F8CF48 /* GeocodingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A5E2CDC9FA300F8CF48 /* GeocodingService.swift */; };
+		FD949A612CDCA03200F8CF48 /* GeocodeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A602CDCA03200F8CF48 /* GeocodeResult.swift */; };
+		FD949A632CDCA0F800F8CF48 /* GeocodeResultDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A622CDCA0F800F8CF48 /* GeocodeResultDTO+Mapping.swift */; };
+		FD949A652CDCA2E100F8CF48 /* GeocodingServiceRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A642CDCA2E100F8CF48 /* GeocodingServiceRemote.swift */; };
+		FD949A672CDCA34400F8CF48 /* GeocodingEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A662CDCA34400F8CF48 /* GeocodingEndpoints.swift */; };
+		FD949A692CDCA44300F8CF48 /* GeocodingService+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A682CDCA44300F8CF48 /* GeocodingService+Dependencies.swift */; };
 		FDB65E732CDC030300E4A52E /* wizard_house.scn in Resources */ = {isa = PBXBuildFile; fileRef = FDB65E722CDC030300E4A52E /* wizard_house.scn */; };
 		FDB65E762CDC033C00E4A52E /* HouseViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E752CDC033C00E4A52E /* HouseViewRepresentable.swift */; };
 		FDB65E782CDC28D400E4A52E /* IsVisibleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E772CDC28D400E4A52E /* IsVisibleModifier.swift */; };
@@ -99,6 +105,12 @@
 		FD949A412CDC8DD800F8CF48 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		FD949A4D2CDC916900F8CF48 /* SkyWizard-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SkyWizard-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD949A5B2CDC935E00F8CF48 /* WeatherServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceTests.swift; sourceTree = "<group>"; };
+		FD949A5E2CDC9FA300F8CF48 /* GeocodingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingService.swift; sourceTree = "<group>"; };
+		FD949A602CDCA03200F8CF48 /* GeocodeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeResult.swift; sourceTree = "<group>"; };
+		FD949A622CDCA0F800F8CF48 /* GeocodeResultDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeocodeResultDTO+Mapping.swift"; sourceTree = "<group>"; };
+		FD949A642CDCA2E100F8CF48 /* GeocodingServiceRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingServiceRemote.swift; sourceTree = "<group>"; };
+		FD949A662CDCA34400F8CF48 /* GeocodingEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingEndpoints.swift; sourceTree = "<group>"; };
+		FD949A682CDCA44300F8CF48 /* GeocodingService+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeocodingService+Dependencies.swift"; sourceTree = "<group>"; };
 		FDB65E722CDC030300E4A52E /* wizard_house.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = wizard_house.scn; sourceTree = "<group>"; };
 		FDB65E752CDC033C00E4A52E /* HouseViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewRepresentable.swift; sourceTree = "<group>"; };
 		FDB65E772CDC28D400E4A52E /* IsVisibleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsVisibleModifier.swift; sourceTree = "<group>"; };
@@ -271,6 +283,7 @@
 				FD85747C2CD9CEA4003D9D29 /* DailyWeatherData.swift */,
 				FD8574842CD9CF8F003D9D29 /* HourlyWeatherData.swift */,
 				FDB65E8C2CDC590600E4A52E /* WeatherResult.swift */,
+				FD949A602CDCA03200F8CF48 /* GeocodeResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -278,6 +291,7 @@
 		FD85747B2CD9CE8C003D9D29 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FD949A5D2CDC9F8D00F8CF48 /* Geocoding */,
 				FD949A3C2CDC7EDA00F8CF48 /* Weather */,
 			);
 			path = Services;
@@ -334,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				FD949A3F2CDC8C3B00F8CF48 /* WeatherService+Dependencies.swift */,
+				FD949A682CDCA44300F8CF48 /* GeocodingService+Dependencies.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -360,6 +375,17 @@
 			children = (
 			);
 			path = "Geocoding Service";
+			sourceTree = "<group>";
+		};
+		FD949A5D2CDC9F8D00F8CF48 /* Geocoding */ = {
+			isa = PBXGroup;
+			children = (
+				FD949A5E2CDC9FA300F8CF48 /* GeocodingService.swift */,
+				FD949A622CDCA0F800F8CF48 /* GeocodeResultDTO+Mapping.swift */,
+				FD949A642CDCA2E100F8CF48 /* GeocodingServiceRemote.swift */,
+				FD949A662CDCA34400F8CF48 /* GeocodingEndpoints.swift */,
+			);
+			path = Geocoding;
 			sourceTree = "<group>";
 		};
 		FDB65E712CDC02FF00E4A52E /* Objects */ = {
@@ -506,10 +532,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD949A422CDC8DD800F8CF48 /* Application.swift in Sources */,
+				FD949A632CDCA0F800F8CF48 /* GeocodeResultDTO+Mapping.swift in Sources */,
 				FDB65E872CDC575A00E4A52E /* WeatherService.swift in Sources */,
 				FDB65E892CDC579100E4A52E /* WeatherServiceRemote.swift in Sources */,
 				FDB65E8D2CDC590600E4A52E /* WeatherResult.swift in Sources */,
 				FD8574832CD9CF6A003D9D29 /* HourlyWeatherItem.swift in Sources */,
+				FD949A652CDCA2E100F8CF48 /* GeocodingServiceRemote.swift in Sources */,
 				FD85748A2CD9D08E003D9D29 /* WeatherViewData.swift in Sources */,
 				FD949A402CDC8C3B00F8CF48 /* WeatherService+Dependencies.swift in Sources */,
 				FDB65E762CDC033C00E4A52E /* HouseViewRepresentable.swift in Sources */,
@@ -517,16 +545,20 @@
 				FD8574882CD9D040003D9D29 /* SubTemperatureView.swift in Sources */,
 				FD0841B62CD743CD00604BF3 /* GlassModifier.swift in Sources */,
 				FDB65E782CDC28D400E4A52E /* IsVisibleModifier.swift in Sources */,
+				FD949A612CDCA03200F8CF48 /* GeocodeResult.swift in Sources */,
 				FD949A3E2CDC7EEC00F8CF48 /* WeatherEndpoints.swift in Sources */,
 				FDE0B9662CD8082200017A6B /* SheetView.swift in Sources */,
 				FD32A9F32CB4484D002B8706 /* WeatherView.swift in Sources */,
 				FD85747D2CD9CEA4003D9D29 /* DailyWeatherData.swift in Sources */,
 				FD0841B92CD7483A00604BF3 /* HourlyWeatherView.swift in Sources */,
+				FD949A5F2CDC9FA300F8CF48 /* GeocodingService.swift in Sources */,
 				FD8574802CD9CEF9003D9D29 /* DailyWeatherItem.swift in Sources */,
+				FD949A672CDCA34400F8CF48 /* GeocodingEndpoints.swift in Sources */,
 				FD32A9F42CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift in Sources */,
 				FD0841B32CD732A400604BF3 /* Font+Extensions.swift in Sources */,
 				FD0841A32CD7202D00604BF3 /* Color+Extensions.swift in Sources */,
 				FD73C1B02CD89EE4004DA8A7 /* DailyWeatherView.swift in Sources */,
+				FD949A692CDCA44300F8CF48 /* GeocodingService+Dependencies.swift in Sources */,
 				FD8574852CD9CF8F003D9D29 /* HourlyWeatherData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,8 @@ import NetworkingService
 enum Application {
     enum Constants {
         static let openMetroBaseUrl = "https://api.open-meteo.com/v1"
-        static let geoCodingBaseUrl = "https://"
+        //Geocoding
+        static let komootBaseUrl = "https://photon.komoot.io"
     }
     
     enum Networking {

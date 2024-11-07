@@ -9,7 +9,7 @@ import Foundation
 import CoreLocation
 import NetworkingService
 
-class WeatherServiceRemote: WeatherService {
+final class WeatherServiceRemote: WeatherService {
     let dataTransferService: NetworkDataTransferService
     
     init(dataTransferService: NetworkDataTransferService) {
