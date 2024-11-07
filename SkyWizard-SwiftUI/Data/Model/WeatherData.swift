@@ -10,6 +10,7 @@ import Foundation
 struct WeatherData: Decodable {
     let latitude: Double
     let longitude: Double
+    let is_day: Bool
     let current: CurrentWeatherResponse
     let hourly: HourlyWeatherResponse
     let daily: DailyWeatherResponse
@@ -62,7 +63,7 @@ extension WeatherData {
             weather_code: 3
         )
         
-        return .init(latitude: 52.52, longitude: 13.41, current: currentSample, hourly: hourlySample, daily: dailySample)
+        return .init(latitude: 52.52, longitude: 13.41, is_day: true, current: currentSample, hourly: hourlySample, daily: dailySample)
     }
     #endif
 }

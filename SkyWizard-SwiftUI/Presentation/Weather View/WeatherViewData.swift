@@ -10,8 +10,6 @@ import Foundation
 class WeatherViewData: ObservableObject {
     @Published var currentTemperature: Int = 20
     @Published var realFeel: Int = 10
-    @Published var highestTemp: Int = 24
-    @Published var lowestTemp: Int = 18
     @Published var currentCity: String = "Northampton"
     @Published var currentWeatherType: WeatherType = .day_sunny
     @Published var hourlyWeatherData: [HourlyWeatherData] = (0...10).map { _ in

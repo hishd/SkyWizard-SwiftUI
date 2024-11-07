@@ -13,7 +13,16 @@ protocol WeatherService {
     func fetchWeather(for location: CLLocationCoordinate2D) async throws -> TaskType
 }
 
-enum WeatherServiceError: Error {
+enum WeatherServiceError: LocalizedError {
     case invalidResponse(message: String)
     case invalidData(message: String)
+    
+    var errorDescription: String? {
+        switch self {
+        case .invalidResponse(let message):
+          return message
+        case .invalidData(let message):
+            return message
+        }
+    }
 }

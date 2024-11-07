@@ -51,6 +51,9 @@
 		FD949A6D2CDD4BCE00F8CF48 /* GeocodingServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A6C2CDD4BCE00F8CF48 /* GeocodingServiceMock.swift */; };
 		FD949A6F2CDD4CAF00F8CF48 /* WeatherServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A6E2CDD4CAF00F8CF48 /* WeatherServiceMock.swift */; };
 		FD949A712CDD4E0F00F8CF48 /* DataTransferService+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A702CDD4E0F00F8CF48 /* DataTransferService+Dependencies.swift */; };
+		FD949A742CDD614300F8CF48 /* WeatherDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A732CDD614300F8CF48 /* WeatherDataStore.swift */; };
+		FD949A762CDD66D000F8CF48 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A752CDD66D000F8CF48 /* View+Extensions.swift */; };
+		FD949A782CDD670E00F8CF48 /* LocalizedAlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A772CDD670E00F8CF48 /* LocalizedAlertError.swift */; };
 		FDB65E732CDC030300E4A52E /* wizard_house.scn in Resources */ = {isa = PBXBuildFile; fileRef = FDB65E722CDC030300E4A52E /* wizard_house.scn */; };
 		FDB65E762CDC033C00E4A52E /* HouseViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E752CDC033C00E4A52E /* HouseViewRepresentable.swift */; };
 		FDB65E782CDC28D400E4A52E /* IsVisibleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E772CDC28D400E4A52E /* IsVisibleModifier.swift */; };
@@ -119,6 +122,9 @@
 		FD949A6C2CDD4BCE00F8CF48 /* GeocodingServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingServiceMock.swift; sourceTree = "<group>"; };
 		FD949A6E2CDD4CAF00F8CF48 /* WeatherServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceMock.swift; sourceTree = "<group>"; };
 		FD949A702CDD4E0F00F8CF48 /* DataTransferService+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataTransferService+Dependencies.swift"; sourceTree = "<group>"; };
+		FD949A732CDD614300F8CF48 /* WeatherDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataStore.swift; sourceTree = "<group>"; };
+		FD949A752CDD66D000F8CF48 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		FD949A772CDD670E00F8CF48 /* LocalizedAlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedAlertError.swift; sourceTree = "<group>"; };
 		FDB65E722CDC030300E4A52E /* wizard_house.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = wizard_house.scn; sourceTree = "<group>"; };
 		FDB65E752CDC033C00E4A52E /* HouseViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewRepresentable.swift; sourceTree = "<group>"; };
 		FDB65E772CDC28D400E4A52E /* IsVisibleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsVisibleModifier.swift; sourceTree = "<group>"; };
@@ -237,9 +243,11 @@
 			isa = PBXGroup;
 			children = (
 				FD0841B42CD743B900604BF3 /* View Modifiers */,
+				FD949A752CDD66D000F8CF48 /* View+Extensions.swift */,
 				FD0841A22CD7202D00604BF3 /* Color+Extensions.swift */,
 				FD0841B22CD732A400604BF3 /* Font+Extensions.swift */,
 				FD8574772CD9CE2D003D9D29 /* StatePreviewWrapper.swift */,
+				FD949A772CDD670E00F8CF48 /* LocalizedAlertError.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -247,6 +255,7 @@
 		FD32A9F72CB44947002B8706 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				FD949A722CDD613800F8CF48 /* Datastores */,
 				FD85747B2CD9CE8C003D9D29 /* Services */,
 				FD85747A2CD9CE86003D9D29 /* Model */,
 			);
@@ -400,6 +409,14 @@
 			path = Geocoding;
 			sourceTree = "<group>";
 		};
+		FD949A722CDD613800F8CF48 /* Datastores */ = {
+			isa = PBXGroup;
+			children = (
+				FD949A732CDD614300F8CF48 /* WeatherDataStore.swift */,
+			);
+			path = Datastores;
+			sourceTree = "<group>";
+		};
 		FDB65E712CDC02FF00E4A52E /* Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -543,6 +560,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD949A742CDD614300F8CF48 /* WeatherDataStore.swift in Sources */,
 				FD949A422CDC8DD800F8CF48 /* Application.swift in Sources */,
 				FD949A632CDCA0F800F8CF48 /* GeocodeResultDTO+Mapping.swift in Sources */,
 				FD949A6F2CDD4CAF00F8CF48 /* WeatherServiceMock.swift in Sources */,
@@ -566,6 +584,8 @@
 				FD85747D2CD9CEA4003D9D29 /* DailyWeatherData.swift in Sources */,
 				FD0841B92CD7483A00604BF3 /* HourlyWeatherView.swift in Sources */,
 				FD949A5F2CDC9FA300F8CF48 /* GeocodingService.swift in Sources */,
+				FD949A762CDD66D000F8CF48 /* View+Extensions.swift in Sources */,
+				FD949A782CDD670E00F8CF48 /* LocalizedAlertError.swift in Sources */,
 				FD8574802CD9CEF9003D9D29 /* DailyWeatherItem.swift in Sources */,
 				FD949A672CDCA34400F8CF48 /* GeocodingEndpoints.swift in Sources */,
 				FD32A9F42CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift in Sources */,
