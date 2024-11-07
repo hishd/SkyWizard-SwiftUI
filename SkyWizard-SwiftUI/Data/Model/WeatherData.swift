@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WeatherResult: Decodable {
+struct WeatherData: Decodable {
     let latitude: Double
     let longitude: Double
     let current: CurrentWeatherResponse
@@ -15,7 +15,7 @@ struct WeatherResult: Decodable {
     let daily: DailyWeatherResponse
 }
 
-extension WeatherResult {
+extension WeatherData {
     struct HourlyWeatherResponse: Decodable {
         let time: [String]
         let temperature_2m: [Double]
@@ -23,7 +23,7 @@ extension WeatherResult {
     }
 }
 
-extension WeatherResult {
+extension WeatherData {
     struct DailyWeatherResponse: Decodable {
         let time: [String]
         let temperature_2m_max: [Double]
@@ -32,7 +32,7 @@ extension WeatherResult {
     }
 }
 
-extension WeatherResult {
+extension WeatherData {
     struct CurrentWeatherResponse: Decodable {
         let temperature_2m: Double
         let apparent_temperature: Double
@@ -40,7 +40,7 @@ extension WeatherResult {
     }
 }
 
-extension WeatherResult {
+extension WeatherData {
     #if DEBUG
     static var sample: Self {
         let hourlySample: HourlyWeatherResponse = .init(

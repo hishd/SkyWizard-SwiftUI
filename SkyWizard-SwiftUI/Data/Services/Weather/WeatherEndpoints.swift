@@ -9,7 +9,7 @@ import Foundation
 import NetworkingService
 
 enum WeatherEndpoints {
-    static func getWeather(latitude: Double, longitude: Double) -> ApiEndpoint<WeatherResult> {
+    static func getWeather(latitude: Double, longitude: Double) -> ApiEndpoint<WeatherData> {
         var queryParams: [String: Any] = [:]
         queryParams["latitude"] = latitude
         queryParams["longitude"] = longitude

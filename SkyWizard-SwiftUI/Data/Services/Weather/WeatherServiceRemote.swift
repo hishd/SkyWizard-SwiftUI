@@ -19,7 +19,7 @@ final class WeatherServiceRemote: WeatherService {
     func fetchWeather(for location: CLLocationCoordinate2D) async throws -> TaskType {
         let task = Task {
             let task = await dataTransferService.request(with: WeatherEndpoints.getWeather(latitude: location.latitude, longitude: location.longitude))
-            let value: WeatherResult = try await task.value
+            let value: WeatherData = try await task.value
             return value
         }
         

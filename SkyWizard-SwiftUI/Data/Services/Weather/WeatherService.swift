@@ -9,7 +9,7 @@ import Foundation
 import CoreLocation
 
 protocol WeatherService {
-    typealias TaskType = Task<WeatherResult, Error>
+    typealias TaskType = Task<WeatherData, Error>
     func fetchWeather(for location: CLLocationCoordinate2D) async throws -> TaskType
 }
 
