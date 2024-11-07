@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct SubTemperatureView: View {
-    var isHighTemp: Bool
     @Binding var temperature: Int
     
     var body: some View {
         HStack(alignment: .top, spacing: 2) {
-            Text("\(isHighTemp ? "H" : "L") \(temperature)")
-                .font(.getFont(type: .medium, size: 20))
-                .padding(.top, 5)
+            Text("\(temperature)")
+                .font(.getFont(type: .medium, size: 18))
             Text("0")
                 .font(.getFont(type: .medium, size: 10))
+            Text("C")
+                .font(.getFont(type: .medium, size: 14))
+                .padding(.top, 3)
         }
     }
 }
