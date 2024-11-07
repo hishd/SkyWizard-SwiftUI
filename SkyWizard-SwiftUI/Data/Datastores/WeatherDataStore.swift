@@ -30,6 +30,10 @@ class WeatherDataStore: ObservableObject {
         
         do {
             self.currentTask = try await weatherService.fetchWeather(for: currentLocation)
+            let data = try await currentTask!.value
+            
+            self.currentTemperature = Int(data.current.temperature_2m)
+            self.realFeel = Int(data.current.apparent_temperature)
         } catch {
             self.error = error
         }
