@@ -10,7 +10,8 @@ import NetworkingService
 import DependencyInjector
 
 fileprivate final class GeocodingServiceRemoteDependency: InjectableDependency {
-    static var dependency: GeocodingService = GeocodingServiceRemote(dataTransferService: Application.Networking.dataTransferServiceGeocode)
+    @Injectable(\.dataTransferServiceGeocoding) static var dataTransferService: NetworkDataTransferService
+    static var dependency: GeocodingService = GeocodingServiceRemote(dataTransferService: dataTransferService)
 }
 
 fileprivate final class GeocodingServiceMockDependency: InjectableDependency {

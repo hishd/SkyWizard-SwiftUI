@@ -10,7 +10,8 @@ import DependencyInjector
 import NetworkingService
 
 fileprivate final class WeatherServiceRemoteDependency: InjectableDependency {
-    static var dependency: WeatherService = WeatherServiceRemote(dataTransferService: Application.Networking.dataTransferServiceWeather)
+    @Injectable(\.dataTransferServiceWeather) static var dataTransferService: NetworkDataTransferService
+    static var dependency: WeatherService = WeatherServiceRemote(dataTransferService: dataTransferService)
 }
 
 fileprivate final class WeatherServiceMockDependency: InjectableDependency {
