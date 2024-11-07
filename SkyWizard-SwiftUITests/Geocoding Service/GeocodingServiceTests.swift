@@ -13,7 +13,7 @@ import CoreLocation
 @testable import SkyWizard_SwiftUI
 
 struct GeocodingServiceTests {
-    @Injectable(\.geoCodingService) var sut: GeocodingService
+    @Injectable(\.geoCodingServiceRemote) var sut: GeocodingService
     let testingLatitude: Double = 52.253643
     let testingLongitude: Double = -0.862097
     

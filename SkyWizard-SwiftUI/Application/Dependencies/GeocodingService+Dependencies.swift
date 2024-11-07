@@ -13,10 +13,20 @@ fileprivate final class GeocodingServiceRemoteDependency: InjectableDependency {
     static var dependency: GeocodingService = GeocodingServiceRemote(dataTransferService: Application.Networking.dataTransferServiceGeocode)
 }
 
+fileprivate final class GeocodingServiceMockDependency: InjectableDependency {
+    static var dependency: GeocodingService = GeocodingServiceMock()
+}
+
 extension InjectableValues {
-    var geoCodingService: GeocodingService {
+    var geoCodingServiceRemote: GeocodingService {
         get {
             Self[GeocodingServiceRemoteDependency.self]
+        }
+    }
+    
+    var geoCodingServiceMock: GeocodingService {
+        get {
+            Self[GeocodingServiceMockDependency.self]
         }
     }
 }

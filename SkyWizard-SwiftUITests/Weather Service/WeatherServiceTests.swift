@@ -12,7 +12,7 @@ import CoreLocation
 @testable import SkyWizard_SwiftUI
 
 struct WeatherServiceTests {
-    @Injectable(\.weatherService) var sut: WeatherService
+    @Injectable(\.weatherServiceRemote) var sut: WeatherService
     
     let testingLatitude: Double = 52.253643
     let testingLongitude: Double = -0.862097
