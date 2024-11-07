@@ -1,6 +1,15 @@
 {
-  "originHash" : "6b3386dc9ff1f3a74f1534de9c41d47137eae0901cfe819ed442f1b241549359",
+  "originHash" : "56b9d420a882eb1e189accb1aef6d2b677776e970a0a934b2e76b87b91d2b61f",
   "pins" : [
+    {
+      "identity" : "dependencyinjector",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hishd/DependencyInjector",
+      "state" : {
+        "revision" : "fc409d60cbf3bb76b409bb8cc63453f8df7e852c",
+        "version" : "1.0.0"
+      }
+    },
     {
       "identity" : "lottie-spm",
       "kind" : "remoteSourceControl",
@@ -8,6 +17,15 @@
       "state" : {
         "revision" : "b842598f1295f3ffa1475b1580672d1fe5b83580",
         "version" : "4.5.0"
+      }
+    },
+    {
+      "identity" : "networkingservice",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hishd/NetworkingService",
+      "state" : {
+        "revision" : "6fca3f2b6303201513d112487e1a0b478046cd03",
+        "version" : "1.0.4"
       }
     }
   ],
