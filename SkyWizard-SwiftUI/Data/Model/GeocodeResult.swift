@@ -11,3 +11,9 @@ struct GeocodeResult {
     let country: String
     let city: String
 }
+
+extension GeocodeResult: Codable {
+    #if DEBUG
+    static let sample: Self = .init(country: "United Kingdom", city: "Northampton")
+    #endif
+}
