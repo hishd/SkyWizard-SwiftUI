@@ -10,7 +10,7 @@ import DependencyInjector
 import NetworkingService
 
 fileprivate final class WeatherServiceRemoteDependency: InjectableDependency {
-    static var dependency: WeatherService = WeatherServiceRemote(dataTransferService: Application.Networking.dataTransferService)
+    static var dependency: WeatherService = WeatherServiceRemote(dataTransferService: Application.Networking.dataTransferServiceWeather)
 }
 
 extension InjectableValues {
