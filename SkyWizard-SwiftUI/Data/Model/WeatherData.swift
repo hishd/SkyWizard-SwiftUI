@@ -10,7 +10,6 @@ import Foundation
 struct WeatherData: Decodable {
     let latitude: Double
     let longitude: Double
-    let is_day: Bool
     let current: CurrentWeatherData
     let hourly: HourlyWeatherData
     let daily: DailyWeatherData
@@ -33,14 +32,60 @@ extension WeatherData {
     }
 }
 
+extension WeatherData.DailyWeatherData {
+    var weatherType: CurrentWeatherType? {
+        switch weather_code {
+        case let code where (0...3).contains(code):
+            .day_sunny
+        case let code where (45...48).contains(code):
+            .day_cloudy
+        case let code where ((51...67).contains(code) || (80...82).contains(code) || (95...99).contains(code)):
+            .day_rainy
+        case let code where (0...3).contains(code):
+            .day_sunny
+        case let code where (45...48).contains(code):
+            .day_cloudy
+        case let code where ((51...67).contains(code) || (80...82).contains(code) || (95...99).contains(code)):
+            .day_rainy
+        case let code where (71...77).contains(code) || (85...86).contains(code):
+            .snow
+        default:
+            nil
+        }
+    }
+}
+
 extension WeatherData {
     struct CurrentWeatherData: Decodable {
         let temperature_2m: Double
         let apparent_temperature: Double
         let weather_code: Int
+        let is_day: Bool
     }
 }
 
+extension WeatherData.CurrentWeatherData {
+    var weatherType: CurrentWeatherType? {
+        switch weather_code {
+        case let code where (0...3).contains(code) && is_day:
+            .day_sunny
+        case let code where (45...48).contains(code) && is_day:
+            .day_cloudy
+        case let code where ((51...67).contains(code) || (80...82).contains(code) || (95...99).contains(code)) && is_day:
+            .day_rainy
+        case let code where (0...3).contains(code) && !is_day:
+            .day_sunny
+        case let code where (45...48).contains(code) && !is_day:
+            .day_cloudy
+        case let code where ((51...67).contains(code) || (80...82).contains(code) || (95...99).contains(code)) && !is_day:
+            .day_rainy
+        case let code where (71...77).contains(code) || (85...86).contains(code):
+            .snow
+        default:
+            nil
+        }
+    }
+}
 
 
 extension WeatherData {
@@ -62,10 +107,11 @@ extension WeatherData {
         let currentSample: CurrentWeatherData = .init(
             temperature_2m: 20.0,
             apparent_temperature: 12.0,
-            weather_code: 3
+            weather_code: 3,
+            is_day: true
         )
         
-        return .init(latitude: 52.52, longitude: 13.41, is_day: true, current: currentSample, hourly: hourlySample, daily: dailySample)
+        return .init(latitude: 52.52, longitude: 13.41, current: currentSample, hourly: hourlySample, daily: dailySample)
     }
     #endif
 }

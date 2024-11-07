@@ -148,7 +148,7 @@ extension WeatherView {
     }
 }
 
-enum WeatherType: CaseIterable {
+enum CurrentWeatherType: CaseIterable {
     case day_sunny
     case day_cloudy
     case day_rainy

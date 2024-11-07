@@ -12,7 +12,7 @@ class WeatherDataStore: ObservableObject {
     @Published var currentTemperature: Int = 20
     @Published var realFeel: Int = 10
     @Published var currentCity: String = "Northampton"
-    @Published var currentWeatherType: WeatherType = .day_sunny
+    @Published var currentWeatherType: CurrentWeatherType = .day_sunny
     @Published var hourlyWeatherData: [HourlyWeatherData] = .init()
     @Published var dailyWeatherData: [DailyWeatherData] = .init()
     @Published var error: Swift.Error?
@@ -34,6 +34,13 @@ class WeatherDataStore: ObservableObject {
             
             self.currentTemperature = Int(data.current.temperature_2m)
             self.realFeel = Int(data.current.apparent_temperature)
+            
+            if let weatherType = data.current.weatherType {
+                self.currentWeatherType = weatherType
+            } else {
+                error = WeatherServiceError.invalidData(message: "Could not find weather type for the given wmo code.")
+            }
+
         } catch {
             self.error = error
         }
