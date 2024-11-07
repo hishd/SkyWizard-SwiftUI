@@ -40,6 +40,7 @@
 		FD949A3E2CDC7EEC00F8CF48 /* WeatherEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A3D2CDC7EEC00F8CF48 /* WeatherEndpoints.swift */; };
 		FD949A402CDC8C3B00F8CF48 /* WeatherService+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A3F2CDC8C3B00F8CF48 /* WeatherService+Dependencies.swift */; };
 		FD949A422CDC8DD800F8CF48 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A412CDC8DD800F8CF48 /* Application.swift */; };
+		FD949A5C2CDC935E00F8CF48 /* WeatherServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A5B2CDC935E00F8CF48 /* WeatherServiceTests.swift */; };
 		FDB65E732CDC030300E4A52E /* wizard_house.scn in Resources */ = {isa = PBXBuildFile; fileRef = FDB65E722CDC030300E4A52E /* wizard_house.scn */; };
 		FDB65E762CDC033C00E4A52E /* HouseViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E752CDC033C00E4A52E /* HouseViewRepresentable.swift */; };
 		FDB65E782CDC28D400E4A52E /* IsVisibleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E772CDC28D400E4A52E /* IsVisibleModifier.swift */; };
@@ -50,6 +51,16 @@
 		FDB65E8D2CDC590600E4A52E /* WeatherResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E8C2CDC590600E4A52E /* WeatherResult.swift */; };
 		FDE0B9662CD8082200017A6B /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE0B9652CD8082200017A6B /* SheetView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FD949A512CDC916900F8CF48 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD32A9D12CB446CF002B8706 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD32A9D82CB446CF002B8706;
+			remoteInfo = "SkyWizard-SwiftUI";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		FD0841A22CD7202D00604BF3 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
@@ -86,6 +97,8 @@
 		FD949A3D2CDC7EEC00F8CF48 /* WeatherEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEndpoints.swift; sourceTree = "<group>"; };
 		FD949A3F2CDC8C3B00F8CF48 /* WeatherService+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherService+Dependencies.swift"; sourceTree = "<group>"; };
 		FD949A412CDC8DD800F8CF48 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		FD949A4D2CDC916900F8CF48 /* SkyWizard-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SkyWizard-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD949A5B2CDC935E00F8CF48 /* WeatherServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceTests.swift; sourceTree = "<group>"; };
 		FDB65E722CDC030300E4A52E /* wizard_house.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = wizard_house.scn; sourceTree = "<group>"; };
 		FDB65E752CDC033C00E4A52E /* HouseViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewRepresentable.swift; sourceTree = "<group>"; };
 		FDB65E772CDC28D400E4A52E /* IsVisibleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsVisibleModifier.swift; sourceTree = "<group>"; };
@@ -103,6 +116,13 @@
 				FDB65E7B2CDC4F2600E4A52E /* NetworkingService in Frameworks */,
 				FD8574672CD9C572003D9D29 /* Lottie in Frameworks */,
 				FDB65E7E2CDC4F4E00E4A52E /* DependencyInjector in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD949A4A2CDC916900F8CF48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				FD32A9F02CB4484D002B8706 /* SkyWizard-SwiftUI */,
+				FD949A572CDC917200F8CF48 /* SkyWizard-SwiftUITests */,
 				FD32A9DA2CB446CF002B8706 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -153,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				FD32A9D92CB446CF002B8706 /* SkyWizard-SwiftUI.app */,
+				FD949A4D2CDC916900F8CF48 /* SkyWizard-SwiftUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -316,6 +338,30 @@
 			path = Dependencies;
 			sourceTree = "<group>";
 		};
+		FD949A572CDC917200F8CF48 /* SkyWizard-SwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FD949A5A2CDC91DF00F8CF48 /* Geocoding Service */,
+				FD949A592CDC91D700F8CF48 /* Weather Service */,
+			);
+			path = "SkyWizard-SwiftUITests";
+			sourceTree = "<group>";
+		};
+		FD949A592CDC91D700F8CF48 /* Weather Service */ = {
+			isa = PBXGroup;
+			children = (
+				FD949A5B2CDC935E00F8CF48 /* WeatherServiceTests.swift */,
+			);
+			path = "Weather Service";
+			sourceTree = "<group>";
+		};
+		FD949A5A2CDC91DF00F8CF48 /* Geocoding Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Geocoding Service";
+			sourceTree = "<group>";
+		};
 		FDB65E712CDC02FF00E4A52E /* Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +403,26 @@
 			productReference = FD32A9D92CB446CF002B8706 /* SkyWizard-SwiftUI.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FD949A4C2CDC916900F8CF48 /* SkyWizard-SwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD949A532CDC916900F8CF48 /* Build configuration list for PBXNativeTarget "SkyWizard-SwiftUITests" */;
+			buildPhases = (
+				FD949A492CDC916900F8CF48 /* Sources */,
+				FD949A4A2CDC916900F8CF48 /* Frameworks */,
+				FD949A4B2CDC916900F8CF48 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD949A522CDC916900F8CF48 /* PBXTargetDependency */,
+			);
+			name = "SkyWizard-SwiftUITests";
+			packageProductDependencies = (
+			);
+			productName = "SkyWizard-SwiftUITests";
+			productReference = FD949A4D2CDC916900F8CF48 /* SkyWizard-SwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -369,6 +435,10 @@
 				TargetAttributes = {
 					FD32A9D82CB446CF002B8706 = {
 						CreatedOnToolsVersion = 16.0;
+					};
+					FD949A4C2CDC916900F8CF48 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = FD32A9D82CB446CF002B8706;
 					};
 				};
 			};
@@ -392,6 +462,7 @@
 			projectRoot = "";
 			targets = (
 				FD32A9D82CB446CF002B8706 /* SkyWizard-SwiftUI */,
+				FD949A4C2CDC916900F8CF48 /* SkyWizard-SwiftUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -417,6 +488,13 @@
 				FD8574752CD9C690003D9D29 /* sunny.json in Resources */,
 				FD8574762CD9C690003D9D29 /* night.json in Resources */,
 				FD32A9F22CB4484D002B8706 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD949A4B2CDC916900F8CF48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,7 +531,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FD949A492CDC916900F8CF48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD949A5C2CDC935E00F8CF48 /* WeatherServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD949A522CDC916900F8CF48 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD32A9D82CB446CF002B8706 /* SkyWizard-SwiftUI */;
+			targetProxy = FD949A512CDC916900F8CF48 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		FD32A9E52CB446D1002B8706 /* Debug */ = {
@@ -641,6 +735,42 @@
 			};
 			name = Release;
 		};
+		FD949A542CDC916900F8CF48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZMV4XYT773;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hishd.SkyWizard-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkyWizard-SwiftUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SkyWizard-SwiftUI";
+			};
+			name = Debug;
+		};
+		FD949A552CDC916900F8CF48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZMV4XYT773;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hishd.SkyWizard-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkyWizard-SwiftUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SkyWizard-SwiftUI";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -658,6 +788,15 @@
 			buildConfigurations = (
 				FD32A9E82CB446D1002B8706 /* Debug */,
 				FD32A9E92CB446D1002B8706 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD949A532CDC916900F8CF48 /* Build configuration list for PBXNativeTarget "SkyWizard-SwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD949A542CDC916900F8CF48 /* Debug */,
+				FD949A552CDC916900F8CF48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

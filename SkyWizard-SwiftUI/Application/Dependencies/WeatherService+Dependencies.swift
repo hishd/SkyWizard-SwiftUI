@@ -9,13 +9,17 @@ import Foundation
 import DependencyInjector
 import NetworkingService
 
-
 fileprivate class WeatherServiceRemoteDependency: InjectableDependency {
     static var dependency: WeatherService = WeatherServiceRemote(dataTransferService: Application.Networking.dataTransferService)
 }
 
 extension InjectableValues {
-    static var weatherService: WeatherService {
-        Self[WeatherServiceRemoteDependency.self]
+    var weatherService: WeatherService {
+        get {
+            Self[WeatherServiceRemoteDependency.self]
+        }
+        set {
+            Self[WeatherServiceRemoteDependency.self] = newValue
+        }
     }
 }
