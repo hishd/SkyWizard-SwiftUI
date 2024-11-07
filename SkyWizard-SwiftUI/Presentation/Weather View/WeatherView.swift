@@ -94,13 +94,16 @@ extension WeatherView {
                     .font(.getFont(type: .regular, size: 76))
                 Text("0")
                     .font(.getFont(type: .regular, size: 26))
+
             }
             .foregroundStyle(mainTitleColor)
-            HStack(spacing: 20) {
-                SubTemperatureView(isHighTemp: true, temperature: $currentWeatherData.highestTemp)
-                SubTemperatureView(isHighTemp: false, temperature: $currentWeatherData.lowestTemp)
+            HStack(spacing: 8) {
+                Text("Real feel:")
+                    .font(.getFont(type: .medium, size: 18))
+                SubTemperatureView(temperature: $currentWeatherData.realFeel)
             }
-            .foregroundStyle(subTitleColor)
+            .padding(.top, 6)
+            .foregroundStyle(mainTitleColor)
         }
     }
     

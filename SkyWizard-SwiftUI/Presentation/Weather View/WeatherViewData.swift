@@ -9,6 +9,7 @@ import Foundation
 
 class WeatherViewData: ObservableObject {
     @Published var currentTemperature: Int = 20
+    @Published var realFeel: Int = 10
     @Published var highestTemp: Int = 24
     @Published var lowestTemp: Int = 18
     @Published var currentCity: String = "Northampton"
@@ -24,6 +25,7 @@ class WeatherViewData: ObservableObject {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)){
             let type: WeatherType = WeatherType.allCases.randomElement()!
             self.currentWeatherType = type
+            self.realFeel = Int.random(in: 10...20)
         }
     }
 }
