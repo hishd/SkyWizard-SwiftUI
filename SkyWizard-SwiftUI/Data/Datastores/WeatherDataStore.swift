@@ -30,13 +30,22 @@ class WeatherDataStore: ObservableObject {
         
         do {
             self.currentTask = try await weatherService.fetchWeather(for: currentLocation)
-            let data = try await currentTask!.value
+            async let data = currentTask!.value
             
-            self.currentTemperature = Int(data.current.temperature_2m)
-            self.realFeel = Int(data.current.apparent_temperature)
-            self.currentWeatherType = weatherService.getWeatherType(for: data.current)
-            self.hourlyWeatherData = try weatherService.getWeather(for: data.hourly)
-            self.dailyWeatherData = try weatherService.getWeather(for: data.daily)
+            await updateData(from: try data)
+        } catch {
+            self.error = error
+        }
+    }
+    
+    @MainActor
+    private func updateData(from weather: WeatherData) {
+        do {
+            self.currentTemperature = Int(weather.current.temperature_2m)
+            self.realFeel = Int(weather.current.apparent_temperature)
+            self.currentWeatherType = weatherService.getWeatherType(for: weather.current)
+            self.hourlyWeatherData = try weatherService.getWeather(for: weather.hourly)
+            self.dailyWeatherData = try weatherService.getWeather(for: weather.daily)
         } catch {
             self.error = error
         }
