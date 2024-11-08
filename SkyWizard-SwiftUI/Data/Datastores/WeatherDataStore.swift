@@ -35,11 +35,11 @@ class WeatherDataStore: ObservableObject {
             self.currentTemperature = Int(data.current.temperature_2m)
             self.realFeel = Int(data.current.apparent_temperature)
             
-            if let weatherType = data.current.weatherType {
-                self.currentWeatherType = weatherType
-            } else {
-                error = WeatherServiceError.invalidData(message: "Could not find weather type for the given wmo code.")
-            }
+//            if let weatherType = data.current.weatherType {
+//                self.currentWeatherType = weatherType
+//            } else {
+//                error = WeatherServiceError.invalidData(message: "Could not find weather type for the given wmo code.")
+//            }
 
         } catch {
             self.error = error

@@ -148,27 +148,20 @@ extension WeatherView {
     }
 }
 
-enum CurrentWeatherType: CaseIterable {
-    case day_sunny
-    case day_cloudy
-    case day_rainy
-    case night_clear
-    case night_cloudy
-    case night_rainy
-    case snow
-    
-    struct WeatherTypeResource {
-        let backgroundGradient: LinearGradient
-        let houseIcon: Image
-        let weatherIcon: Image
-        let weatherIconAnimationName: String
-        let mainTitleColor: Color
-        let subTitleColor: Color
-        let lightIntensity: CGFloat
-    }
-    
+struct WeatherTypeResource {
+    let backgroundGradient: LinearGradient
+    let houseIcon: Image
+    let weatherIcon: Image
+    let weatherIconAnimationName: String
+    let mainTitleColor: Color
+    let subTitleColor: Color
+    let lightIntensity: CGFloat
+}
+
+extension CurrentWeatherType {
+#warning("Implement the resources for the undefined weather case")
     func getWeatherTypeResource() -> WeatherTypeResource {
-        switch self {
+        return switch self {
         case .day_sunny:
                 .init(
                     backgroundGradient: .init(
@@ -284,6 +277,23 @@ enum CurrentWeatherType: CaseIterable {
                     houseIcon: Image(.houseSnow),
                     weatherIcon: Image(.weatherSnow),
                     weatherIconAnimationName: "snow.json",
+                    mainTitleColor: .dayTitle,
+                    subTitleColor: .daySubTitle,
+                    lightIntensity: 600
+                )
+        case .undefined:
+                .init(
+                    backgroundGradient: .init(
+                        colors: [
+                            .init(hex: "#FFFCEF"),
+                            .init(hex: "#EAE2B2")
+                        ],
+                        startPoint: .topTrailing,
+                        endPoint: .bottomLeading
+                    ),
+                    houseIcon: Image(.houseDaySunny),
+                    weatherIcon: Image(.weatherDaySunny),
+                    weatherIconAnimationName: "sunny.json",
                     mainTitleColor: .dayTitle,
                     subTitleColor: .daySubTitle,
                     lightIntensity: 600
