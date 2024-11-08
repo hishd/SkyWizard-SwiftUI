@@ -14,4 +14,20 @@ class WeatherServiceMock: WeatherService {
             .sample
         }
     }
+    
+    func getWeatherType(for current: WeatherData.CurrentWeatherData) -> CurrentWeatherType {
+        .day_sunny
+    }
+    
+    func getWeather(for daily: WeatherData.DailyWeatherData) throws -> [DailyWeatherData] {
+        return (0...5).map { _ in
+                .sample
+        }
+    }
+    
+    func getWeather(for hourly: WeatherData.HourlyWeatherData) throws -> [HourlyWeatherData] {
+        return (0...10).map { _ in
+                .sample
+        }
+    }
 }
