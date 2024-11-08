@@ -10,14 +10,12 @@ import Foundation
 struct HourlyWeatherData: Identifiable {
     let id: UUID = .init()
     let timeText: String
-    let isDay: Bool
     let weatherType: CurrentWeatherType
     let temperature: Int
     
     #if DEBUG
     static let sample: HourlyWeatherData = .init(
         timeText: "10 am",
-        isDay: true,
         weatherType: .day_sunny,
         temperature: 20
     )

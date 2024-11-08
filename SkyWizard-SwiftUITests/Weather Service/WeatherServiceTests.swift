@@ -30,4 +30,36 @@ struct WeatherServiceTests {
         #expect(!value.daily.temperature_2m_max.isEmpty)
         #expect(!value.daily.temperature_2m_min.isEmpty)
     }
+    
+    @Test
+    func test_get_current_weather_type() async throws {
+        let task = try await sut.fetchWeather(for: .init(latitude: testingLatitude, longitude: testingLongitude))
+        let value = try await task.value
+        
+        let current = value.current
+        let currentType: CurrentWeatherType = sut.getWeatherType(for: current)
+        #expect(currentType != CurrentWeatherType.undefined)
+    }
+    
+    @Test
+    func test_get_hourly_weather() async throws {
+        let task = try await sut.fetchWeather(for: .init(latitude: testingLatitude, longitude: testingLongitude))
+        let value = try await task.value
+        
+        let hourly = value.hourly
+        let hourlyWeather: [HourlyWeatherData] = try sut.getWeather(for: hourly)
+        print(hourlyWeather)
+        #expect(!hourlyWeather.isEmpty)
+    }
+    
+    @Test
+    func test_get_daily_weather() async throws {
+        let task = try await sut.fetchWeather(for: .init(latitude: testingLatitude, longitude: testingLongitude))
+        let value = try await task.value
+        
+        let daily = value.daily
+        let dailyWeather: [DailyWeatherData] = try sut.getWeather(for: daily)
+        print(dailyWeather)
+        #expect(!dailyWeather.isEmpty)
+    }
 }

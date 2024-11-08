@@ -26,11 +26,11 @@ extension WeatherService {
         case let code where ((51...67).contains(code) || (80...82).contains(code) || (95...99).contains(code)) && isDay:
             .day_rainy
         case let code where (0...3).contains(code) && !isDay:
-            .day_sunny
+            .night_clear
         case let code where (45...48).contains(code) && !isDay:
-            .day_cloudy
+            .night_cloudy
         case let code where ((51...67).contains(code) || (80...82).contains(code) || (95...99).contains(code)) && !isDay:
-            .day_rainy
+            .night_rainy
         case let code where (71...77).contains(code) || (85...86).contains(code):
             .snow
         default:
@@ -38,7 +38,7 @@ extension WeatherService {
         }
     }
     
-    func getWeatherType(for daily: WeatherData.DailyWeatherData) throws -> [DailyWeatherData] {
+    func getWeather(for daily: WeatherData.DailyWeatherData) throws -> [DailyWeatherData] {
         var data: [DailyWeatherData] = .init()
         let dateFormatter: DateFormatter = .init()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -81,11 +81,11 @@ extension WeatherService {
         return data
     }
     
-    func getWeatherType(for hourly: WeatherData.HourlyWeatherData) throws -> [HourlyWeatherData] {
+    func getWeather(for hourly: WeatherData.HourlyWeatherData) throws -> [HourlyWeatherData] {
         var data: [HourlyWeatherData] = .init()
         let currentHour: Int = Calendar.current.component(.hour, from: .now)
         let dateFormatter: DateFormatter = .init()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
         
         guard !hourly.time.isEmpty else {
             throw WeatherServiceError.invalidData(message: "Empty time data found.")
@@ -121,7 +121,6 @@ extension WeatherService {
             data.append(
                 .init(
                     timeText: timeText,
-                    isDay: hour <= 12,
                     weatherType: getWeatherType(for: hourly.weather_code[index], by: date),
                     temperature: Int(hourly.temperature_2m[index])
                 )
@@ -163,11 +162,11 @@ extension WeatherService {
         case let code where ((51...67).contains(code) || (80...82).contains(code) || (95...99).contains(code)) && isDay:
             .day_rainy
         case let code where (0...3).contains(code) && !isDay:
-            .day_sunny
+            .night_clear
         case let code where (45...48).contains(code) && !isDay:
-            .day_cloudy
+            .night_cloudy
         case let code where ((51...67).contains(code) || (80...82).contains(code) || (95...99).contains(code)) && !isDay:
-            .day_rainy
+            .night_rainy
         case let code where (71...77).contains(code) || (85...86).contains(code):
             .snow
         default:
