@@ -8,7 +8,7 @@
 import Foundation
 import CoreLocation
 
-class WeatherDataStore: ObservableObject {
+final class WeatherDataStore: @unchecked Sendable, ObservableObject {
     @Published var currentTemperature: Int = 20
     @Published var realFeel: Int = 10
     @Published var currentCity: String = "Northampton"
@@ -30,9 +30,9 @@ class WeatherDataStore: ObservableObject {
         
         do {
             self.currentTask = try await weatherService.fetchWeather(for: currentLocation)
-            async let data = currentTask!.value
+            let data = try await currentTask!.value
             
-            await updateData(from: try data)
+            await updateData(from: data)
         } catch {
             self.error = error
         }

@@ -66,6 +66,8 @@
 		FDB65E892CDC579100E4A52E /* WeatherServiceRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E882CDC579100E4A52E /* WeatherServiceRemote.swift */; };
 		FDB65E8D2CDC590600E4A52E /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E8C2CDC590600E4A52E /* WeatherData.swift */; };
 		FDE0B9662CD8082200017A6B /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE0B9652CD8082200017A6B /* SheetView.swift */; };
+		FDF41DE92CE37521000C4FB4 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF41DE82CE37521000C4FB4 /* LocationService.swift */; };
+		FDF41DEB2CE37AC8000C4FB4 /* OSLog+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF41DEA2CE37AC8000C4FB4 /* OSLog+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +140,8 @@
 		FDB65E882CDC579100E4A52E /* WeatherServiceRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceRemote.swift; sourceTree = "<group>"; };
 		FDB65E8C2CDC590600E4A52E /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		FDE0B9652CD8082200017A6B /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
+		FDF41DE82CE37521000C4FB4 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		FDF41DEA2CE37AC8000C4FB4 /* OSLog+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +259,7 @@
 				FD0841B22CD732A400604BF3 /* Font+Extensions.swift */,
 				FD8574772CD9CE2D003D9D29 /* StatePreviewWrapper.swift */,
 				FD949A772CDD670E00F8CF48 /* LocalizedAlertError.swift */,
+				FDF41DEA2CE37AC8000C4FB4 /* OSLog+Extensions.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -316,6 +321,7 @@
 		FD85747B2CD9CE8C003D9D29 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FD9C174D2CDE76C700401013 /* Location */,
 				FD949A5D2CDC9F8D00F8CF48 /* Geocoding */,
 				FD949A3C2CDC7EDA00F8CF48 /* Weather */,
 			);
@@ -432,6 +438,14 @@
 				FD949A7C2CDD79BA00F8CF48 /* CurrentWeatherType.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		FD9C174D2CDE76C700401013 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				FDF41DE82CE37521000C4FB4 /* LocationService.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		FDB65E712CDC02FF00E4A52E /* Objects */ = {
@@ -577,6 +591,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDF41DEB2CE37AC8000C4FB4 /* OSLog+Extensions.swift in Sources */,
 				FD9C174C2CDE02E300401013 /* FormatStyle+Extensions.swift in Sources */,
 				FD949A742CDD614300F8CF48 /* WeatherDataStore.swift in Sources */,
 				FD949A422CDC8DD800F8CF48 /* Application.swift in Sources */,
@@ -599,6 +614,7 @@
 				FDB65E782CDC28D400E4A52E /* IsVisibleModifier.swift in Sources */,
 				FD949A612CDCA03200F8CF48 /* GeocodeData.swift in Sources */,
 				FD949A3E2CDC7EEC00F8CF48 /* WeatherEndpoints.swift in Sources */,
+				FDF41DE92CE37521000C4FB4 /* LocationService.swift in Sources */,
 				FDE0B9662CD8082200017A6B /* SheetView.swift in Sources */,
 				FD32A9F32CB4484D002B8706 /* WeatherView.swift in Sources */,
 				FD85747D2CD9CEA4003D9D29 /* DailyWeatherData.swift in Sources */,
@@ -698,6 +714,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = targeted;
 			};
 			name = Debug;
 		};
@@ -753,6 +770,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_STRICT_CONCURRENCY = targeted;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
