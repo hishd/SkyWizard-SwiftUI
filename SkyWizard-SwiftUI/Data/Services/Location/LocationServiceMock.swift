@@ -12,6 +12,8 @@ final class LocationServiceMock: LocationService {
     let locationResult: PassthroughSubject<LocationResult, Never> = .init()
     
     func start() {
-        locationResult.send(.success(.init(latitude: 0, longitude: 0)))
+        DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
+            self.locationResult.send(.success(.init(latitude: 0, longitude: 0)))
+        }
     }
 }
