@@ -29,12 +29,12 @@ final class WeatherDataStore: @unchecked Sendable, ObservableObject {
     
     let weatherService: WeatherService
     let geocodingService: GeocodingService
-    var locationService: LocationService?
+    var locationService: LocationServiceGps?
     
     init(weatherService: WeatherService, geocodingService: GeocodingService) {
         self.weatherService = weatherService
         self.geocodingService = geocodingService
-        self.locationService = LocationService()
+        self.locationService = LocationServiceGps()
         locationService?.start()
     }
     
