@@ -18,7 +18,7 @@ final class WeatherDataStore: @unchecked Sendable, ObservableObject {
     @Published var hourlyWeatherData: [HourlyWeatherData] = .init()
     @Published var dailyWeatherData: [DailyWeatherData] = .init()
     @Published var error: Swift.Error?
-    @Published var loading: Bool = false
+    @Published var weatherLoading: Bool = true
     var currentWeatherTask: Task<WeatherData, Error>?
     var currentGeocodingTask: Task<GeocodeData, Error>?
     var locationResultCancellable: AnyCancellable?
@@ -44,6 +44,7 @@ final class WeatherDataStore: @unchecked Sendable, ObservableObject {
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] result in
                 if case let .failure(error) = result {
+                    self?.weatherLoading = false
                     self?.error = error
                     return
                 }
@@ -64,6 +65,7 @@ final class WeatherDataStore: @unchecked Sendable, ObservableObject {
             await updateData(from: data)
         } catch {
             await MainActor.run {
+                self.weatherLoading = false
                 self.error = error
             }
         }
@@ -80,10 +82,12 @@ final class WeatherDataStore: @unchecked Sendable, ObservableObject {
             
             await MainActor.run {
                 Logger.statistics.info("Geocoded location: \(location.city)")
+                self.weatherLoading = false
                 self.currentCity = location.city
             }
         } catch {
             await MainActor.run {
+                self.weatherLoading = false
                 self.error = error
             }
         }
@@ -92,6 +96,7 @@ final class WeatherDataStore: @unchecked Sendable, ObservableObject {
     @MainActor
     private func updateData(from weather: WeatherData) {
         do {
+            self.weatherLoading = false
             self.currentTemperature = Int(weather.current.temperature_2m)
             self.realFeel = Int(weather.current.apparent_temperature)
             self.currentWeatherType = weatherService.getWeatherType(for: weather.current)

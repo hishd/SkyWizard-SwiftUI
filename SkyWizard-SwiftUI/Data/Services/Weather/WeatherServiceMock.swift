@@ -20,13 +20,13 @@ class WeatherServiceMock: WeatherService {
     }
     
     func getWeather(for daily: WeatherData.DailyWeatherData) throws -> [DailyWeatherData] {
-        return (0...5).map { _ in
+        return (0...4).map { _ in
                 .sample
         }
     }
     
     func getWeather(for hourly: WeatherData.HourlyWeatherData) throws -> [HourlyWeatherData] {
-        return (0...10).map { _ in
+        return (0...12).map { _ in
                 .sample
         }
     }

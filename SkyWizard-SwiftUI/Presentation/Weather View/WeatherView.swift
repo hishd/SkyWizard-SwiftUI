@@ -19,8 +19,8 @@ struct WeatherView: View {
         ZStack {
             backgroundColorGradient
                 .ignoresSafeArea()
-//            houseImage
-//                .ignoresSafeArea()
+            houseImage
+                .ignoresSafeArea()
             weatherIcon
             VStack(alignment: .leading, spacing: 0) {
                 HStack {
@@ -39,7 +39,9 @@ struct WeatherView: View {
                 sceneLoadingView
             }
             
-            weatherLoadingView
+            if weatherDataStore.weatherLoading {
+                weatherLoadingView
+            }
         }
         .onAppear(perform: {
             weatherDataStore.startLoadingWeather()
@@ -140,13 +142,15 @@ extension WeatherView {
             Color(.daySubTitle)
                 .opacity(0.95)
             
-            VStack {
+            VStack(spacing: 0) {
                 LottieView(animation: .named("sun_moon"))
                     .playing(loopMode: .loop)
                     .resizable()
                     .frame(width: 180, height: 180)
                 
-                Text("Loading...")
+                Text("Loading...!")
+                    .font(.getFont(type: .semibold, size: 16))
+                    .foregroundStyle(.white)
             }
         }
         .ignoresSafeArea()
