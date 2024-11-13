@@ -8,6 +8,7 @@
 import SwiftUI
 import Lottie
 import SceneKit
+import DependencyInjector
 
 struct WeatherView: View {
     @State private var isPresented: Bool = false
@@ -18,8 +19,8 @@ struct WeatherView: View {
         ZStack {
             backgroundColorGradient
                 .ignoresSafeArea()
-            houseImage
-                .ignoresSafeArea()
+//            houseImage
+//                .ignoresSafeArea()
             weatherIcon
             VStack(alignment: .leading, spacing: 0) {
                 HStack {
@@ -33,6 +34,12 @@ struct WeatherView: View {
             }.padding()
             
             sheetView
+            
+            if isSceneLoading {
+                sceneLoadingView
+            }
+            
+            weatherLoadingView
         }
         .onAppear(perform: {
             weatherDataStore.startLoadingWeather()
@@ -43,13 +50,6 @@ struct WeatherView: View {
             withAnimation {
                 isPresented.toggle()
             }
-        }
-        .overlay {
-            ProgressView()
-                .tint(.daySubTitle)
-                .controlSize(.large)
-                .isVisible(isVisible: isSceneLoading)
-                .animation(.easeOut(duration: 0.3), value: isSceneLoading)
         }
     }
 }
@@ -125,6 +125,31 @@ extension WeatherView {
 
         }
         .foregroundStyle(subTitleColor)
+    }
+    
+    private var sceneLoadingView: some View {
+        ProgressView()
+            .tint(.daySubTitle)
+            .controlSize(.large)
+            .isVisible(isVisible: isSceneLoading)
+            .animation(.easeOut(duration: 0.3), value: isSceneLoading)
+    }
+    
+    private var weatherLoadingView: some View {
+        ZStack {
+            Color(.daySubTitle)
+                .opacity(0.95)
+            
+            VStack {
+                LottieView(animation: .named("sun_moon"))
+                    .playing(loopMode: .loop)
+                    .resizable()
+                    .frame(width: 180, height: 180)
+                
+                Text("Loading...")
+            }
+        }
+        .ignoresSafeArea()
     }
     
     private var sheetView: some View {
@@ -306,5 +331,7 @@ extension CurrentWeatherType {
 }
 
 #Preview {
+    @Injectable(\.weatherDataStoreMock) var weatherDataStore: WeatherDataStore
     WeatherView()
+        .environmentObject(weatherDataStore)
 }

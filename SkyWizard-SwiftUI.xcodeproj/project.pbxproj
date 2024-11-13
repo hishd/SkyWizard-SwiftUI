@@ -21,6 +21,7 @@
 		FD32A9F22CB4484D002B8706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD32A9ED2CB4484D002B8706 /* Assets.xcassets */; };
 		FD32A9F32CB4484D002B8706 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD32A9EE2CB4484D002B8706 /* WeatherView.swift */; };
 		FD32A9F42CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD32A9EF2CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift */; };
+		FD3558DA2CE526B100E57013 /* sun_moon.json in Resources */ = {isa = PBXBuildFile; fileRef = FD3558D92CE526B100E57013 /* sun_moon.json */; };
 		FD73C1B02CD89EE4004DA8A7 /* DailyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD73C1AF2CD89EE4004DA8A7 /* DailyWeatherView.swift */; };
 		FD8574672CD9C572003D9D29 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FD8574662CD9C572003D9D29 /* Lottie */; };
 		FD8574702CD9C690003D9D29 /* snow.json in Resources */ = {isa = PBXBuildFile; fileRef = FD85746E2CD9C690003D9D29 /* snow.json */; };
@@ -98,6 +99,7 @@
 		FD32A9ED2CB4484D002B8706 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD32A9EE2CB4484D002B8706 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		FD32A9EF2CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyWizard_SwiftUIApp.swift; sourceTree = "<group>"; };
+		FD3558D92CE526B100E57013 /* sun_moon.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sun_moon.json; sourceTree = "<group>"; };
 		FD73C1AF2CD89EE4004DA8A7 /* DailyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherView.swift; sourceTree = "<group>"; };
 		FD8574692CD9C690003D9D29 /* cloudy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cloudy.json; sourceTree = "<group>"; };
 		FD85746A2CD9C690003D9D29 /* cloudy_sun.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cloudy_sun.json; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 		FD8574682CD9C5A8003D9D29 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				FD3558D92CE526B100E57013 /* sun_moon.json */,
 				FD8574692CD9C690003D9D29 /* cloudy.json */,
 				FD85746A2CD9C690003D9D29 /* cloudy_sun.json */,
 				FD85746B2CD9C690003D9D29 /* night.json */,
@@ -563,6 +566,7 @@
 			files = (
 				FD32A9F12CB4484D002B8706 /* Preview Assets.xcassets in Resources */,
 				FD0841AB2CD7307900604BF3 /* Montserrat-Light.ttf in Resources */,
+				FD3558DA2CE526B100E57013 /* sun_moon.json in Resources */,
 				FD0841AC2CD7307900604BF3 /* Montserrat-Black.ttf in Resources */,
 				FD0841AD2CD7307900604BF3 /* Montserrat-Bold.ttf in Resources */,
 				FD0841AE2CD7307900604BF3 /* Montserrat-Medium.ttf in Resources */,

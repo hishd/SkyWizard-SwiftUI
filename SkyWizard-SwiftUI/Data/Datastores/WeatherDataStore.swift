@@ -13,7 +13,7 @@ import Combine
 final class WeatherDataStore: @unchecked Sendable, ObservableObject {
     @Published var currentTemperature: Int = 0
     @Published var realFeel: Int = 0
-    @Published var currentCity: String = ""
+    @Published var currentCity: String = "Location"
     @Published var currentWeatherType: CurrentWeatherType = .day_sunny
     @Published var hourlyWeatherData: [HourlyWeatherData] = .init()
     @Published var dailyWeatherData: [DailyWeatherData] = .init()
