@@ -14,10 +14,22 @@ fileprivate final class WeatherDataStoreInjectableDependency: InjectableDependen
     static var dependency: WeatherDataStore = .init(weatherService: weatherService, geocodingService: geocodingService)
 }
 
+fileprivate final class WeatherDataStoreMockInjectableDependency: InjectableDependency {
+    @Injectable(\.weatherServiceMock) private static var weatherService: WeatherService
+    @Injectable(\.geoCodingServiceMock) private static var geocodingService: GeocodingService
+    static var dependency: WeatherDataStore = .init(weatherService: weatherService, geocodingService: geocodingService)
+}
+
 extension InjectableValues {
     var weatherDataStore: WeatherDataStore {
         get {
             WeatherDataStoreInjectableDependency.dependency
+        }
+    }
+    
+    var weatherDataStoreMock: WeatherDataStore {
+        get {
+            WeatherDataStoreMockInjectableDependency.dependency
         }
     }
 }
