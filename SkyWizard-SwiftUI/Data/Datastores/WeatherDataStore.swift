@@ -7,34 +7,85 @@
 
 import Foundation
 import CoreLocation
+import OSLog
+import Combine
 
 final class WeatherDataStore: @unchecked Sendable, ObservableObject {
-    @Published var currentTemperature: Int = 20
-    @Published var realFeel: Int = 10
-    @Published var currentCity: String = "Northampton"
+    @Published var currentTemperature: Int = 0
+    @Published var realFeel: Int = 0
+    @Published var currentCity: String = ""
     @Published var currentWeatherType: CurrentWeatherType = .day_sunny
     @Published var hourlyWeatherData: [HourlyWeatherData] = .init()
     @Published var dailyWeatherData: [DailyWeatherData] = .init()
     @Published var error: Swift.Error?
-    var currentTask: Task<WeatherData, Error>?
+    @Published var loading: Bool = false
+    var currentWeatherTask: Task<WeatherData, Error>?
+    var currentGeocodingTask: Task<GeocodeData, Error>?
+    var locationResultCancellable: AnyCancellable?
     
-    var currentLocation: CLLocationCoordinate2D?
-    let weatherService: WeatherService
-    
-    init(weatherService: WeatherService) {
-        self.weatherService = weatherService
+    var weatherTypeResource: WeatherTypeResource {
+        currentWeatherType.getWeatherTypeResource()
     }
     
-    func loadWeatherData() async {
-        guard let currentLocation else { return }
-        
+    let weatherService: WeatherService
+    let geocodingService: GeocodingService
+    var locationService: LocationService?
+    
+    init(weatherService: WeatherService, geocodingService: GeocodingService) {
+        self.weatherService = weatherService
+        self.geocodingService = geocodingService
+        self.locationService = LocationService()
+        locationService?.start()
+    }
+    
+    func startLoadingWeather() {
+        locationResultCancellable = locationService?.locationResult
+            .subscribe(on: DispatchQueue.global())
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] result in
+                if case let .failure(error) = result {
+                    self?.error = error
+                    return
+                }
+                
+                guard case let .success(result) = result else { return }
+                Task {
+                    await self?.loadWeatherData(for: result)
+                    await self?.geocodeLocation(with: result)
+                }
+            })
+    }
+    
+    private func loadWeatherData(for coordinate: CLLocationCoordinate2D) async {
         do {
-            self.currentTask = try await weatherService.fetchWeather(for: currentLocation)
-            let data = try await currentTask!.value
+            self.currentWeatherTask = try await weatherService.fetchWeather(for: coordinate)
+            let data = try await currentWeatherTask!.value
             
             await updateData(from: data)
         } catch {
-            self.error = error
+            await MainActor.run {
+                self.error = error
+            }
+        }
+    }
+    
+    private func geocodeLocation(with coordinates: CLLocationCoordinate2D) async {
+        Logger.statistics.info("Location changed to : \(coordinates.latitude), \(coordinates.longitude)")
+        
+        do {
+            self.currentGeocodingTask = try await geocodingService.geocode(with: coordinates)
+            
+            let location = try await currentGeocodingTask?.value
+            guard let location else { return }
+            
+            await MainActor.run {
+                Logger.statistics.info("Geocoded location: \(location.city)")
+                self.currentCity = location.city
+            }
+        } catch {
+            await MainActor.run {
+                self.error = error
+            }
         }
     }
     
@@ -52,6 +103,8 @@ final class WeatherDataStore: @unchecked Sendable, ObservableObject {
     }
     
     func cancelCurrentTask() {
-        currentTask?.cancel()
+        currentWeatherTask?.cancel()
+        currentGeocodingTask?.cancel()
+        locationResultCancellable?.cancel()
     }
 }

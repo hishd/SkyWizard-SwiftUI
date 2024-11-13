@@ -90,12 +90,13 @@ final class WeatherServiceRemote: WeatherService {
             ))
         }
         
-        return data
+        return Array(data.prefix(5))
     }
     
     func getWeather(for hourly: WeatherData.HourlyWeatherData) throws -> [HourlyWeatherData] {
         var data: [HourlyWeatherData] = .init()
         let currentHour: Int = Calendar.current.component(.hour, from: .now)
+        let currentDay: Int = Calendar.current.component(.day, from: .now)
         let dateFormatter: DateFormatter = .init()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
         
@@ -120,8 +121,9 @@ final class WeatherServiceRemote: WeatherService {
             }
             
             let hour = Calendar.current.component(.hour, from: date)
+            let day = Calendar.current.component(.day, from: date)
             
-            if hour == currentHour {
+            if day == currentDay && hour <= currentHour {
                 continue
             }
             
@@ -139,7 +141,7 @@ final class WeatherServiceRemote: WeatherService {
             )
         }
         
-        return data
+        return Array(data.prefix(12))
     }
 }
 

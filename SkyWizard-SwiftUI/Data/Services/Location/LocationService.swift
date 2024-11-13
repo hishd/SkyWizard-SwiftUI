@@ -8,26 +8,30 @@
 import Foundation
 import CoreLocation
 import OSLog
+import Combine
 
-enum LocationServiceError: Error {
+enum LocationServiceError: LocalizedError {
     case locationUnavailable
-    case locationDeniedAccess(_ message: String)
+    case locationDeniedAccess
+}
+
+extension LocationServiceError {
+    var errorDescription: String? {
+        switch self {
+        case .locationUnavailable:
+            return "Location is unavailable"
+        case .locationDeniedAccess:
+            return "Location access is denied"
+        }
+    }
 }
 
 final class LocationService: NSObject, CLLocationManagerDelegate {
     typealias LocationResult = Result<CLLocationCoordinate2D, LocationServiceError>
-    let onLocationChanged: (LocationResult) -> Void
-    let locationManager: CLLocationManager
+    private let locationManager: CLLocationManager = CLLocationManager()
+    let locationResult: PassthroughSubject<LocationResult, Never> = .init()
     
-    init(onLocationChanged: @escaping (LocationResult) -> Void) {
-        self.onLocationChanged = onLocationChanged
-        self.locationManager = CLLocationManager()
-        
-        super.init()
-        self.start()
-    }
-    
-    private func start() {
+    func start() {
         self.locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
         locationManager.allowsBackgroundLocationUpdates = false
@@ -40,7 +44,7 @@ final class LocationService: NSObject, CLLocationManagerDelegate {
         case .authorizedWhenInUse:
             locationManager.startMonitoringSignificantLocationChanges()
         default:
-            onLocationChanged(.failure(.locationDeniedAccess("Location access denied")))
+            self.locationResult.send(.failure(.locationDeniedAccess))
         }
     }
     
@@ -49,6 +53,6 @@ final class LocationService: NSObject, CLLocationManagerDelegate {
             Logger.viewCycle.error("Location not found")
             return
         }
-        onLocationChanged(.success(location.coordinate))
+        self.locationResult.send(.success(location.coordinate))
     }
 }

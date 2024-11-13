@@ -10,9 +10,9 @@ import Lottie
 import SceneKit
 
 struct WeatherView: View {
-    @StateObject private var currentWeatherData: WeatherViewData = .init()
     @State private var isPresented: Bool = false
     @State private var isSceneLoading: Bool = true
+    @EnvironmentObject private var weatherDataStore: WeatherDataStore
     
     var body: some View {
         ZStack {
@@ -34,7 +34,10 @@ struct WeatherView: View {
             
             sheetView
         }
-        .animation(.easeInOut, value: currentWeatherData.currentWeatherType)
+        .onAppear(perform: {
+            weatherDataStore.startLoadingWeather()
+        })
+        .animation(.easeInOut, value: weatherDataStore.currentWeatherType)
         .onTapGesture {
             guard isPresented else { return }
             withAnimation {
@@ -53,17 +56,17 @@ struct WeatherView: View {
 
 extension WeatherView {
     private var backgroundColorGradient: LinearGradient {
-        currentWeatherData.currentWeatherType.getWeatherTypeResource().backgroundGradient
+        weatherDataStore.weatherTypeResource.backgroundGradient
     }
     private var mainTitleColor: Color {
-        currentWeatherData.currentWeatherType.getWeatherTypeResource().mainTitleColor
+        weatherDataStore.weatherTypeResource.mainTitleColor
     }
     private var subTitleColor: Color {
-        currentWeatherData.currentWeatherType.getWeatherTypeResource().subTitleColor
+        weatherDataStore.currentWeatherType.getWeatherTypeResource().subTitleColor
     }
     private var weatherIcon: some View {
         VStack {
-            LottieView(animation: .named(currentWeatherData.currentWeatherType.getWeatherTypeResource().weatherIconAnimationName))
+            LottieView(animation: .named(weatherDataStore.weatherTypeResource.weatherIconAnimationName))
                 .playing(loopMode: .loop)
                 .resizable()
                 .frame(width: 180, height: 180)
@@ -74,7 +77,7 @@ extension WeatherView {
     private var houseImage: some View {
         //Disabled house image
 //        currentWeatherData.currentWeatherType.getWeatherTypeResource().houseIcon
-        var view = HouseViewRepresentable(lightIntensity: currentWeatherData.currentWeatherType.getWeatherTypeResource().lightIntensity)
+        var view = HouseViewRepresentable(lightIntensity: weatherDataStore.weatherTypeResource.lightIntensity)
         view.onRenderFinished = {
             print("Render finished")
             withAnimation {
@@ -90,7 +93,7 @@ extension WeatherView {
     private var temperatureView: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(alignment: .top) {
-                Text("\(currentWeatherData.currentTemperature)")
+                Text("\(weatherDataStore.currentTemperature)")
                     .font(.getFont(type: .regular, size: 76))
                 Text("0")
                     .font(.getFont(type: .regular, size: 26))
@@ -100,7 +103,7 @@ extension WeatherView {
             HStack(spacing: 8) {
                 Text("Real feel:")
                     .font(.getFont(type: .medium, size: 18))
-                SubTemperatureView(temperature: $currentWeatherData.realFeel)
+                SubTemperatureView(temperature: $weatherDataStore.realFeel)
             }
             .padding(.top, 6)
             .foregroundStyle(mainTitleColor)
@@ -109,11 +112,11 @@ extension WeatherView {
     
     private var currentCityView: some View {
         HStack {
-            Text(currentWeatherData.currentCity)
+            Text(weatherDataStore.currentCity)
                 .font(.getFont(type: .medium, size: 26))
                 .padding(.trailing, 5)
             Button {
-                currentWeatherData.toggleWeatherType()
+//                weatherDataStore.toggleWeatherType()
             } label: {
                 Image(systemName: "location.circle")
                     .resizable()
@@ -127,9 +130,9 @@ extension WeatherView {
     private var sheetView: some View {
         SheetView(isBackgroundVisible: false, isPresented: $isPresented) {
             VStack {
-                HourlyWeatherView(hourlyData: currentWeatherData.hourlyWeatherData)
+                HourlyWeatherView(hourlyData: weatherDataStore.hourlyWeatherData)
                     .padding(.horizontal, 25)
-                DailyWeatherView(weatherData: currentWeatherData.dailyWeatherData)
+                DailyWeatherView(weatherData: weatherDataStore.dailyWeatherData)
                     .padding(.horizontal, 25)
                 Button {
                     

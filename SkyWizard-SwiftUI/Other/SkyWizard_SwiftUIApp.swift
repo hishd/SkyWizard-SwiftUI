@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import DependencyInjector
 
 @main
 struct SkyWizard_SwiftUIApp: App {
+    @Injectable(\.weatherDataStore) var weatherDataStore: WeatherDataStore
+    
     var body: some Scene {
         WindowGroup {
             WeatherView()
+                .environmentObject(weatherDataStore)
         }
     }
 }

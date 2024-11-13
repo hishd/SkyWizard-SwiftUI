@@ -68,6 +68,7 @@
 		FDE0B9662CD8082200017A6B /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE0B9652CD8082200017A6B /* SheetView.swift */; };
 		FDF41DE92CE37521000C4FB4 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF41DE82CE37521000C4FB4 /* LocationService.swift */; };
 		FDF41DEB2CE37AC8000C4FB4 /* OSLog+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF41DEA2CE37AC8000C4FB4 /* OSLog+Extensions.swift */; };
+		FDF41DED2CE386F0000C4FB4 /* WeatherDataStore+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF41DEC2CE386E5000C4FB4 /* WeatherDataStore+Dependencies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +143,7 @@
 		FDE0B9652CD8082200017A6B /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		FDF41DE82CE37521000C4FB4 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		FDF41DEA2CE37AC8000C4FB4 /* OSLog+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+Extensions.swift"; sourceTree = "<group>"; };
+		FDF41DEC2CE386E5000C4FB4 /* WeatherDataStore+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherDataStore+Dependencies.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -379,6 +381,7 @@
 		FD949A462CDC8EF800F8CF48 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				FDF41DEC2CE386E5000C4FB4 /* WeatherDataStore+Dependencies.swift */,
 				FD949A3F2CDC8C3B00F8CF48 /* WeatherService+Dependencies.swift */,
 				FD949A682CDCA44300F8CF48 /* GeocodingService+Dependencies.swift */,
 				FD949A702CDD4E0F00F8CF48 /* DataTransferService+Dependencies.swift */,
@@ -604,6 +607,7 @@
 				FDB65E892CDC579100E4A52E /* WeatherServiceRemote.swift in Sources */,
 				FDB65E8D2CDC590600E4A52E /* WeatherData.swift in Sources */,
 				FD8574832CD9CF6A003D9D29 /* HourlyWeatherItem.swift in Sources */,
+				FDF41DED2CE386F0000C4FB4 /* WeatherDataStore+Dependencies.swift in Sources */,
 				FD949A652CDCA2E100F8CF48 /* GeocodingServiceRemote.swift in Sources */,
 				FD85748A2CD9D08E003D9D29 /* WeatherViewData.swift in Sources */,
 				FD949A402CDC8C3B00F8CF48 /* WeatherService+Dependencies.swift in Sources */,
