@@ -29,17 +29,17 @@ final class WeatherDataStore: @unchecked Sendable, ObservableObject {
     
     let weatherService: WeatherService
     let geocodingService: GeocodingService
-    var locationService: LocationServiceGps?
+    var locationService: LocationService
     
-    init(weatherService: WeatherService, geocodingService: GeocodingService) {
+    init(weatherService: WeatherService, geocodingService: GeocodingService, locationService: LocationService) {
         self.weatherService = weatherService
         self.geocodingService = geocodingService
-        self.locationService = LocationServiceGps()
-        locationService?.start()
+        self.locationService = locationService
+        locationService.start()
     }
     
     func startLoadingWeather() {
-        locationResultCancellable = locationService?.locationResult
+        locationResultCancellable = locationService.locationResult
             .subscribe(on: DispatchQueue.global())
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] result in
