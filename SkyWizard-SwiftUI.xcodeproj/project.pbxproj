@@ -23,6 +23,7 @@
 		FD32A9F42CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD32A9EF2CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift */; };
 		FD3558DA2CE526B100E57013 /* sun_moon.json in Resources */ = {isa = PBXBuildFile; fileRef = FD3558D92CE526B100E57013 /* sun_moon.json */; };
 		FD3558DC2CE52AB300E57013 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3558DB2CE52AB300E57013 /* LocationService.swift */; };
+		FD3558DE2CE52B6B00E57013 /* LocationServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3558DD2CE52B6B00E57013 /* LocationServiceMock.swift */; };
 		FD73C1B02CD89EE4004DA8A7 /* DailyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD73C1AF2CD89EE4004DA8A7 /* DailyWeatherView.swift */; };
 		FD8574672CD9C572003D9D29 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FD8574662CD9C572003D9D29 /* Lottie */; };
 		FD8574702CD9C690003D9D29 /* snow.json in Resources */ = {isa = PBXBuildFile; fileRef = FD85746E2CD9C690003D9D29 /* snow.json */; };
@@ -102,6 +103,7 @@
 		FD32A9EF2CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyWizard_SwiftUIApp.swift; sourceTree = "<group>"; };
 		FD3558D92CE526B100E57013 /* sun_moon.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sun_moon.json; sourceTree = "<group>"; };
 		FD3558DB2CE52AB300E57013 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		FD3558DD2CE52B6B00E57013 /* LocationServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceMock.swift; sourceTree = "<group>"; };
 		FD73C1AF2CD89EE4004DA8A7 /* DailyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherView.swift; sourceTree = "<group>"; };
 		FD8574692CD9C690003D9D29 /* cloudy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cloudy.json; sourceTree = "<group>"; };
 		FD85746A2CD9C690003D9D29 /* cloudy_sun.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cloudy_sun.json; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 			children = (
 				FDF41DE82CE37521000C4FB4 /* LocationServiceGps.swift */,
 				FD3558DB2CE52AB300E57013 /* LocationService.swift */,
+				FD3558DD2CE52B6B00E57013 /* LocationServiceMock.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -601,6 +604,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD3558DE2CE52B6B00E57013 /* LocationServiceMock.swift in Sources */,
 				FDF41DEB2CE37AC8000C4FB4 /* OSLog+Extensions.swift in Sources */,
 				FD9C174C2CDE02E300401013 /* FormatStyle+Extensions.swift in Sources */,
 				FD949A742CDD614300F8CF48 /* WeatherDataStore.swift in Sources */,
