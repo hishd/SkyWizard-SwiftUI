@@ -8,11 +8,12 @@
 import SwiftUI
 import Lottie
 import SceneKit
+import DependencyInjector
 
 struct WeatherView: View {
-    @StateObject private var currentWeatherData: WeatherViewData = .init()
     @State private var isPresented: Bool = false
     @State private var isSceneLoading: Bool = true
+    @EnvironmentObject private var weatherDataStore: WeatherDataStore
     
     var body: some View {
         ZStack {
@@ -33,37 +34,41 @@ struct WeatherView: View {
             }.padding()
             
             sheetView
+            
+            if isSceneLoading {
+                sceneLoadingView
+            }
+            
+            if weatherDataStore.weatherLoading {
+                weatherLoadingView
+            }
         }
-        .animation(.easeInOut, value: currentWeatherData.currentWeatherType)
+        .onAppear(perform: {
+            weatherDataStore.startLoadingWeather()
+        })
+        .animation(.easeInOut, value: weatherDataStore.currentWeatherType)
         .onTapGesture {
             guard isPresented else { return }
             withAnimation {
                 isPresented.toggle()
             }
         }
-        .overlay {
-            ProgressView()
-                .tint(.daySubTitle)
-                .controlSize(.large)
-                .isVisible(isVisible: isSceneLoading)
-                .animation(.easeOut(duration: 0.3), value: isSceneLoading)
-        }
     }
 }
 
 extension WeatherView {
     private var backgroundColorGradient: LinearGradient {
-        currentWeatherData.currentWeatherType.getWeatherTypeResource().backgroundGradient
+        weatherDataStore.weatherTypeResource.backgroundGradient
     }
     private var mainTitleColor: Color {
-        currentWeatherData.currentWeatherType.getWeatherTypeResource().mainTitleColor
+        weatherDataStore.weatherTypeResource.mainTitleColor
     }
     private var subTitleColor: Color {
-        currentWeatherData.currentWeatherType.getWeatherTypeResource().subTitleColor
+        weatherDataStore.currentWeatherType.getWeatherTypeResource().subTitleColor
     }
     private var weatherIcon: some View {
         VStack {
-            LottieView(animation: .named(currentWeatherData.currentWeatherType.getWeatherTypeResource().weatherIconAnimationName))
+            LottieView(animation: .named(weatherDataStore.weatherTypeResource.weatherIconAnimationName))
                 .playing(loopMode: .loop)
                 .resizable()
                 .frame(width: 180, height: 180)
@@ -74,7 +79,7 @@ extension WeatherView {
     private var houseImage: some View {
         //Disabled house image
 //        currentWeatherData.currentWeatherType.getWeatherTypeResource().houseIcon
-        var view = HouseViewRepresentable(lightIntensity: currentWeatherData.currentWeatherType.getWeatherTypeResource().lightIntensity)
+        var view = HouseViewRepresentable(lightIntensity: weatherDataStore.weatherTypeResource.lightIntensity)
         view.onRenderFinished = {
             print("Render finished")
             withAnimation {
@@ -90,7 +95,7 @@ extension WeatherView {
     private var temperatureView: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(alignment: .top) {
-                Text("\(currentWeatherData.currentTemperature)")
+                Text("\(weatherDataStore.currentTemperature)")
                     .font(.getFont(type: .regular, size: 76))
                 Text("0")
                     .font(.getFont(type: .regular, size: 26))
@@ -100,7 +105,7 @@ extension WeatherView {
             HStack(spacing: 8) {
                 Text("Real feel:")
                     .font(.getFont(type: .medium, size: 18))
-                SubTemperatureView(temperature: $currentWeatherData.realFeel)
+                SubTemperatureView(temperature: $weatherDataStore.realFeel)
             }
             .padding(.top, 6)
             .foregroundStyle(mainTitleColor)
@@ -109,11 +114,11 @@ extension WeatherView {
     
     private var currentCityView: some View {
         HStack {
-            Text(currentWeatherData.currentCity)
+            Text(weatherDataStore.currentCity)
                 .font(.getFont(type: .medium, size: 26))
                 .padding(.trailing, 5)
             Button {
-                currentWeatherData.toggleWeatherType()
+//                weatherDataStore.toggleWeatherType()
             } label: {
                 Image(systemName: "location.circle")
                     .resizable()
@@ -124,12 +129,39 @@ extension WeatherView {
         .foregroundStyle(subTitleColor)
     }
     
+    private var sceneLoadingView: some View {
+        ProgressView()
+            .tint(.daySubTitle)
+            .controlSize(.large)
+            .isVisible(isVisible: isSceneLoading)
+            .animation(.easeOut(duration: 0.3), value: isSceneLoading)
+    }
+    
+    private var weatherLoadingView: some View {
+        ZStack {
+            Color(.daySubTitle)
+                .opacity(0.95)
+            
+            VStack(spacing: 0) {
+                LottieView(animation: .named("sun_moon"))
+                    .playing(loopMode: .loop)
+                    .resizable()
+                    .frame(width: 180, height: 180)
+                
+                Text("Loading...!")
+                    .font(.getFont(type: .semibold, size: 16))
+                    .foregroundStyle(.white)
+            }
+        }
+        .ignoresSafeArea()
+    }
+    
     private var sheetView: some View {
         SheetView(isBackgroundVisible: false, isPresented: $isPresented) {
             VStack {
-                HourlyWeatherView(hourlyData: currentWeatherData.hourlyWeatherData)
+                HourlyWeatherView(hourlyData: weatherDataStore.hourlyWeatherData)
                     .padding(.horizontal, 25)
-                DailyWeatherView(weatherData: currentWeatherData.dailyWeatherData)
+                DailyWeatherView(weatherData: weatherDataStore.dailyWeatherData)
                     .padding(.horizontal, 25)
                 Button {
                     
@@ -148,27 +180,20 @@ extension WeatherView {
     }
 }
 
-enum WeatherType: CaseIterable {
-    case day_sunny
-    case day_cloudy
-    case day_rainy
-    case night_clear
-    case night_cloudy
-    case night_rainy
-    case snow
-    
-    struct WeatherTypeResource {
-        let backgroundGradient: LinearGradient
-        let houseIcon: Image
-        let weatherIcon: Image
-        let weatherIconAnimationName: String
-        let mainTitleColor: Color
-        let subTitleColor: Color
-        let lightIntensity: CGFloat
-    }
-    
+struct WeatherTypeResource {
+    let backgroundGradient: LinearGradient
+    let houseIcon: Image
+    let weatherIcon: Image
+    let weatherIconAnimationName: String
+    let mainTitleColor: Color
+    let subTitleColor: Color
+    let lightIntensity: CGFloat
+}
+
+extension CurrentWeatherType {
+#warning("Implement the resources for the undefined weather case")
     func getWeatherTypeResource() -> WeatherTypeResource {
-        switch self {
+        return switch self {
         case .day_sunny:
                 .init(
                     backgroundGradient: .init(
@@ -288,10 +313,29 @@ enum WeatherType: CaseIterable {
                     subTitleColor: .daySubTitle,
                     lightIntensity: 600
                 )
+        case .undefined:
+                .init(
+                    backgroundGradient: .init(
+                        colors: [
+                            .init(hex: "#FFFCEF"),
+                            .init(hex: "#EAE2B2")
+                        ],
+                        startPoint: .topTrailing,
+                        endPoint: .bottomLeading
+                    ),
+                    houseIcon: Image(.houseDaySunny),
+                    weatherIcon: Image(.weatherDaySunny),
+                    weatherIconAnimationName: "sunny.json",
+                    mainTitleColor: .dayTitle,
+                    subTitleColor: .daySubTitle,
+                    lightIntensity: 600
+                )
         }
     }
 }
 
 #Preview {
+    @Injectable(\.weatherDataStoreMock) var weatherDataStore: WeatherDataStore
     WeatherView()
+        .environmentObject(weatherDataStore)
 }
