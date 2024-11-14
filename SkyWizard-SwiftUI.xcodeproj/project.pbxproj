@@ -75,6 +75,7 @@
 		FDF41DED2CE386F0000C4FB4 /* WeatherDataStore+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF41DEC2CE386E5000C4FB4 /* WeatherDataStore+Dependencies.swift */; };
 		FDFD8F9A2CE67EA2000B3C18 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFD8F982CE67EA2000B3C18 /* Reachability.swift */; };
 		FDFD8F9C2CE67ED0000B3C18 /* NetworkReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFD8F9B2CE67ED0000B3C18 /* NetworkReachabilityService.swift */; };
+		FDFD8F9E2CE6807C000B3C18 /* Reachability+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFD8F9D2CE6807C000B3C18 /* Reachability+Dependencies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +157,7 @@
 		FDF41DEC2CE386E5000C4FB4 /* WeatherDataStore+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherDataStore+Dependencies.swift"; sourceTree = "<group>"; };
 		FDFD8F982CE67EA2000B3C18 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		FDFD8F9B2CE67ED0000B3C18 /* NetworkReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityService.swift; sourceTree = "<group>"; };
+		FDFD8F9D2CE6807C000B3C18 /* Reachability+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reachability+Dependencies.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +402,7 @@
 				FD949A682CDCA44300F8CF48 /* GeocodingService+Dependencies.swift */,
 				FD949A702CDD4E0F00F8CF48 /* DataTransferService+Dependencies.swift */,
 				FD3558DF2CE52BF600E57013 /* LocationService+Dependencies.swift */,
+				FDFD8F9D2CE6807C000B3C18 /* Reachability+Dependencies.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				FD949A712CDD4E0F00F8CF48 /* DataTransferService+Dependencies.swift in Sources */,
 				FDB65E872CDC575A00E4A52E /* WeatherService.swift in Sources */,
 				FD949A7D2CDD79BA00F8CF48 /* CurrentWeatherType.swift in Sources */,
+				FDFD8F9E2CE6807C000B3C18 /* Reachability+Dependencies.swift in Sources */,
 				FD949A7B2CDD79A700F8CF48 /* DailyWeatherType.swift in Sources */,
 				FDB65E892CDC579100E4A52E /* WeatherServiceRemote.swift in Sources */,
 				FDB65E8D2CDC590600E4A52E /* WeatherData.swift in Sources */,
