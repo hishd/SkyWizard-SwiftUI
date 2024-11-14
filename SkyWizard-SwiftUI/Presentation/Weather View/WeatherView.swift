@@ -38,7 +38,7 @@ struct WeatherView: View {
                 weatherLoadingView
             }
             
-            if weatherDataStore.isOffline {
+            if !weatherDataStore.isOnline {
                 OfflineView()
             }
         }

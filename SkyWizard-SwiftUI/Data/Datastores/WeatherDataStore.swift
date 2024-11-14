@@ -19,7 +19,7 @@ final class WeatherDataStore: @unchecked Sendable, ObservableObject {
     @Published var dailyWeatherData: [DailyWeatherData] = .init()
     @Published var error: Swift.Error?
     @Published var weatherLoading: Bool = true
-    @Published var isOffline: Bool = false
+    @Published var isOnline: Bool = true
     var currentWeatherTask: Task<WeatherData, Error>?
     var currentGeocodingTask: Task<GeocodeData, Error>?
     var cancelable: Set<AnyCancellable> = .init()
@@ -62,30 +62,45 @@ final class WeatherDataStore: @unchecked Sendable, ObservableObject {
             .store(in: &cancelable)
     }
     
+    func reloadWeather() {
+        guard let location = locationService.getLastKnownLocation() else {
+            self.error = WeatherDataStoreError.locationError
+            return
+        }
+        
+        Task {
+            await loadWeatherData(for: location)
+            await geocodeLocation(with: location)
+        }
+    }
+    
     private func startMonitoringForReachability() {
         reachabilityService
             .isReachable
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] isOnline in
-                if !isOnline {
-                    guard let weatherTask = self?.currentWeatherTask, let geocodingTask = self?.currentGeocodingTask else { return }
-                    weatherTask.cancel()
-                    geocodingTask.cancel()
-                    self?.isOffline = true
+                let lastOnline = self?.isOnline
+                self?.isOnline = isOnline
+                
+                if !isOnline { return }
+                
+                guard lastOnline != isOnline else {
+                    Logger.viewCycle.info("Reachability hasn't changed. Returning")
                     return
                 }
                 
-                self?.isOffline = false
-                self?.startLoadingWeather()
+                Logger.viewCycle.info("Reachability changed to \(isOnline). Reloading weather data.")
+                self?.reloadWeather()
             })
             .store(in: &cancelable)
     }
     
     private func loadWeatherData(for coordinate: CLLocationCoordinate2D) async {
+        self.currentWeatherTask?.cancel()
         do {
             self.currentWeatherTask = try await weatherService.fetchWeather(for: coordinate)
             let data = try await currentWeatherTask!.value
-            
+                        
             await updateData(from: data)
         } catch {
             await MainActor.run {
@@ -97,7 +112,7 @@ final class WeatherDataStore: @unchecked Sendable, ObservableObject {
     
     private func geocodeLocation(with coordinates: CLLocationCoordinate2D) async {
         Logger.statistics.info("Location changed to : \(coordinates.latitude), \(coordinates.longitude)")
-        
+        self.currentGeocodingTask?.cancel()
         do {
             self.currentGeocodingTask = try await geocodingService.geocode(with: coordinates)
             
@@ -135,5 +150,18 @@ final class WeatherDataStore: @unchecked Sendable, ObservableObject {
         currentWeatherTask?.cancel()
         currentGeocodingTask?.cancel()
         cancelable.removeAll()
+    }
+}
+
+enum WeatherDataStoreError: LocalizedError {
+    case locationError
+}
+
+extension WeatherDataStoreError {
+    var errorDescription: String? {
+        switch self {
+        case .locationError:
+            return "Could not load location. Please try again later."
+        }
     }
 }

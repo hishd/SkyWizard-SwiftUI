@@ -10,7 +10,7 @@ import Network
 import Combine
 
 final class NetworkReachabilityService: ReachabilityService {
-    let isReachable: CurrentValueSubject<Bool, Never> = .init(true)
+    let isReachable: CurrentValueSubject<Bool, Never> = .init(false)
     private let monitor: NWPathMonitor
     private let queue: DispatchQueue
     

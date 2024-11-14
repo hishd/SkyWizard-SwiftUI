@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import CoreLocation
 
 final class LocationServiceMock: LocationService {
     let locationResult: PassthroughSubject<LocationResult, Never> = .init()
@@ -15,5 +16,9 @@ final class LocationServiceMock: LocationService {
         DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
             self.locationResult.send(.success(.init(latitude: 0, longitude: 0)))
         }
+    }
+    
+    func getLastKnownLocation() -> CLLocationCoordinate2D? {
+        .init(latitude: 0, longitude: 0)
     }
 }
