@@ -14,4 +14,5 @@ protocol LocationService {
     var locationResult: PassthroughSubject<LocationResult, Never> { get }
     
     func start()
+    func getLastKnownLocation() -> CLLocationCoordinate2D?
 }

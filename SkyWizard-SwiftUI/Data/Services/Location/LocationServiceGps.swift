@@ -29,6 +29,7 @@ extension LocationServiceError {
 final class LocationServiceGps: NSObject, LocationService, CLLocationManagerDelegate {
     private let locationManager: CLLocationManager = CLLocationManager()
     let locationResult: PassthroughSubject<LocationResult, Never> = .init()
+    private var lastKnownLocation: CLLocationCoordinate2D?
     
     func start() {
         self.locationManager.delegate = self
@@ -36,6 +37,11 @@ final class LocationServiceGps: NSObject, LocationService, CLLocationManagerDele
         locationManager.allowsBackgroundLocationUpdates = false
         
         locationManager.requestWhenInUseAuthorization()
+        self.lastKnownLocation = locationManager.location?.coordinate
+    }
+    
+    func getLastKnownLocation() -> CLLocationCoordinate2D? {
+        lastKnownLocation
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
@@ -52,6 +58,7 @@ final class LocationServiceGps: NSObject, LocationService, CLLocationManagerDele
             Logger.viewCycle.error("Location not found")
             return
         }
+        self.lastKnownLocation = location.coordinate
         self.locationResult.send(.success(location.coordinate))
     }
 }

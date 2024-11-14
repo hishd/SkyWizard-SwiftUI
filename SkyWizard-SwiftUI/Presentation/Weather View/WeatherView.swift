@@ -14,26 +14,26 @@ struct WeatherView: View {
     @State private var isPresented: Bool = false
     @State private var isSceneLoading: Bool = true
     @EnvironmentObject private var weatherDataStore: WeatherDataStore
+    private var isDataReady: Bool {
+        weatherDataStore.dailyWeatherData.isEmpty == false
+    }
     
     var body: some View {
         ZStack {
-            backgroundColorGradient
-                .ignoresSafeArea()
-            houseImage
-                .ignoresSafeArea()
-            weatherIcon
-            VStack(alignment: .leading, spacing: 0) {
-                HStack {
+            ZStack {
+                backgroundColorGradient
+                    .ignoresSafeArea()
+                houseImage
+                    .ignoresSafeArea()
+                weatherIcon
+                VStack(alignment: .leading, spacing: 0) {
                     temperatureView
+                    currentCityView
                     Spacer()
-                }
-                .frame(maxWidth: .infinity)
-                .padding(.bottom, 16)
-                currentCityView
-                Spacer()
-            }.padding()
-            
-            sheetView
+                }.padding()
+                
+                sheetView
+            }.opacity(isDataReady ? 1 : 0)
             
             if isSceneLoading {
                 sceneLoadingView
@@ -41,6 +41,10 @@ struct WeatherView: View {
             
             if weatherDataStore.weatherLoading {
                 weatherLoadingView
+            }
+            
+            if !weatherDataStore.isOnline {
+                OfflineView()
             }
         }
         .onAppear(perform: {
@@ -99,17 +103,18 @@ extension WeatherView {
                     .font(.getFont(type: .regular, size: 76))
                 Text("0")
                     .font(.getFont(type: .regular, size: 26))
-
+                Spacer()
             }
             .foregroundStyle(mainTitleColor)
             HStack(spacing: 8) {
                 Text("Real feel:")
                     .font(.getFont(type: .medium, size: 18))
                 SubTemperatureView(temperature: $weatherDataStore.realFeel)
+                Spacer()
             }
             .padding(.top, 6)
             .foregroundStyle(mainTitleColor)
-        }
+        }.padding(.bottom, 16)
     }
     
     private var currentCityView: some View {
