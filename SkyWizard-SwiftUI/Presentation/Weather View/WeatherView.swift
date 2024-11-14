@@ -57,6 +57,7 @@ struct WeatherView: View {
                 isPresented.toggle()
             }
         }
+        .errorAlert(error: $weatherDataStore.error)
     }
 }
 
