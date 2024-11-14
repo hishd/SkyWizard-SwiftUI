@@ -7,22 +7,19 @@
 
 import Foundation
 import Network
+import Combine
 
 class NetworkReachabilityService: Reachability {
+    var isReachable: CurrentValueSubject<Bool, Never> = .init(false)
     private let monitor: NWPathMonitor
     private let queue: DispatchQueue
-    private var isNetworkReachable: Bool = false
     
     init() {
         self.monitor = .init()
         self.queue = .global(qos: .background)
         monitor.pathUpdateHandler = { [weak self] path in
-            self?.isNetworkReachable = path.status == .satisfied
+            self?.isReachable.send(path.status == .satisfied)
         }
         monitor.start(queue: queue)
-    }
-    
-    func isReachable() -> Bool {
-        isNetworkReachable
     }
 }

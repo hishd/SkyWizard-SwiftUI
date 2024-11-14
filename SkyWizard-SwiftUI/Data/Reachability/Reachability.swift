@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import Combine
 
 protocol Reachability {
-    func isReachable() -> Bool
+    var isReachable: CurrentValueSubject<Bool, Never> { get }
 }
