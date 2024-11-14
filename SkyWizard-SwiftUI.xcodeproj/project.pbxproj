@@ -73,6 +73,8 @@
 		FDF41DE92CE37521000C4FB4 /* LocationServiceGps.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF41DE82CE37521000C4FB4 /* LocationServiceGps.swift */; };
 		FDF41DEB2CE37AC8000C4FB4 /* OSLog+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF41DEA2CE37AC8000C4FB4 /* OSLog+Extensions.swift */; };
 		FDF41DED2CE386F0000C4FB4 /* WeatherDataStore+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF41DEC2CE386E5000C4FB4 /* WeatherDataStore+Dependencies.swift */; };
+		FDFD8F9A2CE67EA2000B3C18 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFD8F982CE67EA2000B3C18 /* Reachability.swift */; };
+		FDFD8F9C2CE67ED0000B3C18 /* NetworkReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFD8F9B2CE67ED0000B3C18 /* NetworkReachabilityService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +154,8 @@
 		FDF41DE82CE37521000C4FB4 /* LocationServiceGps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceGps.swift; sourceTree = "<group>"; };
 		FDF41DEA2CE37AC8000C4FB4 /* OSLog+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+Extensions.swift"; sourceTree = "<group>"; };
 		FDF41DEC2CE386E5000C4FB4 /* WeatherDataStore+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherDataStore+Dependencies.swift"; sourceTree = "<group>"; };
+		FDFD8F982CE67EA2000B3C18 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		FDFD8F9B2CE67ED0000B3C18 /* NetworkReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +281,7 @@
 		FD32A9F72CB44947002B8706 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				FDFD8F992CE67EA2000B3C18 /* Reachability */,
 				FD949A792CDD799800F8CF48 /* Enum */,
 				FD949A722CDD613800F8CF48 /* Datastores */,
 				FD85747B2CD9CE8C003D9D29 /* Services */,
@@ -479,6 +484,15 @@
 			path = Representables;
 			sourceTree = "<group>";
 		};
+		FDFD8F992CE67EA2000B3C18 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				FDFD8F982CE67EA2000B3C18 /* Reachability.swift */,
+				FDFD8F9B2CE67ED0000B3C18 /* NetworkReachabilityService.swift */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -630,6 +644,8 @@
 				FD8574882CD9D040003D9D29 /* SubTemperatureView.swift in Sources */,
 				FD0841B62CD743CD00604BF3 /* GlassModifier.swift in Sources */,
 				FDB65E782CDC28D400E4A52E /* IsVisibleModifier.swift in Sources */,
+				FDFD8F9C2CE67ED0000B3C18 /* NetworkReachabilityService.swift in Sources */,
+				FDFD8F9A2CE67EA2000B3C18 /* Reachability.swift in Sources */,
 				FD949A612CDCA03200F8CF48 /* GeocodeData.swift in Sources */,
 				FD949A3E2CDC7EEC00F8CF48 /* WeatherEndpoints.swift in Sources */,
 				FD3558E02CE52BF600E57013 /* LocationService+Dependencies.swift in Sources */,
