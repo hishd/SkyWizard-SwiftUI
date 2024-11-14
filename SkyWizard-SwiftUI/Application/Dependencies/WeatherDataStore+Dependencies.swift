@@ -12,14 +12,26 @@ fileprivate final class WeatherDataStoreInjectableDependency: InjectableDependen
     @Injectable(\.locationServiceGps) private static var locationService: LocationService
     @Injectable(\.weatherServiceRemote) private static var weatherService: WeatherService
     @Injectable(\.geoCodingServiceRemote) private static var geocodingService: GeocodingService
-    static var dependency: WeatherDataStore = .init(weatherService: weatherService, geocodingService: geocodingService, locationService: locationService)
+    @Injectable(\.networkReachabilityService) private static var reachabilityService: ReachabilityService
+    static var dependency: WeatherDataStore = .init(
+        weatherService: weatherService,
+        geocodingService: geocodingService,
+        locationService: locationService,
+        reachabilityService: reachabilityService
+    )
 }
 
 fileprivate final class WeatherDataStoreMockInjectableDependency: InjectableDependency {
     @Injectable(\.locationServiceMock) private static var locationService: LocationService
     @Injectable(\.weatherServiceMock) private static var weatherService: WeatherService
     @Injectable(\.geoCodingServiceMock) private static var geocodingService: GeocodingService
-    static var dependency: WeatherDataStore = .init(weatherService: weatherService, geocodingService: geocodingService, locationService: locationService)
+    @Injectable(\.reachabilityServiceMock) private static var reachabilityService: ReachabilityService
+    static var dependency: WeatherDataStore = .init(
+        weatherService: weatherService,
+        geocodingService: geocodingService,
+        locationService: locationService,
+        reachabilityService: reachabilityService
+    )
 }
 
 extension InjectableValues {

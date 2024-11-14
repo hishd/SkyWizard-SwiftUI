@@ -9,8 +9,8 @@ import Foundation
 import Network
 import Combine
 
-final class NetworkReachabilityService: Reachability {
-    let isReachable: CurrentValueSubject<Bool, Never> = .init(false)
+final class NetworkReachabilityService: ReachabilityService {
+    let isReachable: CurrentValueSubject<Bool, Never> = .init(true)
     private let monitor: NWPathMonitor
     private let queue: DispatchQueue
     

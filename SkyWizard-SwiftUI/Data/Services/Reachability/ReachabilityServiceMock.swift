@@ -8,12 +8,12 @@
 import Foundation
 import Combine
 
-final class ReachabilityServiceMock: Reachability {
-    let isReachable: CurrentValueSubject<Bool, Never> = .init(false)
+final class ReachabilityServiceMock: ReachabilityService {
+    let isReachable: CurrentValueSubject<Bool, Never> = .init(true)
     
     init() {
-        DispatchQueue.global().asyncAfter(deadline: .now() + 1) { [weak self] in
-            self?.isReachable.send(true)
+        DispatchQueue.global().asyncAfter(deadline: .now() + 4) { [weak self] in
+            self?.isReachable.send(false)
         }
     }
 }

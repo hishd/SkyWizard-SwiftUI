@@ -17,7 +17,7 @@ struct DailyWeatherItem: View {
             Spacer()
             Image(weatherItem.icon)
                 .resizable()
-                .frame(width: 28, height: 28)
+                .frame(width: 30, height: 28)
             tempLowView
             tempHighView
         }

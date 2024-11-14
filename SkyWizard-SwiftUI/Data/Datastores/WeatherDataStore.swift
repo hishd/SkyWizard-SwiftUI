@@ -19,9 +19,10 @@ final class WeatherDataStore: @unchecked Sendable, ObservableObject {
     @Published var dailyWeatherData: [DailyWeatherData] = .init()
     @Published var error: Swift.Error?
     @Published var weatherLoading: Bool = true
+    @Published var isOffline: Bool = false
     var currentWeatherTask: Task<WeatherData, Error>?
     var currentGeocodingTask: Task<GeocodeData, Error>?
-    var locationResultCancellable: AnyCancellable?
+    var cancelable: Set<AnyCancellable> = .init()
     
     var weatherTypeResource: WeatherTypeResource {
         currentWeatherType.getWeatherTypeResource()
@@ -29,17 +30,20 @@ final class WeatherDataStore: @unchecked Sendable, ObservableObject {
     
     let weatherService: WeatherService
     let geocodingService: GeocodingService
-    var locationService: LocationService
+    let locationService: LocationService
+    let reachabilityService: ReachabilityService
     
-    init(weatherService: WeatherService, geocodingService: GeocodingService, locationService: LocationService) {
+    init(weatherService: WeatherService, geocodingService: GeocodingService, locationService: LocationService, reachabilityService: ReachabilityService) {
         self.weatherService = weatherService
         self.geocodingService = geocodingService
         self.locationService = locationService
+        self.reachabilityService = reachabilityService
+        startMonitoringForReachability()
         locationService.start()
     }
     
     func startLoadingWeather() {
-        locationResultCancellable = locationService.locationResult
+        locationService.locationResult
             .subscribe(on: DispatchQueue.global())
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] result in
@@ -55,6 +59,26 @@ final class WeatherDataStore: @unchecked Sendable, ObservableObject {
                     await self?.geocodeLocation(with: result)
                 }
             })
+            .store(in: &cancelable)
+    }
+    
+    private func startMonitoringForReachability() {
+        reachabilityService
+            .isReachable
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] isOnline in
+                if !isOnline {
+                    guard let weatherTask = self?.currentWeatherTask, let geocodingTask = self?.currentGeocodingTask else { return }
+                    weatherTask.cancel()
+                    geocodingTask.cancel()
+                    self?.isOffline = true
+                    return
+                }
+                
+                self?.isOffline = false
+                self?.startLoadingWeather()
+            })
+            .store(in: &cancelable)
     }
     
     private func loadWeatherData(for coordinate: CLLocationCoordinate2D) async {
@@ -110,6 +134,6 @@ final class WeatherDataStore: @unchecked Sendable, ObservableObject {
     func cancelCurrentTask() {
         currentWeatherTask?.cancel()
         currentGeocodingTask?.cancel()
-        locationResultCancellable?.cancel()
+        cancelable.removeAll()
     }
 }

@@ -17,13 +17,13 @@ fileprivate final class ReachabilityServiceMockDependency: InjectableDependency 
 }
 
 extension InjectableValues {
-    var networkReachabilityService: NetworkReachabilityService {
+    var networkReachabilityService: ReachabilityService {
         get {
             Self[NetworkReachabilityServiceDependency.self]
         }
     }
     
-    var reachabilityServiceMock: ReachabilityServiceMock {
+    var reachabilityServiceMock: ReachabilityService {
         get {
             Self[ReachabilityServiceMockDependency.self]
         }

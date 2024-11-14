@@ -23,12 +23,7 @@ struct WeatherView: View {
                 .ignoresSafeArea()
             weatherIcon
             VStack(alignment: .leading, spacing: 0) {
-                HStack {
-                    temperatureView
-                    Spacer()
-                }
-                .frame(maxWidth: .infinity)
-                .padding(.bottom, 16)
+                temperatureView
                 currentCityView
                 Spacer()
             }.padding()
@@ -41,6 +36,10 @@ struct WeatherView: View {
             
             if weatherDataStore.weatherLoading {
                 weatherLoadingView
+            }
+            
+            if weatherDataStore.isOffline {
+                OfflineView()
             }
         }
         .onAppear(perform: {
@@ -99,17 +98,18 @@ extension WeatherView {
                     .font(.getFont(type: .regular, size: 76))
                 Text("0")
                     .font(.getFont(type: .regular, size: 26))
-
+                Spacer()
             }
             .foregroundStyle(mainTitleColor)
             HStack(spacing: 8) {
                 Text("Real feel:")
                     .font(.getFont(type: .medium, size: 18))
                 SubTemperatureView(temperature: $weatherDataStore.realFeel)
+                Spacer()
             }
             .padding(.top, 6)
             .foregroundStyle(mainTitleColor)
-        }
+        }.padding(.bottom, 16)
     }
     
     private var currentCityView: some View {

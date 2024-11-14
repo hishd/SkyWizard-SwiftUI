@@ -77,6 +77,7 @@
 		FDFD8F9C2CE67ED0000B3C18 /* NetworkReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFD8F9B2CE67ED0000B3C18 /* NetworkReachabilityService.swift */; };
 		FDFD8F9E2CE6807C000B3C18 /* Reachability+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFD8F9D2CE6807C000B3C18 /* Reachability+Dependencies.swift */; };
 		FDFD8FA02CE68316000B3C18 /* ReachabilityServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFD8F9F2CE68316000B3C18 /* ReachabilityServiceMock.swift */; };
+		FDFD8FA32CE68CAB000B3C18 /* OfflineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFD8FA22CE68CAB000B3C18 /* OfflineView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +161,7 @@
 		FDFD8F9B2CE67ED0000B3C18 /* NetworkReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityService.swift; sourceTree = "<group>"; };
 		FDFD8F9D2CE6807C000B3C18 /* Reachability+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reachability+Dependencies.swift"; sourceTree = "<group>"; };
 		FDFD8F9F2CE68316000B3C18 /* ReachabilityServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityServiceMock.swift; sourceTree = "<group>"; };
+		FDFD8FA22CE68CAB000B3C18 /* OfflineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 		FD0841B72CD7481400604BF3 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				FDFD8FA12CE68C9C000B3C18 /* Offline View */,
 				FD8574812CD9CF51003D9D29 /* Hourly Weather */,
 				FD85747E2CD9CEC6003D9D29 /* Daily Weather */,
 				FD8574792CD9CE5D003D9D29 /* Sheet View */,
@@ -499,6 +502,14 @@
 			path = Reachability;
 			sourceTree = "<group>";
 		};
+		FDFD8FA12CE68C9C000B3C18 /* Offline View */ = {
+			isa = PBXGroup;
+			children = (
+				FDFD8FA22CE68CAB000B3C18 /* OfflineView.swift */,
+			);
+			path = "Offline View";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -651,6 +662,7 @@
 				FD8574782CD9CE2D003D9D29 /* StatePreviewWrapper.swift in Sources */,
 				FD8574882CD9D040003D9D29 /* SubTemperatureView.swift in Sources */,
 				FD0841B62CD743CD00604BF3 /* GlassModifier.swift in Sources */,
+				FDFD8FA32CE68CAB000B3C18 /* OfflineView.swift in Sources */,
 				FDB65E782CDC28D400E4A52E /* IsVisibleModifier.swift in Sources */,
 				FDFD8F9C2CE67ED0000B3C18 /* NetworkReachabilityService.swift in Sources */,
 				FDFD8F9A2CE67EA2000B3C18 /* ReachabilityService.swift in Sources */,
