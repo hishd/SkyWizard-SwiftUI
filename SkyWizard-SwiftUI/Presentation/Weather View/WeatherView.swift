@@ -14,21 +14,26 @@ struct WeatherView: View {
     @State private var isPresented: Bool = false
     @State private var isSceneLoading: Bool = true
     @EnvironmentObject private var weatherDataStore: WeatherDataStore
+    private var isDataReady: Bool {
+        weatherDataStore.dailyWeatherData.isEmpty == false
+    }
     
     var body: some View {
         ZStack {
-            backgroundColorGradient
-                .ignoresSafeArea()
-            houseImage
-                .ignoresSafeArea()
-            weatherIcon
-            VStack(alignment: .leading, spacing: 0) {
-                temperatureView
-                currentCityView
-                Spacer()
-            }.padding()
-            
-            sheetView
+            ZStack {
+                backgroundColorGradient
+                    .ignoresSafeArea()
+                houseImage
+                    .ignoresSafeArea()
+                weatherIcon
+                VStack(alignment: .leading, spacing: 0) {
+                    temperatureView
+                    currentCityView
+                    Spacer()
+                }.padding()
+                
+                sheetView
+            }.opacity(isDataReady ? 1 : 0)
             
             if isSceneLoading {
                 sceneLoadingView
