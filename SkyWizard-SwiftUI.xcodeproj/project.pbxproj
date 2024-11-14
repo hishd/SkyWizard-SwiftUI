@@ -76,6 +76,7 @@
 		FDFD8F9A2CE67EA2000B3C18 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFD8F982CE67EA2000B3C18 /* Reachability.swift */; };
 		FDFD8F9C2CE67ED0000B3C18 /* NetworkReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFD8F9B2CE67ED0000B3C18 /* NetworkReachabilityService.swift */; };
 		FDFD8F9E2CE6807C000B3C18 /* Reachability+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFD8F9D2CE6807C000B3C18 /* Reachability+Dependencies.swift */; };
+		FDFD8FA02CE68316000B3C18 /* ReachabilityServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFD8F9F2CE68316000B3C18 /* ReachabilityServiceMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +159,7 @@
 		FDFD8F982CE67EA2000B3C18 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		FDFD8F9B2CE67ED0000B3C18 /* NetworkReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityService.swift; sourceTree = "<group>"; };
 		FDFD8F9D2CE6807C000B3C18 /* Reachability+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reachability+Dependencies.swift"; sourceTree = "<group>"; };
+		FDFD8F9F2CE68316000B3C18 /* ReachabilityServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityServiceMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -492,6 +494,7 @@
 			children = (
 				FDFD8F982CE67EA2000B3C18 /* Reachability.swift */,
 				FDFD8F9B2CE67ED0000B3C18 /* NetworkReachabilityService.swift */,
+				FDFD8F9F2CE68316000B3C18 /* ReachabilityServiceMock.swift */,
 			);
 			path = Reachability;
 			sourceTree = "<group>";
@@ -644,6 +647,7 @@
 				FD85748A2CD9D08E003D9D29 /* WeatherViewData.swift in Sources */,
 				FD949A402CDC8C3B00F8CF48 /* WeatherService+Dependencies.swift in Sources */,
 				FDB65E762CDC033C00E4A52E /* HouseViewRepresentable.swift in Sources */,
+				FDFD8FA02CE68316000B3C18 /* ReachabilityServiceMock.swift in Sources */,
 				FD8574782CD9CE2D003D9D29 /* StatePreviewWrapper.swift in Sources */,
 				FD8574882CD9D040003D9D29 /* SubTemperatureView.swift in Sources */,
 				FD0841B62CD743CD00604BF3 /* GlassModifier.swift in Sources */,
