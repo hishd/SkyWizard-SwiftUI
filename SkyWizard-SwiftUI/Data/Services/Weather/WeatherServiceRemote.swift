@@ -148,9 +148,9 @@ final class WeatherServiceRemote: WeatherService {
 extension WeatherServiceRemote {
     private func getWeatherType(for code: Int) -> DailyWeatherType {
         return switch code {
-        case let code where (0...3).contains(code):
+        case let code where (0...1).contains(code):
                 .sunny
-        case let code where (45...48).contains(code):
+        case let code where (2...48).contains(code):
                 .cloudy
         case let code where ((51...67).contains(code) || (80...82).contains(code) || (95...99).contains(code)):
                 .rainy
@@ -171,9 +171,9 @@ extension WeatherServiceRemote {
         let isDay = Calendar.current.component(.hour, from: time) < 18
         
         return switch code {
-        case let code where (0...3).contains(code) && isDay:
+        case let code where (0...1).contains(code) && isDay:
             .day_sunny
-        case let code where (45...48).contains(code) && isDay:
+        case let code where (2...48).contains(code) && isDay:
             .day_cloudy
         case let code where ((51...67).contains(code) || (80...82).contains(code) || (95...99).contains(code)) && isDay:
             .day_rainy
