@@ -197,7 +197,6 @@ struct WeatherTypeResource {
 }
 
 extension CurrentWeatherType {
-#warning("Implement the resources for the undefined weather case")
     func getWeatherTypeResource() -> WeatherTypeResource {
         return switch self {
         case .day_sunny:
@@ -323,15 +322,15 @@ extension CurrentWeatherType {
                 .init(
                     backgroundGradient: .init(
                         colors: [
-                            .init(hex: "#FFFCEF"),
-                            .init(hex: "#EAE2B2")
+                            .init(hex: "#D3D3D3"),
+                            .init(hex: "#5C5C5C")
                         ],
                         startPoint: .topTrailing,
                         endPoint: .bottomLeading
                     ),
                     houseIcon: Image(.houseDaySunny),
-                    weatherIcon: Image(.weatherDaySunny),
-                    weatherIconAnimationName: "sunny.json",
+                    weatherIcon: Image(.weatherUnknown),
+                    weatherIconAnimationName: "unknown_weather.json",
                     mainTitleColor: .dayTitle,
                     subTitleColor: .daySubTitle,
                     lightIntensity: 600

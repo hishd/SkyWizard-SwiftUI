@@ -62,6 +62,7 @@
 		FD949A7B2CDD79A700F8CF48 /* DailyWeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A7A2CDD79A700F8CF48 /* DailyWeatherType.swift */; };
 		FD949A7D2CDD79BA00F8CF48 /* CurrentWeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A7C2CDD79BA00F8CF48 /* CurrentWeatherType.swift */; };
 		FD9C174C2CDE02E300401013 /* FormatStyle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C174B2CDE02E300401013 /* FormatStyle+Extensions.swift */; };
+		FDABC38D2CE778CF0085EC95 /* unknown_weather.json in Resources */ = {isa = PBXBuildFile; fileRef = FDABC38C2CE778CF0085EC95 /* unknown_weather.json */; };
 		FDB65E732CDC030300E4A52E /* wizard_house.scn in Resources */ = {isa = PBXBuildFile; fileRef = FDB65E722CDC030300E4A52E /* wizard_house.scn */; };
 		FDB65E762CDC033C00E4A52E /* HouseViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E752CDC033C00E4A52E /* HouseViewRepresentable.swift */; };
 		FDB65E782CDC28D400E4A52E /* IsVisibleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E772CDC28D400E4A52E /* IsVisibleModifier.swift */; };
@@ -149,6 +150,7 @@
 		FD949A7A2CDD79A700F8CF48 /* DailyWeatherType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherType.swift; sourceTree = "<group>"; };
 		FD949A7C2CDD79BA00F8CF48 /* CurrentWeatherType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherType.swift; sourceTree = "<group>"; };
 		FD9C174B2CDE02E300401013 /* FormatStyle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormatStyle+Extensions.swift"; sourceTree = "<group>"; };
+		FDABC38C2CE778CF0085EC95 /* unknown_weather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = unknown_weather.json; sourceTree = "<group>"; };
 		FDB65E722CDC030300E4A52E /* wizard_house.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = wizard_house.scn; sourceTree = "<group>"; };
 		FDB65E752CDC033C00E4A52E /* HouseViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewRepresentable.swift; sourceTree = "<group>"; };
 		FDB65E772CDC28D400E4A52E /* IsVisibleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsVisibleModifier.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 		FD8574682CD9C5A8003D9D29 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				FDABC38C2CE778CF0085EC95 /* unknown_weather.json */,
 				FD3558D92CE526B100E57013 /* sun_moon.json */,
 				FD8574692CD9C690003D9D29 /* cloudy.json */,
 				FD85746A2CD9C690003D9D29 /* cloudy_sun.json */,
@@ -624,6 +627,7 @@
 				FD0841AF2CD7307900604BF3 /* Montserrat-Regular.ttf in Resources */,
 				FDB65E732CDC030300E4A52E /* wizard_house.scn in Resources */,
 				FD0841B02CD7307900604BF3 /* Montserrat-SemiBold.ttf in Resources */,
+				FDABC38D2CE778CF0085EC95 /* unknown_weather.json in Resources */,
 				FD8574702CD9C690003D9D29 /* snow.json in Resources */,
 				FD8574712CD9C690003D9D29 /* rainy.json in Resources */,
 				FD8574722CD9C690003D9D29 /* night_rainy.json in Resources */,
