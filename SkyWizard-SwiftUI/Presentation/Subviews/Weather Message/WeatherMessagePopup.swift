@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WeatherMessagePopup: View {
-    @State var message: String
+    let message: String
     @Binding var isPresent: Bool
     
     var body: some View {
@@ -19,6 +19,7 @@ struct WeatherMessagePopup: View {
                         .resizable()
                         .frame(width: 60, height: 60)
                     Text(self.message)
+                        .foregroundStyle(.daySubTitle)
                         .font(.getFont(type: .medium, size: 14))
                     Button {
                         withAnimation {
@@ -32,7 +33,6 @@ struct WeatherMessagePopup: View {
                                 Image(systemName: "multiply")
                                     .foregroundStyle(.daySubTitle)
                             }
-                            .shadow(radius: 4)
                     }
                     
                 }
@@ -45,7 +45,8 @@ struct WeatherMessagePopup: View {
                     .foregroundStyle(.white)
             }
             .padding(.bottom, 40)
-            .padding(.horizontal, 30)
+            .padding(.horizontal, 36)
+            .shadow(radius: 6)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
     }

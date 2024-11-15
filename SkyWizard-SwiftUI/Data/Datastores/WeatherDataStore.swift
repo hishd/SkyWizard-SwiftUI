@@ -20,6 +20,7 @@ final class WeatherDataStore: @unchecked Sendable, ObservableObject {
     @Published var error: Swift.Error?
     @Published var weatherLoading: Bool = true
     @Published var isOnline: Bool = true
+    @Published var greetingMessage: String = .init()
     private var currentWeatherTask: Task<WeatherData, Error>?
     private var currentGeocodingTask: Task<GeocodeData, Error>?
     private var cancelable: Set<AnyCancellable> = .init()
@@ -154,6 +155,7 @@ final class WeatherDataStore: @unchecked Sendable, ObservableObject {
             self.currentWeatherType = weatherService.getWeatherType(for: weather.current)
             self.hourlyWeatherData = try weatherService.getWeather(for: weather.hourly)
             self.dailyWeatherData = try weatherService.getWeather(for: weather.daily)
+            self.greetingMessage = currentWeatherType.greeting
         } catch {
             self.error = error
         }

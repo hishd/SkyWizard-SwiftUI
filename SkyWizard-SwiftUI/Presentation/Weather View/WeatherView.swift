@@ -13,10 +13,8 @@ import DependencyInjector
 struct WeatherView: View {
     @State private var isPresented: Bool = false
     @State private var isSceneLoading: Bool = true
+    @State private var isGreetingPresented: Bool = false
     @EnvironmentObject private var weatherDataStore: WeatherDataStore
-    private var isDataReady: Bool {
-        weatherDataStore.dailyWeatherData.isEmpty == false
-    }
     
     var body: some View {
         ZStack {
@@ -46,6 +44,8 @@ struct WeatherView: View {
             if !weatherDataStore.isOnline {
                 OfflineView()
             }
+            
+            weatherGreetingPopup
         }
         .onAppear(perform: {
             weatherDataStore.loadWeather()
@@ -57,11 +57,19 @@ struct WeatherView: View {
                 isPresented.toggle()
             }
         }
+        .onChange(of: weatherDataStore.greetingMessage) { _ in
+            withAnimation {
+                isGreetingPresented.toggle()
+            }
+        }
         .errorAlert(error: $weatherDataStore.error)
     }
 }
 
 extension WeatherView {
+    private var isDataReady: Bool {
+        weatherDataStore.dailyWeatherData.isEmpty == false
+    }
     private var backgroundColorGradient: LinearGradient {
         weatherDataStore.weatherTypeResource.backgroundGradient
     }
@@ -70,6 +78,10 @@ extension WeatherView {
     }
     private var subTitleColor: Color {
         weatherDataStore.currentWeatherType.getWeatherTypeResource().subTitleColor
+    }
+    private var weatherGreetingPopup: some View {
+        WeatherMessagePopup(message: weatherDataStore.greetingMessage, isPresent: $isGreetingPresented)
+            .opacity(isGreetingPresented ? 1 : 0)
     }
     private var weatherIcon: some View {
         VStack {
@@ -80,6 +92,12 @@ extension WeatherView {
             Spacer()
         }
         .frame(maxWidth: .infinity, alignment: .trailing)
+        .onTapGesture {
+            guard !isGreetingPresented else { return }
+            withAnimation {
+                isGreetingPresented.toggle()
+            }
+        }
     }
     private var houseImage: some View {
         //Disabled house image
