@@ -15,23 +15,11 @@ struct WeatherView: View {
     @State private var isSceneLoading: Bool = true
     @State private var isGreetingPresented: Bool = false
     @EnvironmentObject private var weatherDataStore: WeatherDataStore
+    @Environment(\.navigation) var navigation
     
     var body: some View {
         ZStack {
-            ZStack {
-                backgroundColorGradient
-                    .ignoresSafeArea()
-                houseImage
-                    .ignoresSafeArea()
-                weatherIcon
-                VStack(alignment: .leading, spacing: 0) {
-                    temperatureView
-                    currentCityView
-                    Spacer()
-                }.padding()
-                
-                sheetView
-            }.opacity(isDataReady ? 1 : 0)
+            mainContent
             
             if isSceneLoading {
                 sceneLoadingView
@@ -47,6 +35,8 @@ struct WeatherView: View {
             
             weatherGreetingPopup
         }
+        .navigationTitle("Weather")
+        .toolbar(.hidden, for: .navigationBar)
         .onAppear(perform: {
             weatherDataStore.loadWeather()
         })
@@ -63,6 +53,9 @@ struct WeatherView: View {
             }
         }
         .errorAlert(error: $weatherDataStore.error)
+        .navigationDestination(for: AppRoute.self) { route in
+            route.content
+        }
     }
 }
 
@@ -82,6 +75,22 @@ extension WeatherView {
     private var weatherGreetingPopup: some View {
         WeatherMessagePopup(message: weatherDataStore.greetingMessage, isPresent: $isGreetingPresented)
             .opacity(isGreetingPresented ? 1 : 0)
+    }
+    private var mainContent: some View {
+        ZStack {
+            backgroundColorGradient
+                .ignoresSafeArea()
+            houseImage
+                .ignoresSafeArea()
+            weatherIcon
+            VStack(alignment: .leading, spacing: 0) {
+                temperatureView
+                currentCityView
+                Spacer()
+            }.padding()
+            
+            sheetView
+        }.opacity(isDataReady ? 1 : 0)
     }
     private var weatherIcon: some View {
         VStack {
@@ -188,9 +197,9 @@ extension WeatherView {
                 DailyWeatherView(weatherData: weatherDataStore.dailyWeatherData)
                     .padding(.horizontal, 25)
                 Button {
-                    
+                    navigation(route: .about)
                 } label: {
-                    Text("Application Settings")
+                    Text("About Application")
                         .font(.getFont(type: .semibold, size: 16))
                         .frame(maxWidth: .infinity)
                         .frame(height: 50)
