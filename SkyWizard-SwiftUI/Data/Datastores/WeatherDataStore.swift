@@ -13,16 +13,18 @@ import Combine
 final class WeatherDataStore: @unchecked Sendable, ObservableObject {
     @Published var currentTemperature: Int = 0
     @Published var realFeel: Int = 0
-    @Published var currentCity: String = "Location"
+    @Published var currentCity: String = "No Location"
     @Published var currentWeatherType: CurrentWeatherType = .day_sunny
     @Published var hourlyWeatherData: [HourlyWeatherData] = .init()
     @Published var dailyWeatherData: [DailyWeatherData] = .init()
     @Published var error: Swift.Error?
     @Published var weatherLoading: Bool = true
     @Published var isOnline: Bool = true
-    var currentWeatherTask: Task<WeatherData, Error>?
-    var currentGeocodingTask: Task<GeocodeData, Error>?
-    var cancelable: Set<AnyCancellable> = .init()
+    private var currentWeatherTask: Task<WeatherData, Error>?
+    private var currentGeocodingTask: Task<GeocodeData, Error>?
+    private var cancelable: Set<AnyCancellable> = .init()
+    private var isLocationLoadingStarted: Bool = false
+    private var isMonitoringForReachabilityStarted: Bool = false
     
     var weatherTypeResource: WeatherTypeResource {
         currentWeatherType.getWeatherTypeResource()
@@ -38,11 +40,32 @@ final class WeatherDataStore: @unchecked Sendable, ObservableObject {
         self.geocodingService = geocodingService
         self.locationService = locationService
         self.reachabilityService = reachabilityService
-        startMonitoringForReachability()
-        locationService.start()
     }
     
-    func startLoadingWeather() {
+    func loadWeather() {
+        if !isLocationLoadingStarted {
+            startLoadingLocation()
+        }
+        
+        if !isMonitoringForReachabilityStarted {
+            startMonitoringForReachability()
+        }
+    }
+    
+    func reloadWeather() {
+        guard let location = locationService.getLastKnownLocation() else {
+            self.error = WeatherDataStoreError.locationError
+            return
+        }
+        
+        Task {
+            await loadWeatherData(for: location)
+            await geocodeLocation(with: location)
+        }
+    }
+    
+    private func startLoadingLocation() {
+        self.isLocationLoadingStarted = true
         locationService.locationResult
             .subscribe(on: DispatchQueue.global())
             .receive(on: DispatchQueue.main)
@@ -60,21 +83,11 @@ final class WeatherDataStore: @unchecked Sendable, ObservableObject {
                 }
             })
             .store(in: &cancelable)
-    }
-    
-    func reloadWeather() {
-        guard let location = locationService.getLastKnownLocation() else {
-            self.error = WeatherDataStoreError.locationError
-            return
-        }
-        
-        Task {
-            await loadWeatherData(for: location)
-            await geocodeLocation(with: location)
-        }
+        locationService.start()
     }
     
     private func startMonitoringForReachability() {
+        self.isMonitoringForReachabilityStarted = true
         reachabilityService
             .isReachable
             .receive(on: DispatchQueue.main)

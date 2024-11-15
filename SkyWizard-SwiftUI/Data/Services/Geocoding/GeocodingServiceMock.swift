@@ -11,7 +11,7 @@ import CoreLocation
 class GeocodingServiceMock: GeocodingService {
     func geocode(with location: CLLocationCoordinate2D) async throws -> TaskType {
         return Task {
-            .sample
+            throw GeocodingServiceError.invalidAddress(message: "Invalid address")
         }
     }
 }

@@ -48,7 +48,7 @@ struct WeatherView: View {
             }
         }
         .onAppear(perform: {
-            weatherDataStore.startLoadingWeather()
+            weatherDataStore.loadWeather()
         })
         .animation(.easeInOut, value: weatherDataStore.currentWeatherType)
         .onTapGesture {

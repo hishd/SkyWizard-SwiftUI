@@ -13,7 +13,7 @@ final class ReachabilityServiceMock: ReachabilityService {
     
     init() {
         DispatchQueue.global().asyncAfter(deadline: .now() + 4) { [weak self] in
-            self?.isReachable.send(false)
+            self?.isReachable.send(true)
         }
     }
 }
