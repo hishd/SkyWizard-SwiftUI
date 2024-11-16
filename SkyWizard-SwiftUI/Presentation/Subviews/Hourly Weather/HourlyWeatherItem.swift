@@ -21,6 +21,7 @@ struct HourlyWeatherItem: View {
                 .foregroundStyle(.dayTitle)
             Image(data.imageName)
                 .resizable()
+                .aspectRatio(contentMode: .fit)
                 .frame(width: 36, height: 36)
             HStack(alignment: .top, spacing: 3) {
                 Text("\(data.temperature)")

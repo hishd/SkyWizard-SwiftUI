@@ -17,6 +17,7 @@ struct DailyWeatherItem: View {
             Spacer()
             Image(weatherItem.icon)
                 .resizable()
+                .aspectRatio(contentMode: .fit)
                 .frame(width: 30, height: 28)
             tempLowView
             tempHighView
