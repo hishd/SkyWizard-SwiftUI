@@ -56,7 +56,7 @@ struct WeatherView: View {
         }
         .onChange(of: weatherDataStore.greetingMessage) { _ in
             withAnimation {
-                isGreetingPresented.toggle()
+                isGreetingPresented = true
             }
         }
         .errorAlert(error: $weatherDataStore.error)
@@ -145,6 +145,7 @@ extension WeatherView {
                 .padding(.trailing, 5)
             Button {
 //                weatherDataStore.toggleWeatherType()
+                weatherDataStore.changeWeatherType()
             } label: {
                 Image(systemName: "location.circle")
                     .resizable()
