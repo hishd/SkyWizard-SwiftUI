@@ -37,7 +37,13 @@ final class LocationServiceGps: NSObject, LocationService, CLLocationManagerDele
         locationManager.allowsBackgroundLocationUpdates = false
         
         locationManager.requestWhenInUseAuthorization()
-        self.lastKnownLocation = locationManager.location?.coordinate
+        
+        guard let lastCoordinate = locationManager.location?.coordinate else {
+            return
+        }
+        self.lastKnownLocation = lastCoordinate
+        
+        self.locationResult.send(.success(lastCoordinate))
     }
     
     func getLastKnownLocation() -> CLLocationCoordinate2D? {
