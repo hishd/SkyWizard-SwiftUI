@@ -65,6 +65,7 @@
 		FDABC38D2CE778CF0085EC95 /* unknown_weather.json in Resources */ = {isa = PBXBuildFile; fileRef = FDABC38C2CE778CF0085EC95 /* unknown_weather.json */; };
 		FDABC3962CE7A5FE0085EC95 /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABC3952CE7A5FE0085EC95 /* AppRoute.swift */; };
 		FDABC3982CE7A6D70085EC95 /* Navigation+EnvironmentKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABC3972CE7A6D70085EC95 /* Navigation+EnvironmentKeys.swift */; };
+		FDABC3A12CE844730085EC95 /* AboutAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABC3A02CE844730085EC95 /* AboutAppView.swift */; };
 		FDB65E732CDC030300E4A52E /* wizard_house.scn in Resources */ = {isa = PBXBuildFile; fileRef = FDB65E722CDC030300E4A52E /* wizard_house.scn */; };
 		FDB65E762CDC033C00E4A52E /* HouseViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E752CDC033C00E4A52E /* HouseViewRepresentable.swift */; };
 		FDB65E782CDC28D400E4A52E /* IsVisibleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E772CDC28D400E4A52E /* IsVisibleModifier.swift */; };
@@ -155,6 +156,7 @@
 		FDABC38C2CE778CF0085EC95 /* unknown_weather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = unknown_weather.json; sourceTree = "<group>"; };
 		FDABC3952CE7A5FE0085EC95 /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
 		FDABC3972CE7A6D70085EC95 /* Navigation+EnvironmentKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation+EnvironmentKeys.swift"; sourceTree = "<group>"; };
+		FDABC3A02CE844730085EC95 /* AboutAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppView.swift; sourceTree = "<group>"; };
 		FDB65E722CDC030300E4A52E /* wizard_house.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = wizard_house.scn; sourceTree = "<group>"; };
 		FDB65E752CDC033C00E4A52E /* HouseViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewRepresentable.swift; sourceTree = "<group>"; };
 		FDB65E772CDC28D400E4A52E /* IsVisibleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsVisibleModifier.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				FDB65E742CDC031C00E4A52E /* Representables */,
 				FD0841B72CD7481400604BF3 /* Subviews */,
 				FD8574862CD9D000003D9D29 /* Weather View */,
+				FDABC39F2CE7ADCE0085EC95 /* About App View */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -504,6 +507,14 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		FDABC39F2CE7ADCE0085EC95 /* About App View */ = {
+			isa = PBXGroup;
+			children = (
+				FDABC3A02CE844730085EC95 /* AboutAppView.swift */,
+			);
+			path = "About App View";
+			sourceTree = "<group>";
+		};
 		FDB65E712CDC02FF00E4A52E /* Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -681,6 +692,7 @@
 				FD949A7B2CDD79A700F8CF48 /* DailyWeatherType.swift in Sources */,
 				FDB65E892CDC579100E4A52E /* WeatherServiceRemote.swift in Sources */,
 				FD126D182CE76A7300B3654A /* WeatherMessagePopup.swift in Sources */,
+				FDABC3A12CE844730085EC95 /* AboutAppView.swift in Sources */,
 				FDB65E8D2CDC590600E4A52E /* WeatherData.swift in Sources */,
 				FD8574832CD9CF6A003D9D29 /* HourlyWeatherItem.swift in Sources */,
 				FDF41DED2CE386F0000C4FB4 /* WeatherDataStore+Dependencies.swift in Sources */,

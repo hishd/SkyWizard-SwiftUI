@@ -15,7 +15,7 @@ enum AppRoute {
 extension AppRoute: Hashable {
     var content: some View {
         switch self {
-        case .about: Text("This is About View")
+        case .about: AboutAppView()
         }
     }
 }
