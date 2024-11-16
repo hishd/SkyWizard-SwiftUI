@@ -228,7 +228,7 @@ extension WeatherView {
         isOnIpad ? 600 : .infinity
     }
     private var greetingPopupWidth: CGFloat {
-        isOnIpad ? 500 : .infinity
+        isOnIpad ? 460 : .infinity
     }
 }
 
