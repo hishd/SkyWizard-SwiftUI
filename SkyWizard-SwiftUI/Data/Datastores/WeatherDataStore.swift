@@ -155,7 +155,11 @@ final class WeatherDataStore: @unchecked Sendable, ObservableObject {
             self.currentWeatherType = weatherService.getWeatherType(for: weather.current)
             self.hourlyWeatherData = try weatherService.getWeather(for: weather.hourly)
             self.dailyWeatherData = try weatherService.getWeather(for: weather.daily)
-            self.greetingMessage = currentWeatherType.greeting
+            
+            Task {
+                try? await Task.sleep(for: .seconds(1))
+                self.greetingMessage = currentWeatherType.greeting
+            }
         } catch {
             self.error = error
         }
@@ -166,6 +170,14 @@ final class WeatherDataStore: @unchecked Sendable, ObservableObject {
         currentGeocodingTask?.cancel()
         cancelable.removeAll()
     }
+    
+    #if DEBUG
+    func changeWeatherType() {
+        let type = CurrentWeatherType.allCases.randomElement()!
+        self.currentWeatherType = type
+        self.greetingMessage = type.greeting
+    }
+    #endif
 }
 
 enum WeatherDataStoreError: LocalizedError {
