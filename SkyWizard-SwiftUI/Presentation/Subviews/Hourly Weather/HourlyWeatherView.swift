@@ -32,6 +32,7 @@ struct HourlyWeatherView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     VStack {
         LinearGradient(colors: [.blue, .red], startPoint: .topTrailing, endPoint: .bottomLeading)
@@ -49,3 +50,4 @@ struct HourlyWeatherView: View {
         Spacer()
     }
 }
+#endif
