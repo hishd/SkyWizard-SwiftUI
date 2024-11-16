@@ -39,7 +39,6 @@ struct WeatherMessagePopup: View {
                 .padding(.horizontal, 4)
             }
             .padding(8)
-            .frame(maxWidth: .infinity)
             .background {
                 RoundedRectangle(cornerRadius: 40)
                     .foregroundStyle(.white)

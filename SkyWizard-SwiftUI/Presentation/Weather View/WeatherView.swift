@@ -17,6 +17,12 @@ struct WeatherView: View {
     @EnvironmentObject private var weatherDataStore: WeatherDataStore
     @Environment(\.navigation) var navigation
     
+    @Environment(\.verticalSizeClass) var verticalSizeClass: UserInterfaceSizeClass?
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
+    var isOnIpad: Bool {
+        horizontalSizeClass == .regular && verticalSizeClass == .regular
+    }
+    
     var body: some View {
         ZStack {
             mainContent
@@ -34,6 +40,7 @@ struct WeatherView: View {
             }
             
             weatherGreetingPopup
+                .frame(maxWidth: greetingPopupWidth)
         }
         .navigationTitle("Weather")
         .toolbar(.hidden, for: .navigationBar)
@@ -59,23 +66,8 @@ struct WeatherView: View {
     }
 }
 
+// MARK: - View Components
 extension WeatherView {
-    private var isDataReady: Bool {
-        weatherDataStore.dailyWeatherData.isEmpty == false
-    }
-    private var backgroundColorGradient: LinearGradient {
-        weatherDataStore.weatherTypeResource.backgroundGradient
-    }
-    private var mainTitleColor: Color {
-        weatherDataStore.weatherTypeResource.mainTitleColor
-    }
-    private var subTitleColor: Color {
-        weatherDataStore.currentWeatherType.getWeatherTypeResource().subTitleColor
-    }
-    private var weatherGreetingPopup: some View {
-        WeatherMessagePopup(message: weatherDataStore.greetingMessage, isPresent: $isGreetingPresented)
-            .opacity(isGreetingPresented ? 1 : 0)
-    }
     private var mainContent: some View {
         ZStack {
             backgroundColorGradient
@@ -90,6 +82,7 @@ extension WeatherView {
             }.padding()
             
             sheetView
+                .frame(maxWidth: sheetViewWidth)
         }.opacity(isDataReady ? 1 : 0)
     }
     private var weatherIcon: some View {
@@ -213,6 +206,33 @@ extension WeatherView {
     }
 }
 
+// MARK: - View computed properties
+extension WeatherView {
+    private var isDataReady: Bool {
+        weatherDataStore.dailyWeatherData.isEmpty == false
+    }
+    private var backgroundColorGradient: LinearGradient {
+        weatherDataStore.weatherTypeResource.backgroundGradient
+    }
+    private var mainTitleColor: Color {
+        weatherDataStore.weatherTypeResource.mainTitleColor
+    }
+    private var subTitleColor: Color {
+        weatherDataStore.currentWeatherType.getWeatherTypeResource().subTitleColor
+    }
+    private var weatherGreetingPopup: some View {
+        WeatherMessagePopup(message: weatherDataStore.greetingMessage, isPresent: $isGreetingPresented)
+            .opacity(isGreetingPresented ? 1 : 0)
+    }
+    private var sheetViewWidth: CGFloat {
+        isOnIpad ? 600 : .infinity
+    }
+    private var greetingPopupWidth: CGFloat {
+        isOnIpad ? 500 : .infinity
+    }
+}
+
+// MARK: - Helper types for the view
 struct WeatherTypeResource {
     let backgroundGradient: LinearGradient
     let houseIcon: Image
