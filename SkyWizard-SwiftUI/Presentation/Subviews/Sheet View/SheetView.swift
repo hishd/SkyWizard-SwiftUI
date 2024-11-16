@@ -82,9 +82,10 @@ struct SheetView<Content: View>: View {
         .ignoresSafeArea(.all, edges: .bottom)
     }
     
-    @MainActor
     func onChange() {
-        self.offset = gestureOffset + lastOffset
+        DispatchQueue.main.async {
+            self.offset = gestureOffset + lastOffset
+        }
     }
 }
 
