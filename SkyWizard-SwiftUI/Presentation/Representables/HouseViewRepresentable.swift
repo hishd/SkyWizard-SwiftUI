@@ -23,6 +23,9 @@ struct HouseViewRepresentable: UIViewRepresentable {
         // Store the initial rotation angles for resetting later
         var initialRotation = SCNVector3Zero
         var didRenderScene: (() -> Void)?
+        let impactGenerator = UIImpactFeedbackGenerator(style: .light)
+        var lastHapticTime: Date = .now
+        let hapticInterval: TimeInterval = 0.12
         
         override init() {
             super.init()
@@ -43,6 +46,8 @@ struct HouseViewRepresentable: UIViewRepresentable {
             self.houseNode = houseNode
             self.lightNodeFirst = lightNodeFirst
             self.lightNodeSecond = lightNodeSecond
+            
+            impactGenerator.prepare()
         }
         
         func renderer(_ renderer: any SCNSceneRenderer, didRenderScene scene: SCNScene, atTime time: TimeInterval) {
@@ -60,6 +65,7 @@ struct HouseViewRepresentable: UIViewRepresentable {
                 
             switch panGesture.state {
             case .began:
+                impactGenerator.prepare()
                 // Store the initial rotation when the gesture begins
                 initialRotation = houseNode.eulerAngles
                 
@@ -73,6 +79,11 @@ struct HouseViewRepresentable: UIViewRepresentable {
                 // Reset translation to avoid compounded rotation
                 panGesture.setTranslation(.zero, in: sceneView)
                 
+                if Date().timeIntervalSince(lastHapticTime) > hapticInterval {
+                    impactGenerator.impactOccurred(intensity: 1)
+                    lastHapticTime = .now
+                }
+                
             case .ended, .cancelled:
                 // Reset rotation to the initial position when the gesture ends
                 SCNTransaction.begin()
@@ -80,6 +91,7 @@ struct HouseViewRepresentable: UIViewRepresentable {
                 houseNode.eulerAngles = initialRotation
                 SCNTransaction.commit()
                 
+                impactGenerator.impactOccurred()
             default:
                 break
             }

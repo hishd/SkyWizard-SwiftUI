@@ -13,27 +13,19 @@ import DependencyInjector
 struct WeatherView: View {
     @State private var isPresented: Bool = false
     @State private var isSceneLoading: Bool = true
+    @State private var isGreetingPresented: Bool = false
     @EnvironmentObject private var weatherDataStore: WeatherDataStore
-    private var isDataReady: Bool {
-        weatherDataStore.dailyWeatherData.isEmpty == false
+    @Environment(\.navigation) var navigation
+    
+    @Environment(\.verticalSizeClass) var verticalSizeClass: UserInterfaceSizeClass?
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
+    var isOnIpad: Bool {
+        horizontalSizeClass == .regular && verticalSizeClass == .regular
     }
     
     var body: some View {
         ZStack {
-            ZStack {
-                backgroundColorGradient
-                    .ignoresSafeArea()
-                houseImage
-                    .ignoresSafeArea()
-                weatherIcon
-                VStack(alignment: .leading, spacing: 0) {
-                    temperatureView
-                    currentCityView
-                    Spacer()
-                }.padding()
-                
-                sheetView
-            }.opacity(isDataReady ? 1 : 0)
+            mainContent
             
             if isSceneLoading {
                 sceneLoadingView
@@ -46,9 +38,14 @@ struct WeatherView: View {
             if !weatherDataStore.isOnline {
                 OfflineView()
             }
+            
+            weatherGreetingPopup
+                .frame(maxWidth: greetingPopupWidth)
         }
+        .navigationTitle("Weather")
+        .toolbar(.hidden, for: .navigationBar)
         .onAppear(perform: {
-            weatherDataStore.startLoadingWeather()
+            weatherDataStore.loadWeather()
         })
         .animation(.easeInOut, value: weatherDataStore.currentWeatherType)
         .onTapGesture {
@@ -57,19 +54,36 @@ struct WeatherView: View {
                 isPresented.toggle()
             }
         }
+        .onChange(of: weatherDataStore.greetingMessage) { _ in
+            withAnimation {
+                isGreetingPresented = true
+            }
+        }
         .errorAlert(error: $weatherDataStore.error)
+        .navigationDestination(for: AppRoute.self) { route in
+            route.content
+        }
     }
 }
 
+// MARK: - View Components
 extension WeatherView {
-    private var backgroundColorGradient: LinearGradient {
-        weatherDataStore.weatherTypeResource.backgroundGradient
-    }
-    private var mainTitleColor: Color {
-        weatherDataStore.weatherTypeResource.mainTitleColor
-    }
-    private var subTitleColor: Color {
-        weatherDataStore.currentWeatherType.getWeatherTypeResource().subTitleColor
+    private var mainContent: some View {
+        ZStack {
+            backgroundColorGradient
+                .ignoresSafeArea()
+            houseImage
+                .ignoresSafeArea()
+            weatherIcon
+            VStack(alignment: .leading, spacing: 0) {
+                temperatureView
+                currentCityView
+                Spacer()
+            }.padding()
+            
+            sheetView
+                .frame(maxWidth: sheetViewWidth)
+        }.opacity(isDataReady ? 1 : 0)
     }
     private var weatherIcon: some View {
         VStack {
@@ -80,6 +94,12 @@ extension WeatherView {
             Spacer()
         }
         .frame(maxWidth: .infinity, alignment: .trailing)
+        .onTapGesture {
+            guard !isGreetingPresented else { return }
+            withAnimation {
+                isGreetingPresented.toggle()
+            }
+        }
     }
     private var houseImage: some View {
         //Disabled house image
@@ -125,6 +145,7 @@ extension WeatherView {
                 .padding(.trailing, 5)
             Button {
 //                weatherDataStore.toggleWeatherType()
+                weatherDataStore.changeWeatherType()
             } label: {
                 Image(systemName: "location.circle")
                     .resizable()
@@ -170,9 +191,9 @@ extension WeatherView {
                 DailyWeatherView(weatherData: weatherDataStore.dailyWeatherData)
                     .padding(.horizontal, 25)
                 Button {
-                    
+                    navigation(route: .about)
                 } label: {
-                    Text("Application Settings")
+                    Text("About Application")
                         .font(.getFont(type: .semibold, size: 16))
                         .frame(maxWidth: .infinity)
                         .frame(height: 50)
@@ -186,6 +207,33 @@ extension WeatherView {
     }
 }
 
+// MARK: - View computed properties
+extension WeatherView {
+    private var isDataReady: Bool {
+        weatherDataStore.dailyWeatherData.isEmpty == false
+    }
+    private var backgroundColorGradient: LinearGradient {
+        weatherDataStore.weatherTypeResource.backgroundGradient
+    }
+    private var mainTitleColor: Color {
+        weatherDataStore.weatherTypeResource.mainTitleColor
+    }
+    private var subTitleColor: Color {
+        weatherDataStore.currentWeatherType.getWeatherTypeResource().subTitleColor
+    }
+    private var weatherGreetingPopup: some View {
+        WeatherMessagePopup(message: weatherDataStore.greetingMessage, isPresent: $isGreetingPresented)
+            .opacity(isGreetingPresented ? 1 : 0)
+    }
+    private var sheetViewWidth: CGFloat {
+        isOnIpad ? 600 : .infinity
+    }
+    private var greetingPopupWidth: CGFloat {
+        isOnIpad ? 460 : .infinity
+    }
+}
+
+// MARK: - Helper types for the view
 struct WeatherTypeResource {
     let backgroundGradient: LinearGradient
     let houseIcon: Image
@@ -197,7 +245,6 @@ struct WeatherTypeResource {
 }
 
 extension CurrentWeatherType {
-#warning("Implement the resources for the undefined weather case")
     func getWeatherTypeResource() -> WeatherTypeResource {
         return switch self {
         case .day_sunny:
@@ -323,15 +370,15 @@ extension CurrentWeatherType {
                 .init(
                     backgroundGradient: .init(
                         colors: [
-                            .init(hex: "#FFFCEF"),
-                            .init(hex: "#EAE2B2")
+                            .init(hex: "#D3D3D3"),
+                            .init(hex: "#5C5C5C")
                         ],
                         startPoint: .topTrailing,
                         endPoint: .bottomLeading
                     ),
                     houseIcon: Image(.houseDaySunny),
-                    weatherIcon: Image(.weatherDaySunny),
-                    weatherIconAnimationName: "sunny.json",
+                    weatherIcon: Image(.weatherUnknown),
+                    weatherIconAnimationName: "unknown_weather.json",
                     mainTitleColor: .dayTitle,
                     subTitleColor: .daySubTitle,
                     lightIntensity: 600

@@ -23,7 +23,6 @@ struct HourlyWeatherData: Identifiable {
 }
 
 extension HourlyWeatherData {
-#warning("Implement resource for undefined case")
     var imageName: String {
         return switch weatherType
         {
@@ -42,7 +41,7 @@ extension HourlyWeatherData {
         case .snow:
             "forecast_ic_snow"
         case .undefined:
-            "forecast_ic_sunny"
+            "weather_unknown"
         }
     }
 }
