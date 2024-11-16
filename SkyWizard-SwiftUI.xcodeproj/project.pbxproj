@@ -17,12 +17,12 @@
 		FD0841B32CD732A400604BF3 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0841B22CD732A400604BF3 /* Font+Extensions.swift */; };
 		FD0841B62CD743CD00604BF3 /* GlassModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0841B52CD743CD00604BF3 /* GlassModifier.swift */; };
 		FD0841B92CD7483A00604BF3 /* HourlyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0841B82CD7483A00604BF3 /* HourlyWeatherView.swift */; };
+		FD0C62162CE8FF9300BD20EB /* sun_moon.json in Resources */ = {isa = PBXBuildFile; fileRef = FD0C62152CE8FF9300BD20EB /* sun_moon.json */; };
 		FD126D182CE76A7300B3654A /* WeatherMessagePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD126D172CE76A7300B3654A /* WeatherMessagePopup.swift */; };
 		FD32A9F12CB4484D002B8706 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD32A9EB2CB4484D002B8706 /* Preview Assets.xcassets */; };
 		FD32A9F22CB4484D002B8706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD32A9ED2CB4484D002B8706 /* Assets.xcassets */; };
 		FD32A9F32CB4484D002B8706 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD32A9EE2CB4484D002B8706 /* WeatherView.swift */; };
 		FD32A9F42CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD32A9EF2CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift */; };
-		FD3558DA2CE526B100E57013 /* sun_moon.json in Resources */ = {isa = PBXBuildFile; fileRef = FD3558D92CE526B100E57013 /* sun_moon.json */; };
 		FD3558DC2CE52AB300E57013 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3558DB2CE52AB300E57013 /* LocationService.swift */; };
 		FD3558DE2CE52B6B00E57013 /* LocationServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3558DD2CE52B6B00E57013 /* LocationServiceMock.swift */; };
 		FD3558E02CE52BF600E57013 /* LocationService+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3558DF2CE52BF600E57013 /* LocationService+Dependencies.swift */; };
@@ -107,13 +107,13 @@
 		FD0841B22CD732A400604BF3 /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
 		FD0841B52CD743CD00604BF3 /* GlassModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassModifier.swift; sourceTree = "<group>"; };
 		FD0841B82CD7483A00604BF3 /* HourlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherView.swift; sourceTree = "<group>"; };
+		FD0C62152CE8FF9300BD20EB /* sun_moon.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sun_moon.json; sourceTree = "<group>"; };
 		FD126D172CE76A7300B3654A /* WeatherMessagePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMessagePopup.swift; sourceTree = "<group>"; };
 		FD32A9D92CB446CF002B8706 /* SkyWizard-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SkyWizard-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD32A9EB2CB4484D002B8706 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FD32A9ED2CB4484D002B8706 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD32A9EE2CB4484D002B8706 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		FD32A9EF2CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyWizard_SwiftUIApp.swift; sourceTree = "<group>"; };
-		FD3558D92CE526B100E57013 /* sun_moon.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sun_moon.json; sourceTree = "<group>"; };
 		FD3558DB2CE52AB300E57013 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		FD3558DD2CE52B6B00E57013 /* LocationServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceMock.swift; sourceTree = "<group>"; };
 		FD3558DF2CE52BF600E57013 /* LocationService+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationService+Dependencies.swift"; sourceTree = "<group>"; };
@@ -330,8 +330,8 @@
 		FD8574682CD9C5A8003D9D29 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				FD0C62152CE8FF9300BD20EB /* sun_moon.json */,
 				FDABC38C2CE778CF0085EC95 /* unknown_weather.json */,
-				FD3558D92CE526B100E57013 /* sun_moon.json */,
 				FD8574692CD9C690003D9D29 /* cloudy.json */,
 				FD85746A2CD9C690003D9D29 /* cloudy_sun.json */,
 				FD85746B2CD9C690003D9D29 /* night.json */,
@@ -644,8 +644,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD32A9F12CB4484D002B8706 /* Preview Assets.xcassets in Resources */,
+				FD0C62162CE8FF9300BD20EB /* sun_moon.json in Resources */,
 				FD0841AB2CD7307900604BF3 /* Montserrat-Light.ttf in Resources */,
-				FD3558DA2CE526B100E57013 /* sun_moon.json in Resources */,
 				FD0841AC2CD7307900604BF3 /* Montserrat-Black.ttf in Resources */,
 				FD0841AD2CD7307900604BF3 /* Montserrat-Bold.ttf in Resources */,
 				FD0841AE2CD7307900604BF3 /* Montserrat-Medium.ttf in Resources */,
