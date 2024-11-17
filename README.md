@@ -6,6 +6,23 @@
 <img src="https://img.shields.io/badge/XCode-16.0-blue">
 </p>
 
+<p>
+  	<img src="https://github.com/hishd/SkyWizard-SwiftUI/blob/master/banners/iphone1.jpg" height="300">
+	<img src="https://github.com/hishd/SkyWizard-SwiftUI/blob/master/banners/iphone2.jpg" height="300">
+	<img src="https://github.com/hishd/SkyWizard-SwiftUI/blob/master/banners/iphone3.jpg" height="300">
+	<img src="https://github.com/hishd/SkyWizard-SwiftUI/blob/master/banners/iphone4.jpg" height="300">
+	<img src="https://github.com/hishd/SkyWizard-SwiftUI/blob/master/banners/iphone5.jpg" height="300">
+	<img src="https://github.com/hishd/SkyWizard-SwiftUI/blob/master/banners/iphone6.jpg" height="300">
+	<img src="https://github.com/hishd/SkyWizard-SwiftUI/blob/master/banners/iphone7.jpg" height="300">
+</p>
+
+<p>
+  	<img src="https://github.com/hishd/SkyWizard-SwiftUI/blob/master/banners/ipad1.jpg" height="330">
+	<img src="https://github.com/hishd/SkyWizard-SwiftUI/blob/master/banners/ipad2.jpg" height="330">
+	<img src="https://github.com/hishd/SkyWizard-SwiftUI/blob/master/banners/ipad4.jpg" height="330">
+	<img src="https://github.com/hishd/SkyWizard-SwiftUI/blob/master/banners/ipad6.jpg" height="330">
+</p>
+
 ### Overview
 
 Sky Wizard is a weather information application, developed for iOS devices. The app is open source and developed using **[open metro](https://open-meteo.com/)** api for weather updated and **[photon](https://photon.komoot.io)** for reverse geocoding.
