@@ -21,7 +21,7 @@ extension LocationServiceError {
         case .locationUnavailable:
             return "Location is unavailable"
         case .locationDeniedAccess:
-            return "Location access is denied"
+            return "Please allow location access."
         }
     }
 }
