@@ -22,6 +22,8 @@ struct DailyWeatherView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     DailyWeatherView(weatherData: [.sample])
 }
+#endif
