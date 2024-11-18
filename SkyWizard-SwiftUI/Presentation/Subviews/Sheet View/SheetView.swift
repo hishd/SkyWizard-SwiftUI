@@ -99,6 +99,7 @@ private struct CustomCorner: Shape {
     }
 }
 
+#if DEBUG
 #Preview {
     StatePreviewWrapper(value: true) { $value in
         ZStack {
@@ -120,3 +121,4 @@ private struct CustomCorner: Shape {
         }
     }
 }
+#endif

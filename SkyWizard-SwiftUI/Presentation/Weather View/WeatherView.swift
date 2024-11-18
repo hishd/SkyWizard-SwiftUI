@@ -144,8 +144,7 @@ extension WeatherView {
                 .font(.getFont(type: .medium, size: 26))
                 .padding(.trailing, 5)
             Button {
-//                weatherDataStore.toggleWeatherType()
-                weatherDataStore.changeWeatherType()
+                
             } label: {
                 Image(systemName: "location.circle")
                     .resizable()
@@ -387,8 +386,10 @@ extension CurrentWeatherType {
     }
 }
 
+#if DEBUG
 #Preview {
     @Injectable(\.weatherDataStoreMock) var weatherDataStore: WeatherDataStore
     WeatherView()
         .environmentObject(weatherDataStore)
 }
+#endif

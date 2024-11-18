@@ -14,9 +14,11 @@ fileprivate final class WeatherServiceRemoteDependency: InjectableDependency {
     static var dependency: WeatherService = WeatherServiceRemote(dataTransferService: dataTransferService)
 }
 
+#if DEBUG
 fileprivate final class WeatherServiceMockDependency: InjectableDependency {
     static var dependency: WeatherService = WeatherServiceMock()
 }
+#endif
 
 extension InjectableValues {
     var weatherServiceRemote: WeatherService {
@@ -25,9 +27,11 @@ extension InjectableValues {
         }
     }
     
+    #if DEBUG
     var weatherServiceMock: WeatherService {
         get {
             Self[WeatherServiceMockDependency.self]
         }
     }
+    #endif
 }

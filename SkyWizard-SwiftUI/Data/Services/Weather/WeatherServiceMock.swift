@@ -8,6 +8,7 @@
 import Foundation
 import CoreLocation
 
+#if DEBUG
 class WeatherServiceMock: WeatherService {
     func fetchWeather(for location: CLLocationCoordinate2D) async throws -> TaskType {
         return Task {
@@ -31,3 +32,4 @@ class WeatherServiceMock: WeatherService {
         }
     }
 }
+#endif

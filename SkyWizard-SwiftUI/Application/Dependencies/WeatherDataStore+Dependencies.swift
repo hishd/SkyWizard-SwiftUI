@@ -21,6 +21,7 @@ fileprivate final class WeatherDataStoreInjectableDependency: InjectableDependen
     )
 }
 
+#if DEBUG
 fileprivate final class WeatherDataStoreMockInjectableDependency: InjectableDependency {
     @Injectable(\.locationServiceMock) private static var locationService: LocationService
     @Injectable(\.weatherServiceMock) private static var weatherService: WeatherService
@@ -33,6 +34,7 @@ fileprivate final class WeatherDataStoreMockInjectableDependency: InjectableDepe
         reachabilityService: reachabilityService
     )
 }
+#endif
 
 extension InjectableValues {
     var weatherDataStore: WeatherDataStore {
@@ -40,10 +42,11 @@ extension InjectableValues {
             WeatherDataStoreInjectableDependency.dependency
         }
     }
-    
+    #if DEBUG
     var weatherDataStoreMock: WeatherDataStore {
         get {
             WeatherDataStoreMockInjectableDependency.dependency
         }
     }
+    #endif
 }
