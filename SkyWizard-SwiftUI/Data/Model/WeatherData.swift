@@ -20,6 +20,7 @@ extension WeatherData {
         let time: [String]
         let temperature_2m: [Double]
         let weather_code: [Int]
+        let is_day: [Int]
     }
 }
 
@@ -48,7 +49,8 @@ extension WeatherData {
         let hourlySample: HourlyWeatherData = .init(
             time: (0...5).map { "\($0):00" },
             temperature_2m: (0...5).map { Double($0) },
-            weather_code: (0...5).map { $0 }
+            weather_code: (0...5).map { $0 },
+            is_day: (0...5).map{ $0.isMultiple(of: 2) ? 1 : 0 }
         )
         
         let dailySample: DailyWeatherData = .init(
