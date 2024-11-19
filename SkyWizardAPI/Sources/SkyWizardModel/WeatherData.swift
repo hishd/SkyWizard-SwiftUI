@@ -7,45 +7,45 @@
 
 import Foundation
 
-struct WeatherData: Sendable, Decodable {
-    let latitude: Double
-    let longitude: Double
-    let current: CurrentWeatherData
-    let hourly: HourlyWeatherData
-    let daily: DailyWeatherData
+public struct WeatherData: Sendable, Decodable {
+    public let latitude: Double
+    public let longitude: Double
+    public let current: CurrentWeatherData
+    public let hourly: HourlyWeatherData
+    public let daily: DailyWeatherData
 }
 
 extension WeatherData {
-    struct HourlyWeatherData: Decodable {
-        let time: [String]
-        let temperature_2m: [Double]
-        let weather_code: [Int]
-        let is_day: [Int]
+    public struct HourlyWeatherData: Decodable, Sendable {
+        public let time: [String]
+        public let temperature_2m: [Double]
+        public let weather_code: [Int]
+        public let is_day: [Int]
     }
 }
 
 extension WeatherData {
-    struct DailyWeatherData: Decodable {
-        let time: [String]
-        let temperature_2m_max: [Double]
-        let temperature_2m_min: [Double]
-        let weather_code: [Int]
+    public struct DailyWeatherData: Decodable, Sendable {
+        public let time: [String]
+        public let temperature_2m_max: [Double]
+        public let temperature_2m_min: [Double]
+        public let weather_code: [Int]
     }
 }
 
 extension WeatherData {
-    struct CurrentWeatherData: Decodable {
-        let temperature_2m: Double
-        let apparent_temperature: Double
-        let weather_code: Int
-        let is_day: Int
+    public struct CurrentWeatherData: Decodable, Sendable {
+        public let temperature_2m: Double
+        public let apparent_temperature: Double
+        public let weather_code: Int
+        public let is_day: Int
     }
 }
 
 
 extension WeatherData {
     #if DEBUG
-    static var sample: Self {
+    public static var sample: Self {
         let hourlySample: HourlyWeatherData = .init(
             time: (0...5).map { "\($0):00" },
             temperature_2m: (0...5).map { Double($0) },

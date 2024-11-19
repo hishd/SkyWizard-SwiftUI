@@ -7,6 +7,7 @@
 
 import Foundation
 import NetworkingService
+import SkyWizardModel
 
 enum WeatherEndpoints {
     static func getWeather(latitude: Double, longitude: Double) -> ApiEndpoint<WeatherData> {

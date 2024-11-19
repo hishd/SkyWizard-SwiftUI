@@ -67,7 +67,6 @@
 		FDB65E7E2CDC4F4E00E4A52E /* DependencyInjector in Frameworks */ = {isa = PBXBuildFile; productRef = FDB65E7D2CDC4F4E00E4A52E /* DependencyInjector */; };
 		FDB65E872CDC575A00E4A52E /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E862CDC575300E4A52E /* WeatherService.swift */; };
 		FDB65E892CDC579100E4A52E /* WeatherServiceRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E882CDC579100E4A52E /* WeatherServiceRemote.swift */; };
-		FDB65E8D2CDC590600E4A52E /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E8C2CDC590600E4A52E /* WeatherData.swift */; };
 		FDDCB0C22CECF4AD00052822 /* SkyWizardEnum in Frameworks */ = {isa = PBXBuildFile; productRef = FDDCB0C12CECF4AD00052822 /* SkyWizardEnum */; };
 		FDDCB0C72CECF57500052822 /* SkyWizardModel in Frameworks */ = {isa = PBXBuildFile; productRef = FDDCB0C62CECF57500052822 /* SkyWizardModel */; };
 		FDE0B9662CD8082200017A6B /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE0B9652CD8082200017A6B /* SheetView.swift */; };
@@ -152,7 +151,6 @@
 		FDB65E772CDC28D400E4A52E /* IsVisibleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsVisibleModifier.swift; sourceTree = "<group>"; };
 		FDB65E862CDC575300E4A52E /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		FDB65E882CDC579100E4A52E /* WeatherServiceRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceRemote.swift; sourceTree = "<group>"; };
-		FDB65E8C2CDC590600E4A52E /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		FDDCB0BC2CECEFB400052822 /* SkyWizardAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SkyWizardAPI; sourceTree = "<group>"; };
 		FDE0B9652CD8082200017A6B /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		FDF41DE82CE37521000C4FB4 /* LocationServiceGps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceGps.swift; sourceTree = "<group>"; };
@@ -348,7 +346,6 @@
 		FD85747A2CD9CE86003D9D29 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FDB65E8C2CDC590600E4A52E /* WeatherData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -681,7 +678,6 @@
 				FDB65E892CDC579100E4A52E /* WeatherServiceRemote.swift in Sources */,
 				FD126D182CE76A7300B3654A /* WeatherMessagePopup.swift in Sources */,
 				FDABC3A12CE844730085EC95 /* AboutAppView.swift in Sources */,
-				FDB65E8D2CDC590600E4A52E /* WeatherData.swift in Sources */,
 				FD8574832CD9CF6A003D9D29 /* HourlyWeatherItem.swift in Sources */,
 				FDF41DED2CE386F0000C4FB4 /* WeatherDataStore+Dependencies.swift in Sources */,
 				FD949A652CDCA2E100F8CF48 /* GeocodingServiceRemote.swift in Sources */,
