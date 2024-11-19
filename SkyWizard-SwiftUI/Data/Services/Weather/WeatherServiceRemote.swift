@@ -137,7 +137,7 @@ final class WeatherServiceRemote: WeatherService {
             data.append(
                 .init(
                     timeText: timeText,
-                    weatherType: getWeatherType(for: hourly.weather_code[index], by: date),
+                    weatherType: getWeatherType(for: hourly.weather_code[index], by: hourly.is_day[index] == 1),
                     temperature: Int(hourly.temperature_2m[index])
                 )
             )
@@ -169,9 +169,7 @@ extension WeatherServiceRemote {
         }
     }
     
-    private func getWeatherType(for code: Int, by time: Date) -> CurrentWeatherType {
-        let isDay = Calendar.current.component(.hour, from: time) < 18
-        
+    private func getWeatherType(for code: Int, by isDay: Bool) -> CurrentWeatherType {
         return switch code {
         case let code where (0...1).contains(code) && isDay:
             .day_sunny
