@@ -8,7 +8,7 @@
 import Foundation
 
 //Enum for current day weather type, including all hours on current day
-enum CurrentWeatherType: CaseIterable {
+public enum CurrentWeatherType: CaseIterable {
     case day_sunny
     case day_cloudy
     case day_rainy
@@ -20,7 +20,7 @@ enum CurrentWeatherType: CaseIterable {
 }
 
 extension CurrentWeatherType {
-    var greeting: String {
+    public var greeting: String {
         switch self {
         case .day_sunny:
             return "The sun's smile greets the day; wear a hat if you step out."

@@ -57,8 +57,6 @@
 		FD949A742CDD614300F8CF48 /* WeatherDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A732CDD614300F8CF48 /* WeatherDataStore.swift */; };
 		FD949A762CDD66D000F8CF48 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A752CDD66D000F8CF48 /* View+Extensions.swift */; };
 		FD949A782CDD670E00F8CF48 /* LocalizedAlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A772CDD670E00F8CF48 /* LocalizedAlertError.swift */; };
-		FD949A7B2CDD79A700F8CF48 /* DailyWeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A7A2CDD79A700F8CF48 /* DailyWeatherType.swift */; };
-		FD949A7D2CDD79BA00F8CF48 /* CurrentWeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A7C2CDD79BA00F8CF48 /* CurrentWeatherType.swift */; };
 		FD9C174C2CDE02E300401013 /* FormatStyle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C174B2CDE02E300401013 /* FormatStyle+Extensions.swift */; };
 		FDABC38D2CE778CF0085EC95 /* unknown_weather.json in Resources */ = {isa = PBXBuildFile; fileRef = FDABC38C2CE778CF0085EC95 /* unknown_weather.json */; };
 		FDABC3962CE7A5FE0085EC95 /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABC3952CE7A5FE0085EC95 /* AppRoute.swift */; };
@@ -72,7 +70,8 @@
 		FDB65E872CDC575A00E4A52E /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E862CDC575300E4A52E /* WeatherService.swift */; };
 		FDB65E892CDC579100E4A52E /* WeatherServiceRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E882CDC579100E4A52E /* WeatherServiceRemote.swift */; };
 		FDB65E8D2CDC590600E4A52E /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E8C2CDC590600E4A52E /* WeatherData.swift */; };
-		FDDCB0BF2CECF22300052822 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = FDDCB0BE2CECF22300052822 /* Models */; };
+		FDDCB0C22CECF4AD00052822 /* SkyWizardEnum in Frameworks */ = {isa = PBXBuildFile; productRef = FDDCB0C12CECF4AD00052822 /* SkyWizardEnum */; };
+		FDDCB0C72CECF57500052822 /* SkyWizardModel in Frameworks */ = {isa = PBXBuildFile; productRef = FDDCB0C62CECF57500052822 /* SkyWizardModel */; };
 		FDE0B9662CD8082200017A6B /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE0B9652CD8082200017A6B /* SheetView.swift */; };
 		FDF41DE92CE37521000C4FB4 /* LocationServiceGps.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF41DE82CE37521000C4FB4 /* LocationServiceGps.swift */; };
 		FDF41DEB2CE37AC8000C4FB4 /* OSLog+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF41DEA2CE37AC8000C4FB4 /* OSLog+Extensions.swift */; };
@@ -147,8 +146,6 @@
 		FD949A732CDD614300F8CF48 /* WeatherDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataStore.swift; sourceTree = "<group>"; };
 		FD949A752CDD66D000F8CF48 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		FD949A772CDD670E00F8CF48 /* LocalizedAlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedAlertError.swift; sourceTree = "<group>"; };
-		FD949A7A2CDD79A700F8CF48 /* DailyWeatherType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherType.swift; sourceTree = "<group>"; };
-		FD949A7C2CDD79BA00F8CF48 /* CurrentWeatherType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherType.swift; sourceTree = "<group>"; };
 		FD9C174B2CDE02E300401013 /* FormatStyle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormatStyle+Extensions.swift"; sourceTree = "<group>"; };
 		FDABC38C2CE778CF0085EC95 /* unknown_weather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = unknown_weather.json; sourceTree = "<group>"; };
 		FDABC3952CE7A5FE0085EC95 /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
@@ -179,7 +176,8 @@
 			files = (
 				FDB65E7B2CDC4F2600E4A52E /* NetworkingService in Frameworks */,
 				FD8574672CD9C572003D9D29 /* Lottie in Frameworks */,
-				FDDCB0BF2CECF22300052822 /* Models in Frameworks */,
+				FDDCB0C72CECF57500052822 /* SkyWizardModel in Frameworks */,
+				FDDCB0C22CECF4AD00052822 /* SkyWizardEnum in Frameworks */,
 				FDB65E7E2CDC4F4E00E4A52E /* DependencyInjector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,6 +240,7 @@
 				FD32A9F02CB4484D002B8706 /* SkyWizard-SwiftUI */,
 				FD949A572CDC917200F8CF48 /* SkyWizard-SwiftUITests */,
 				FDDCB0BC2CECEFB400052822 /* SkyWizardAPI */,
+				FDDCB0C52CECF57500052822 /* Frameworks */,
 				FD32A9DA2CB446CF002B8706 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -307,7 +306,6 @@
 		FD32A9F72CB44947002B8706 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				FD949A792CDD799800F8CF48 /* Enum */,
 				FD949A722CDD613800F8CF48 /* Datastores */,
 				FD85747B2CD9CE8C003D9D29 /* Services */,
 				FD85747A2CD9CE86003D9D29 /* Model */,
@@ -477,15 +475,6 @@
 			path = Datastores;
 			sourceTree = "<group>";
 		};
-		FD949A792CDD799800F8CF48 /* Enum */ = {
-			isa = PBXGroup;
-			children = (
-				FD949A7A2CDD79A700F8CF48 /* DailyWeatherType.swift */,
-				FD949A7C2CDD79BA00F8CF48 /* CurrentWeatherType.swift */,
-			);
-			path = Enum;
-			sourceTree = "<group>";
-		};
 		FD9C174D2CDE76C700401013 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -529,6 +518,13 @@
 			path = Representables;
 			sourceTree = "<group>";
 		};
+		FDDCB0C52CECF57500052822 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FDFD8F992CE67EA2000B3C18 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
@@ -567,7 +563,8 @@
 				FD8574662CD9C572003D9D29 /* Lottie */,
 				FDB65E7A2CDC4F2600E4A52E /* NetworkingService */,
 				FDB65E7D2CDC4F4E00E4A52E /* DependencyInjector */,
-				FDDCB0BE2CECF22300052822 /* Models */,
+				FDDCB0C12CECF4AD00052822 /* SkyWizardEnum */,
+				FDDCB0C62CECF57500052822 /* SkyWizardModel */,
 			);
 			productName = "SkyWizard-SwiftUI";
 			productReference = FD32A9D92CB446CF002B8706 /* SkyWizard-SwiftUI.app */;
@@ -686,9 +683,7 @@
 				FD949A6F2CDD4CAF00F8CF48 /* WeatherServiceMock.swift in Sources */,
 				FD949A712CDD4E0F00F8CF48 /* DataTransferService+Dependencies.swift in Sources */,
 				FDB65E872CDC575A00E4A52E /* WeatherService.swift in Sources */,
-				FD949A7D2CDD79BA00F8CF48 /* CurrentWeatherType.swift in Sources */,
 				FDFD8F9E2CE6807C000B3C18 /* Reachability+Dependencies.swift in Sources */,
-				FD949A7B2CDD79A700F8CF48 /* DailyWeatherType.swift in Sources */,
 				FDB65E892CDC579100E4A52E /* WeatherServiceRemote.swift in Sources */,
 				FD126D182CE76A7300B3654A /* WeatherMessagePopup.swift in Sources */,
 				FDABC3A12CE844730085EC95 /* AboutAppView.swift in Sources */,
@@ -1053,9 +1048,13 @@
 			package = FDB65E7C2CDC4F4E00E4A52E /* XCRemoteSwiftPackageReference "DependencyInjector" */;
 			productName = DependencyInjector;
 		};
-		FDDCB0BE2CECF22300052822 /* Models */ = {
+		FDDCB0C12CECF4AD00052822 /* SkyWizardEnum */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Models;
+			productName = SkyWizardEnum;
+		};
+		FDDCB0C62CECF57500052822 /* SkyWizardModel */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SkyWizardModel;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

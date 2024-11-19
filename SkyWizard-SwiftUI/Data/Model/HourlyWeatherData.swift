@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SkyWizardEnum
 
 struct HourlyWeatherData: Identifiable {
     let id: UUID = .init()

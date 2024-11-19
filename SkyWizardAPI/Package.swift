@@ -9,14 +9,18 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "Models",
-            targets: ["Models"]),
+            name: "SkyWizardModel",
+            targets: ["SkyWizardModel"]),
+        .library(
+            name: "SkyWizardEnum",
+            targets: ["SkyWizardEnum"]
+        )
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "Models"),
+        .target(name: "SkyWizardModel"),
+        .target(name: "SkyWizardEnum")
 //        .testTarget(
 //            name: "SkyWizardAPITests",
 //            dependencies: ["SkyWizardAPI"]

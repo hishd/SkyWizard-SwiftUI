@@ -7,7 +7,7 @@
 
 import Foundation
 import CoreLocation
-import Models
+import SkyWizardModel
 
 protocol GeocodingService {
     typealias TaskType = Task<GeocodeData, Error>

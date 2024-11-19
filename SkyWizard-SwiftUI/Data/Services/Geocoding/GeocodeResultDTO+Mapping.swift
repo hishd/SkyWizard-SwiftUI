@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Models
+import SkyWizardModel
 
 struct GeocodeResultDTO: Decodable {
     let features: [FeatureNode]

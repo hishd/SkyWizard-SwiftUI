@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import SkyWizardEnum
 
 protocol WeatherService {
     typealias TaskType = Task<WeatherData, Error>

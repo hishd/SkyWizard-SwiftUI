@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import SkyWizardEnum
 
 #if DEBUG
 class WeatherServiceMock: WeatherService {

@@ -8,6 +8,7 @@
 import Foundation
 import CoreLocation
 import NetworkingService
+import SkyWizardEnum
 
 final class WeatherServiceRemote: WeatherService {
     let dataTransferService: NetworkDataTransferService

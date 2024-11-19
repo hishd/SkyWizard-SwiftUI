@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SkyWizardEnum
 
 struct DailyWeatherData: Identifiable {
     let id: UUID = UUID()
