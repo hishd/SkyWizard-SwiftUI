@@ -53,6 +53,7 @@ final class WeatherServiceRemote: WeatherService {
     func getWeather(for daily: WeatherData.DailyWeatherData) throws -> [DailyWeatherData] {
         var data: [DailyWeatherData] = .init()
         let dateFormatter: DateFormatter = .init()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
         guard !daily.time.isEmpty else {
@@ -98,6 +99,7 @@ final class WeatherServiceRemote: WeatherService {
         let currentHour: Int = Calendar.current.component(.hour, from: .now)
         let currentDay: Int = Calendar.current.component(.day, from: .now)
         let dateFormatter: DateFormatter = .init()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
         
         guard !hourly.time.isEmpty else {
@@ -128,7 +130,7 @@ final class WeatherServiceRemote: WeatherService {
             }
             
             let timeText = """
-            \(date.formatted(.dateTime.hour(.defaultDigits(amPM: .abbreviated)))) \
+            \(date.formatted(.dateTime.hour(.defaultDigits(amPM: .omitted)))) \
             \(hour >= 12 ? "PM" : "AM")
             """
             
