@@ -7,6 +7,7 @@
 
 import Foundation
 import DependencyInjector
+import SkyWizardService
 
 final class LocationServiceMockDependency: InjectableDependency {
     static var dependency: LocationService = LocationServiceMock()

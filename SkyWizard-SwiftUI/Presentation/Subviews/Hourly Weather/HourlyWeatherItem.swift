@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SkyWizardModel
 
 struct HourlyWeatherItem: View {
     let data: HourlyWeatherData

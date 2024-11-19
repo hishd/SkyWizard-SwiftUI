@@ -7,6 +7,7 @@
 
 import Foundation
 import DependencyInjector
+import SkyWizardService
 
 fileprivate final class WeatherDataStoreInjectableDependency: InjectableDependency {
     @Injectable(\.locationServiceGps) private static var locationService: LocationService

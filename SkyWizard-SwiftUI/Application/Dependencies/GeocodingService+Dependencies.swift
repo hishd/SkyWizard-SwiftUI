@@ -8,6 +8,7 @@
 import Foundation
 import NetworkingService
 import DependencyInjector
+import SkyWizardService
 
 fileprivate final class GeocodingServiceRemoteDependency: InjectableDependency {
     @Injectable(\.dataTransferServiceGeocoding) static var dataTransferService: NetworkDataTransferService

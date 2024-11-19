@@ -9,6 +9,7 @@ import SwiftUI
 import Lottie
 import SceneKit
 import DependencyInjector
+import SkyWizardEnum
 
 struct WeatherView: View {
     @State private var isPresented: Bool = false

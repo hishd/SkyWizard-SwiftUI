@@ -8,6 +8,7 @@
 import Foundation
 import DependencyInjector
 import NetworkingService
+import SkyWizardService
 
 fileprivate final class WeatherServiceRemoteDependency: InjectableDependency {
     @Injectable(\.dataTransferServiceWeather) static var dataTransferService: NetworkDataTransferService
