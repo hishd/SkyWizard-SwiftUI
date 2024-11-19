@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Models
 
 struct GeocodeResultDTO: Decodable {
     let features: [FeatureNode]

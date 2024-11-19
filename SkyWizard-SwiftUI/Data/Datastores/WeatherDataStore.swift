@@ -9,6 +9,7 @@ import Foundation
 import CoreLocation
 import OSLog
 import Combine
+import Models
 
 final class WeatherDataStore: @unchecked Sendable, ObservableObject {
     @Published var currentTemperature: Int = 0

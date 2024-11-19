@@ -8,6 +8,7 @@
 import Foundation
 import NetworkingService
 import CoreLocation
+import Models
 
 final class GeocodingServiceRemote: GeocodingService {
     

@@ -7,9 +7,14 @@
 
 import Foundation
 
-struct GeocodeData {
-    let country: String
-    let city: String
+public struct GeocodeData : Sendable {
+    public let country: String
+    public let city: String
+    
+    public init(country: String, city: String) {
+        self.country = country
+        self.city = city
+    }
 }
 
 extension GeocodeData: Codable {

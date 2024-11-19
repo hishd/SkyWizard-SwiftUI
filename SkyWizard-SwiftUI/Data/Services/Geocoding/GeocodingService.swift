@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import Models
 
 protocol GeocodingService {
     typealias TaskType = Task<GeocodeData, Error>
