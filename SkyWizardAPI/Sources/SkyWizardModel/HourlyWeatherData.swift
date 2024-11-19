@@ -8,14 +8,20 @@
 import Foundation
 import SkyWizardEnum
 
-struct HourlyWeatherData: Identifiable {
-    let id: UUID = .init()
-    let timeText: String
-    let weatherType: CurrentWeatherType
-    let temperature: Int
+public struct HourlyWeatherData: Identifiable, @unchecked Sendable {
+    public let id: UUID = .init()
+    public let timeText: String
+    public let weatherType: CurrentWeatherType
+    public let temperature: Int
+    
+    public init(timeText: String, weatherType: CurrentWeatherType, temperature: Int) {
+        self.timeText = timeText
+        self.weatherType = weatherType
+        self.temperature = temperature
+    }
     
     #if DEBUG
-    static let sample: HourlyWeatherData = .init(
+    public static let sample: HourlyWeatherData = .init(
         timeText: "10 am",
         weatherType: .day_sunny,
         temperature: 20
@@ -24,7 +30,7 @@ struct HourlyWeatherData: Identifiable {
 }
 
 extension HourlyWeatherData {
-    var imageName: String {
+    public var imageName: String {
         return switch weatherType
         {
         case .day_sunny:
