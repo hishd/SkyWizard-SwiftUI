@@ -9,17 +9,17 @@ import Foundation
 import CoreLocation
 import SkyWizardModel
 
-protocol GeocodingService {
+public protocol GeocodingService {
     typealias TaskType = Task<GeocodeData, Error>
     func geocode(with location: CLLocationCoordinate2D) async throws -> TaskType
 }
 
-enum GeocodingServiceError: LocalizedError {
+public enum GeocodingServiceError: LocalizedError {
     case invalidAddress(message: String)
     case noResponse(message: String)
     case invalidResponse(message: String)
     
-    var errorDescription: String? {
+    public var errorDescription: String? {
         switch self {
         case .invalidAddress(let message):
             return message

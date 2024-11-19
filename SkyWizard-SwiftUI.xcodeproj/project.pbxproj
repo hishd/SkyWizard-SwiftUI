@@ -40,13 +40,8 @@
 		FD949A402CDC8C3B00F8CF48 /* WeatherService+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A3F2CDC8C3B00F8CF48 /* WeatherService+Dependencies.swift */; };
 		FD949A422CDC8DD800F8CF48 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A412CDC8DD800F8CF48 /* Application.swift */; };
 		FD949A5C2CDC935E00F8CF48 /* WeatherServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A5B2CDC935E00F8CF48 /* WeatherServiceTests.swift */; };
-		FD949A5F2CDC9FA300F8CF48 /* GeocodingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A5E2CDC9FA300F8CF48 /* GeocodingService.swift */; };
-		FD949A632CDCA0F800F8CF48 /* GeocodeResultDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A622CDCA0F800F8CF48 /* GeocodeResultDTO+Mapping.swift */; };
-		FD949A652CDCA2E100F8CF48 /* GeocodingServiceRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A642CDCA2E100F8CF48 /* GeocodingServiceRemote.swift */; };
-		FD949A672CDCA34400F8CF48 /* GeocodingEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A662CDCA34400F8CF48 /* GeocodingEndpoints.swift */; };
 		FD949A692CDCA44300F8CF48 /* GeocodingService+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A682CDCA44300F8CF48 /* GeocodingService+Dependencies.swift */; };
 		FD949A6B2CDCA54500F8CF48 /* GeocodingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A6A2CDCA54500F8CF48 /* GeocodingServiceTests.swift */; };
-		FD949A6D2CDD4BCE00F8CF48 /* GeocodingServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A6C2CDD4BCE00F8CF48 /* GeocodingServiceMock.swift */; };
 		FD949A712CDD4E0F00F8CF48 /* DataTransferService+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A702CDD4E0F00F8CF48 /* DataTransferService+Dependencies.swift */; };
 		FD949A742CDD614300F8CF48 /* WeatherDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A732CDD614300F8CF48 /* WeatherDataStore.swift */; };
 		FD949A762CDD66D000F8CF48 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A752CDD66D000F8CF48 /* View+Extensions.swift */; };
@@ -117,13 +112,8 @@
 		FD949A412CDC8DD800F8CF48 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		FD949A4D2CDC916900F8CF48 /* SkyWizard-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SkyWizard-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD949A5B2CDC935E00F8CF48 /* WeatherServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceTests.swift; sourceTree = "<group>"; };
-		FD949A5E2CDC9FA300F8CF48 /* GeocodingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingService.swift; sourceTree = "<group>"; };
-		FD949A622CDCA0F800F8CF48 /* GeocodeResultDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeocodeResultDTO+Mapping.swift"; sourceTree = "<group>"; };
-		FD949A642CDCA2E100F8CF48 /* GeocodingServiceRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingServiceRemote.swift; sourceTree = "<group>"; };
-		FD949A662CDCA34400F8CF48 /* GeocodingEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingEndpoints.swift; sourceTree = "<group>"; };
 		FD949A682CDCA44300F8CF48 /* GeocodingService+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeocodingService+Dependencies.swift"; sourceTree = "<group>"; };
 		FD949A6A2CDCA54500F8CF48 /* GeocodingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingServiceTests.swift; sourceTree = "<group>"; };
-		FD949A6C2CDD4BCE00F8CF48 /* GeocodingServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingServiceMock.swift; sourceTree = "<group>"; };
 		FD949A702CDD4E0F00F8CF48 /* DataTransferService+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataTransferService+Dependencies.swift"; sourceTree = "<group>"; };
 		FD949A732CDD614300F8CF48 /* WeatherDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataStore.swift; sourceTree = "<group>"; };
 		FD949A752CDD66D000F8CF48 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
@@ -244,7 +234,7 @@
 				FD0841B12CD7308E00604BF3 /* Info.plist */,
 				FD949A452CDC8EF200F8CF48 /* Application */,
 				FD32A9F82CB4494B002B8706 /* Presentation */,
-				FD32A9F72CB44947002B8706 /* Data */,
+				FD949A722CDD613800F8CF48 /* Datastores */,
 				FD32A9F62CB44943002B8706 /* Util */,
 				FD32A9F52CB4493E002B8706 /* Other */,
 			);
@@ -277,15 +267,6 @@
 				FDF41DEA2CE37AC8000C4FB4 /* OSLog+Extensions.swift */,
 			);
 			path = Util;
-			sourceTree = "<group>";
-		};
-		FD32A9F72CB44947002B8706 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				FD949A722CDD613800F8CF48 /* Datastores */,
-				FD85747B2CD9CE8C003D9D29 /* Services */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		FD32A9F82CB4494B002B8706 /* Presentation */ = {
@@ -322,14 +303,6 @@
 				FDE0B9652CD8082200017A6B /* SheetView.swift */,
 			);
 			path = "Sheet View";
-			sourceTree = "<group>";
-		};
-		FD85747B2CD9CE8C003D9D29 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				FD949A5D2CDC9F8D00F8CF48 /* Geocoding */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		FD85747E2CD9CEC6003D9D29 /* Daily Weather */ = {
@@ -404,18 +377,6 @@
 				FD949A6A2CDCA54500F8CF48 /* GeocodingServiceTests.swift */,
 			);
 			path = "Geocoding Service";
-			sourceTree = "<group>";
-		};
-		FD949A5D2CDC9F8D00F8CF48 /* Geocoding */ = {
-			isa = PBXGroup;
-			children = (
-				FD949A5E2CDC9FA300F8CF48 /* GeocodingService.swift */,
-				FD949A662CDCA34400F8CF48 /* GeocodingEndpoints.swift */,
-				FD949A622CDCA0F800F8CF48 /* GeocodeResultDTO+Mapping.swift */,
-				FD949A642CDCA2E100F8CF48 /* GeocodingServiceRemote.swift */,
-				FD949A6C2CDD4BCE00F8CF48 /* GeocodingServiceMock.swift */,
-			);
-			path = Geocoding;
 			sourceTree = "<group>";
 		};
 		FD949A722CDD613800F8CF48 /* Datastores */ = {
@@ -610,14 +571,12 @@
 				FD9C174C2CDE02E300401013 /* FormatStyle+Extensions.swift in Sources */,
 				FD949A742CDD614300F8CF48 /* WeatherDataStore.swift in Sources */,
 				FD949A422CDC8DD800F8CF48 /* Application.swift in Sources */,
-				FD949A632CDCA0F800F8CF48 /* GeocodeResultDTO+Mapping.swift in Sources */,
 				FD949A712CDD4E0F00F8CF48 /* DataTransferService+Dependencies.swift in Sources */,
 				FDFD8F9E2CE6807C000B3C18 /* Reachability+Dependencies.swift in Sources */,
 				FD126D182CE76A7300B3654A /* WeatherMessagePopup.swift in Sources */,
 				FDABC3A12CE844730085EC95 /* AboutAppView.swift in Sources */,
 				FD8574832CD9CF6A003D9D29 /* HourlyWeatherItem.swift in Sources */,
 				FDF41DED2CE386F0000C4FB4 /* WeatherDataStore+Dependencies.swift in Sources */,
-				FD949A652CDCA2E100F8CF48 /* GeocodingServiceRemote.swift in Sources */,
 				FDABC3982CE7A6D70085EC95 /* Navigation+EnvironmentKeys.swift in Sources */,
 				FD949A402CDC8C3B00F8CF48 /* WeatherService+Dependencies.swift in Sources */,
 				FDB65E762CDC033C00E4A52E /* HouseViewRepresentable.swift in Sources */,
@@ -631,17 +590,14 @@
 				FDE0B9662CD8082200017A6B /* SheetView.swift in Sources */,
 				FD32A9F32CB4484D002B8706 /* WeatherView.swift in Sources */,
 				FD0841B92CD7483A00604BF3 /* HourlyWeatherView.swift in Sources */,
-				FD949A5F2CDC9FA300F8CF48 /* GeocodingService.swift in Sources */,
 				FD949A762CDD66D000F8CF48 /* View+Extensions.swift in Sources */,
 				FD949A782CDD670E00F8CF48 /* LocalizedAlertError.swift in Sources */,
 				FD8574802CD9CEF9003D9D29 /* DailyWeatherItem.swift in Sources */,
-				FD949A672CDCA34400F8CF48 /* GeocodingEndpoints.swift in Sources */,
 				FD32A9F42CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift in Sources */,
 				FD0841B32CD732A400604BF3 /* Font+Extensions.swift in Sources */,
 				FD0841A32CD7202D00604BF3 /* Color+Extensions.swift in Sources */,
 				FD73C1B02CD89EE4004DA8A7 /* DailyWeatherView.swift in Sources */,
 				FD949A692CDCA44300F8CF48 /* GeocodingService+Dependencies.swift in Sources */,
-				FD949A6D2CDD4BCE00F8CF48 /* GeocodingServiceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
