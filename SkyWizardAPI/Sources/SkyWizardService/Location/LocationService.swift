@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import CoreLocation
 
-protocol LocationService {
+public protocol LocationService {
     typealias LocationResult = Result<CLLocationCoordinate2D, LocationServiceError>
     var locationResult: PassthroughSubject<LocationResult, Never> { get }
     

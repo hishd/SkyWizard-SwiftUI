@@ -9,14 +9,15 @@ import Foundation
 import CoreLocation
 import OSLog
 import Combine
+import SkyWizardLogger
 
-enum LocationServiceError: LocalizedError {
+public enum LocationServiceError: LocalizedError {
     case locationUnavailable
     case locationDeniedAccess
 }
 
 extension LocationServiceError {
-    var errorDescription: String? {
+    public var errorDescription: String? {
         switch self {
         case .locationUnavailable:
             return "Location is unavailable"
@@ -26,12 +27,12 @@ extension LocationServiceError {
     }
 }
 
-final class LocationServiceGps: NSObject, LocationService, CLLocationManagerDelegate {
+public final class LocationServiceGps: NSObject, LocationService, CLLocationManagerDelegate {
     private let locationManager: CLLocationManager = CLLocationManager()
-    let locationResult: PassthroughSubject<LocationResult, Never> = .init()
+    public let locationResult: PassthroughSubject<LocationResult, Never> = .init()
     private var lastKnownLocation: CLLocationCoordinate2D?
     
-    func start() {
+    public func start() {
         self.locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
         locationManager.allowsBackgroundLocationUpdates = false
@@ -46,11 +47,11 @@ final class LocationServiceGps: NSObject, LocationService, CLLocationManagerDele
         self.locationResult.send(.success(lastCoordinate))
     }
     
-    func getLastKnownLocation() -> CLLocationCoordinate2D? {
+    public func getLastKnownLocation() -> CLLocationCoordinate2D? {
         lastKnownLocation
     }
     
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+    public func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         switch manager.authorizationStatus {
         case .authorizedWhenInUse:
             locationManager.startMonitoringSignificantLocationChanges()
@@ -59,7 +60,7 @@ final class LocationServiceGps: NSObject, LocationService, CLLocationManagerDele
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else {
             Logger.viewCycle.error("Location not found")
             return

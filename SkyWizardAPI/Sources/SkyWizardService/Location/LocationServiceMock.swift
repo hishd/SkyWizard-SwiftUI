@@ -9,16 +9,18 @@ import Foundation
 import Combine
 import CoreLocation
 
-final class LocationServiceMock: LocationService {
-    let locationResult: PassthroughSubject<LocationResult, Never> = .init()
+public final class LocationServiceMock: LocationService, @unchecked Sendable {
+    public let locationResult: PassthroughSubject<LocationResult, Never> = .init()
     
-    func start() {
+    public func start() {
         DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
             self.locationResult.send(.success(.init(latitude: 0, longitude: 0)))
         }
     }
     
-    func getLastKnownLocation() -> CLLocationCoordinate2D? {
+    public func getLastKnownLocation() -> CLLocationCoordinate2D? {
         .init(latitude: 0, longitude: 0)
     }
+    
+    public init() {}
 }

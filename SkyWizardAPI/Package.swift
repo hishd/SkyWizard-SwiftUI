@@ -18,6 +18,10 @@ let package = Package(
         .library(
             name: "SkyWizardService",
             targets: ["SkyWizardService"]
+        ),
+        .library(
+            name: "SkyWizardLogger",
+            targets: ["SkyWizardLogger"]
         )
     ],
     targets: [
@@ -25,7 +29,8 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(name: "SkyWizardModel", dependencies: ["SkyWizardEnum"]),
         .target(name: "SkyWizardEnum"),
-        .target(name: "SkyWizardService")
+        .target(name: "SkyWizardService", dependencies: ["SkyWizardLogger"]),
+        .target(name: "SkyWizardLogger")
 //        .testTarget(
 //            name: "SkyWizardAPITests",
 //            dependencies: ["SkyWizardAPI"]
