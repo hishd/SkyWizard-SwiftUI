@@ -9,12 +9,12 @@ import Foundation
 import Network
 import Combine
 
-final class NetworkReachabilityService: ReachabilityService {
-    let isReachable: CurrentValueSubject<Bool, Never> = .init(false)
+public final class NetworkReachabilityService: ReachabilityService, @unchecked Sendable {
+    public let isReachable: CurrentValueSubject<Bool, Never> = .init(false)
     private let monitor: NWPathMonitor
     private let queue: DispatchQueue
     
-    init() {
+    public init() {
         self.monitor = .init()
         self.queue = .global(qos: .background)
         monitor.pathUpdateHandler = { [weak self] path in

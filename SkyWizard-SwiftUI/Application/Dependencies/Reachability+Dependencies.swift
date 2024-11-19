@@ -7,6 +7,7 @@
 
 import Foundation
 import DependencyInjector
+import SkyWizardService
 
 fileprivate final class NetworkReachabilityServiceDependency: InjectableDependency {
     static var dependency: NetworkReachabilityService = .init()

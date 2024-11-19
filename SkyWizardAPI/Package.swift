@@ -14,13 +14,18 @@ let package = Package(
         .library(
             name: "SkyWizardEnum",
             targets: ["SkyWizardEnum"]
+        ),
+        .library(
+            name: "SkyWizardService",
+            targets: ["SkyWizardService"]
         )
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(name: "SkyWizardModel", dependencies: ["SkyWizardEnum"]),
-        .target(name: "SkyWizardEnum")
+        .target(name: "SkyWizardEnum"),
+        .target(name: "SkyWizardService")
 //        .testTarget(
 //            name: "SkyWizardAPITests",
 //            dependencies: ["SkyWizardAPI"]

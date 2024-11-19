@@ -11,6 +11,7 @@ import OSLog
 import Combine
 import SkyWizardModel
 import SkyWizardEnum
+import SkyWizardService
 
 final class WeatherDataStore: @unchecked Sendable, ObservableObject {
     @Published var currentTemperature: Int = 0

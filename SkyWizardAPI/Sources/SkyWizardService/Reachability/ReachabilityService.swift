@@ -8,6 +8,6 @@
 import Foundation
 import Combine
 
-protocol ReachabilityService {
+public protocol ReachabilityService {
     var isReachable: CurrentValueSubject<Bool, Never> { get }
 }
