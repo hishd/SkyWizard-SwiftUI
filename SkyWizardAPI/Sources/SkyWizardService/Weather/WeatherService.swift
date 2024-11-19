@@ -10,7 +10,7 @@ import CoreLocation
 import SkyWizardEnum
 import SkyWizardModel
 
-protocol WeatherService {
+public protocol WeatherService {
     typealias TaskType = Task<WeatherData, Error>
     func fetchWeather(for location: CLLocationCoordinate2D) async throws -> TaskType
     func getWeatherType(for current: WeatherData.CurrentWeatherData) -> CurrentWeatherType
@@ -18,11 +18,11 @@ protocol WeatherService {
     func getWeather(for hourly: WeatherData.HourlyWeatherData) throws -> [HourlyWeatherData]
 }
 
-enum WeatherServiceError: LocalizedError {
+public enum WeatherServiceError: LocalizedError {
     case invalidResponse(message: String)
     case invalidData(message: String)
     
-    var errorDescription: String? {
+    public var errorDescription: String? {
         switch self {
         case .invalidResponse(let message):
           return message

@@ -37,7 +37,6 @@
 		FD8574802CD9CEF9003D9D29 /* DailyWeatherItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD85747F2CD9CEF9003D9D29 /* DailyWeatherItem.swift */; };
 		FD8574832CD9CF6A003D9D29 /* HourlyWeatherItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8574822CD9CF6A003D9D29 /* HourlyWeatherItem.swift */; };
 		FD8574882CD9D040003D9D29 /* SubTemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8574872CD9D040003D9D29 /* SubTemperatureView.swift */; };
-		FD949A3E2CDC7EEC00F8CF48 /* WeatherEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A3D2CDC7EEC00F8CF48 /* WeatherEndpoints.swift */; };
 		FD949A402CDC8C3B00F8CF48 /* WeatherService+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A3F2CDC8C3B00F8CF48 /* WeatherService+Dependencies.swift */; };
 		FD949A422CDC8DD800F8CF48 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A412CDC8DD800F8CF48 /* Application.swift */; };
 		FD949A5C2CDC935E00F8CF48 /* WeatherServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A5B2CDC935E00F8CF48 /* WeatherServiceTests.swift */; };
@@ -48,7 +47,6 @@
 		FD949A692CDCA44300F8CF48 /* GeocodingService+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A682CDCA44300F8CF48 /* GeocodingService+Dependencies.swift */; };
 		FD949A6B2CDCA54500F8CF48 /* GeocodingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A6A2CDCA54500F8CF48 /* GeocodingServiceTests.swift */; };
 		FD949A6D2CDD4BCE00F8CF48 /* GeocodingServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A6C2CDD4BCE00F8CF48 /* GeocodingServiceMock.swift */; };
-		FD949A6F2CDD4CAF00F8CF48 /* WeatherServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A6E2CDD4CAF00F8CF48 /* WeatherServiceMock.swift */; };
 		FD949A712CDD4E0F00F8CF48 /* DataTransferService+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A702CDD4E0F00F8CF48 /* DataTransferService+Dependencies.swift */; };
 		FD949A742CDD614300F8CF48 /* WeatherDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A732CDD614300F8CF48 /* WeatherDataStore.swift */; };
 		FD949A762CDD66D000F8CF48 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD949A752CDD66D000F8CF48 /* View+Extensions.swift */; };
@@ -63,8 +61,6 @@
 		FDB65E782CDC28D400E4A52E /* IsVisibleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E772CDC28D400E4A52E /* IsVisibleModifier.swift */; };
 		FDB65E7B2CDC4F2600E4A52E /* NetworkingService in Frameworks */ = {isa = PBXBuildFile; productRef = FDB65E7A2CDC4F2600E4A52E /* NetworkingService */; };
 		FDB65E7E2CDC4F4E00E4A52E /* DependencyInjector in Frameworks */ = {isa = PBXBuildFile; productRef = FDB65E7D2CDC4F4E00E4A52E /* DependencyInjector */; };
-		FDB65E872CDC575A00E4A52E /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E862CDC575300E4A52E /* WeatherService.swift */; };
-		FDB65E892CDC579100E4A52E /* WeatherServiceRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E882CDC579100E4A52E /* WeatherServiceRemote.swift */; };
 		FDDCB0C22CECF4AD00052822 /* SkyWizardEnum in Frameworks */ = {isa = PBXBuildFile; productRef = FDDCB0C12CECF4AD00052822 /* SkyWizardEnum */; };
 		FDDCB0C72CECF57500052822 /* SkyWizardModel in Frameworks */ = {isa = PBXBuildFile; productRef = FDDCB0C62CECF57500052822 /* SkyWizardModel */; };
 		FDDCB0CB2CECFB4F00052822 /* SkyWizardService in Frameworks */ = {isa = PBXBuildFile; productRef = FDDCB0CA2CECFB4F00052822 /* SkyWizardService */; };
@@ -117,7 +113,6 @@
 		FD85747F2CD9CEF9003D9D29 /* DailyWeatherItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherItem.swift; sourceTree = "<group>"; };
 		FD8574822CD9CF6A003D9D29 /* HourlyWeatherItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherItem.swift; sourceTree = "<group>"; };
 		FD8574872CD9D040003D9D29 /* SubTemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTemperatureView.swift; sourceTree = "<group>"; };
-		FD949A3D2CDC7EEC00F8CF48 /* WeatherEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEndpoints.swift; sourceTree = "<group>"; };
 		FD949A3F2CDC8C3B00F8CF48 /* WeatherService+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherService+Dependencies.swift"; sourceTree = "<group>"; };
 		FD949A412CDC8DD800F8CF48 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		FD949A4D2CDC916900F8CF48 /* SkyWizard-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SkyWizard-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,7 +124,6 @@
 		FD949A682CDCA44300F8CF48 /* GeocodingService+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeocodingService+Dependencies.swift"; sourceTree = "<group>"; };
 		FD949A6A2CDCA54500F8CF48 /* GeocodingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingServiceTests.swift; sourceTree = "<group>"; };
 		FD949A6C2CDD4BCE00F8CF48 /* GeocodingServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingServiceMock.swift; sourceTree = "<group>"; };
-		FD949A6E2CDD4CAF00F8CF48 /* WeatherServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceMock.swift; sourceTree = "<group>"; };
 		FD949A702CDD4E0F00F8CF48 /* DataTransferService+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataTransferService+Dependencies.swift"; sourceTree = "<group>"; };
 		FD949A732CDD614300F8CF48 /* WeatherDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataStore.swift; sourceTree = "<group>"; };
 		FD949A752CDD66D000F8CF48 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
@@ -142,8 +136,6 @@
 		FDB65E722CDC030300E4A52E /* wizard_house.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = wizard_house.scn; sourceTree = "<group>"; };
 		FDB65E752CDC033C00E4A52E /* HouseViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewRepresentable.swift; sourceTree = "<group>"; };
 		FDB65E772CDC28D400E4A52E /* IsVisibleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsVisibleModifier.swift; sourceTree = "<group>"; };
-		FDB65E862CDC575300E4A52E /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
-		FDB65E882CDC579100E4A52E /* WeatherServiceRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceRemote.swift; sourceTree = "<group>"; };
 		FDDCB0BC2CECEFB400052822 /* SkyWizardAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SkyWizardAPI; sourceTree = "<group>"; };
 		FDE0B9652CD8082200017A6B /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		FDF41DEA2CE37AC8000C4FB4 /* OSLog+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+Extensions.swift"; sourceTree = "<group>"; };
@@ -336,7 +328,6 @@
 			isa = PBXGroup;
 			children = (
 				FD949A5D2CDC9F8D00F8CF48 /* Geocoding */,
-				FD949A3C2CDC7EDA00F8CF48 /* Weather */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -366,17 +357,6 @@
 				FD32A9EE2CB4484D002B8706 /* WeatherView.swift */,
 			);
 			path = "Weather View";
-			sourceTree = "<group>";
-		};
-		FD949A3C2CDC7EDA00F8CF48 /* Weather */ = {
-			isa = PBXGroup;
-			children = (
-				FDB65E862CDC575300E4A52E /* WeatherService.swift */,
-				FD949A3D2CDC7EEC00F8CF48 /* WeatherEndpoints.swift */,
-				FDB65E882CDC579100E4A52E /* WeatherServiceRemote.swift */,
-				FD949A6E2CDD4CAF00F8CF48 /* WeatherServiceMock.swift */,
-			);
-			path = Weather;
 			sourceTree = "<group>";
 		};
 		FD949A452CDC8EF200F8CF48 /* Application */ = {
@@ -631,11 +611,8 @@
 				FD949A742CDD614300F8CF48 /* WeatherDataStore.swift in Sources */,
 				FD949A422CDC8DD800F8CF48 /* Application.swift in Sources */,
 				FD949A632CDCA0F800F8CF48 /* GeocodeResultDTO+Mapping.swift in Sources */,
-				FD949A6F2CDD4CAF00F8CF48 /* WeatherServiceMock.swift in Sources */,
 				FD949A712CDD4E0F00F8CF48 /* DataTransferService+Dependencies.swift in Sources */,
-				FDB65E872CDC575A00E4A52E /* WeatherService.swift in Sources */,
 				FDFD8F9E2CE6807C000B3C18 /* Reachability+Dependencies.swift in Sources */,
-				FDB65E892CDC579100E4A52E /* WeatherServiceRemote.swift in Sources */,
 				FD126D182CE76A7300B3654A /* WeatherMessagePopup.swift in Sources */,
 				FDABC3A12CE844730085EC95 /* AboutAppView.swift in Sources */,
 				FD8574832CD9CF6A003D9D29 /* HourlyWeatherItem.swift in Sources */,
@@ -650,7 +627,6 @@
 				FDABC3962CE7A5FE0085EC95 /* AppRoute.swift in Sources */,
 				FDFD8FA32CE68CAB000B3C18 /* OfflineView.swift in Sources */,
 				FDB65E782CDC28D400E4A52E /* IsVisibleModifier.swift in Sources */,
-				FD949A3E2CDC7EEC00F8CF48 /* WeatherEndpoints.swift in Sources */,
 				FD3558E02CE52BF600E57013 /* LocationService+Dependencies.swift in Sources */,
 				FDE0B9662CD8082200017A6B /* SheetView.swift in Sources */,
 				FD32A9F32CB4484D002B8706 /* WeatherView.swift in Sources */,

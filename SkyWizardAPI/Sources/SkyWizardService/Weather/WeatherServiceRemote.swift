@@ -11,24 +11,19 @@ import NetworkingService
 import SkyWizardEnum
 import SkyWizardModel
 
-final class WeatherServiceRemote: WeatherService {
-    let dataTransferService: NetworkDataTransferService
+public final class WeatherServiceRemote: WeatherService {
+    private let dataTransferService: NetworkDataTransferService
     
-    init(dataTransferService: NetworkDataTransferService) {
+    public init(dataTransferService: NetworkDataTransferService) {
         self.dataTransferService = dataTransferService
     }
     
-    func fetchWeather(for location: CLLocationCoordinate2D) async throws -> TaskType {
-        let task = Task {
-            let task = await dataTransferService.request(with: WeatherEndpoints.getWeather(latitude: location.latitude, longitude: location.longitude))
-            let value: WeatherData = try await task.value
-            return value
-        }
-        
+    public func fetchWeather(for location: CLLocationCoordinate2D) async throws -> TaskType {
+        let task = await dataTransferService.request(with: WeatherEndpoints.getWeather(latitude: location.latitude, longitude: location.longitude))
         return task
     }
     
-    func getWeatherType(for current: WeatherData.CurrentWeatherData) -> CurrentWeatherType {
+    public func getWeatherType(for current: WeatherData.CurrentWeatherData) -> CurrentWeatherType {
         let code = current.weather_code
         let isDay = current.is_day == 1
         
@@ -52,7 +47,7 @@ final class WeatherServiceRemote: WeatherService {
         }
     }
     
-    func getWeather(for daily: WeatherData.DailyWeatherData) throws -> [DailyWeatherData] {
+    public func getWeather(for daily: WeatherData.DailyWeatherData) throws -> [DailyWeatherData] {
         var data: [DailyWeatherData] = .init()
         let dateFormatter: DateFormatter = .init()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
@@ -96,7 +91,7 @@ final class WeatherServiceRemote: WeatherService {
         return Array(data.prefix(5))
     }
     
-    func getWeather(for hourly: WeatherData.HourlyWeatherData) throws -> [HourlyWeatherData] {
+    public func getWeather(for hourly: WeatherData.HourlyWeatherData) throws -> [HourlyWeatherData] {
         var data: [HourlyWeatherData] = .init()
         let currentHour: Int = Calendar.current.component(.hour, from: .now)
         let currentDay: Int = Calendar.current.component(.day, from: .now)
