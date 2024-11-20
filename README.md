@@ -1,3 +1,4 @@
+
 # Sky Wizard iOS
 
 <p>
@@ -38,13 +39,21 @@ The project component tree is shown below,
 
  - **Application** : This contains project level resources and dependencies. The Application enum is used as a namespace (as swift does't support namespaces by default).
  - **Presentation** : The layer mainly contains the main SwiftUI views, subviews and navigation logic. The representable contain the SCNView wrapped in a *UIViewRepresentable* type.
- - **Data** : This contains all the service related components, models and datastore to support the views. The services are abstracted to create mocks and to manage dependencies.
+ - **Util** : The utilities contains the view modifiers and view extensions which is used in the project.
+ - **Other** :  Contains project related files and resource files such as animations, 3d models and fonts
+
+#### Data Layer
+
+The data layer is on a separate swift package named **SkyWizardAPI**. This package integrated into the application target through SPM. This package contains different libraries which includes Models, Services, Logging, etc. The reason it contains libraries instead of separate swift packages is because it's too much work to work with multiple **Package.swift** files. The below section describes what libraries included within this package and what their operation is.
+
+ - **SkyWizardEnum**: The main enum types which the application needs
+ - **SkyWizardLogger**: Providing logging feature through OSLog api
+ - **SkyWizardModel**: The models and DTO's the application and services needs
+ - **SkyWizardService**: The core services the application needs to access weather data
 	 - Reachability: Monitoring internet connection changes
 	 - Location: Managing the location events
 	 - Geocoding: Fetching the location name based on current coordinates
 	 - Weather: Fetching the weather data based on the current location coordinate
- - **Util** : The utilities contains the view modifiers and view extensions which is used in the project.
- - **Other** :  Contains project related files and resource files such as animations, 3d models and fonts
 
 ### Navigation
 
