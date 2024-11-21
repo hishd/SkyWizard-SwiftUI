@@ -20,6 +20,7 @@
 		FD0C62162CE8FF9300BD20EB /* sun_moon.json in Resources */ = {isa = PBXBuildFile; fileRef = FD0C62152CE8FF9300BD20EB /* sun_moon.json */; };
 		FD126D182CE76A7300B3654A /* WeatherMessagePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD126D172CE76A7300B3654A /* WeatherMessagePopup.swift */; };
 		FD1DF3122CEF91D10031B319 /* HouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1DF3112CEF91C90031B319 /* HouseView.swift */; };
+		FD1DF3152CEF9CBD0031B319 /* Vortex in Frameworks */ = {isa = PBXBuildFile; productRef = FD1DF3142CEF9CBD0031B319 /* Vortex */; };
 		FD32A9F12CB4484D002B8706 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD32A9EB2CB4484D002B8706 /* Preview Assets.xcassets */; };
 		FD32A9F22CB4484D002B8706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD32A9ED2CB4484D002B8706 /* Assets.xcassets */; };
 		FD32A9F32CB4484D002B8706 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD32A9EE2CB4484D002B8706 /* WeatherView.swift */; };
@@ -141,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD1DF3152CEF9CBD0031B319 /* Vortex in Frameworks */,
 				FDB65E7B2CDC4F2600E4A52E /* NetworkingService in Frameworks */,
 				FD8574672CD9C572003D9D29 /* Lottie in Frameworks */,
 				FDDCB0C72CECF57500052822 /* SkyWizardModel in Frameworks */,
@@ -461,6 +463,7 @@
 				FDDCB0C12CECF4AD00052822 /* SkyWizardEnum */,
 				FDDCB0C62CECF57500052822 /* SkyWizardModel */,
 				FDDCB0CA2CECFB4F00052822 /* SkyWizardService */,
+				FD1DF3142CEF9CBD0031B319 /* Vortex */,
 			);
 			productName = "SkyWizard-SwiftUI";
 			productReference = FD32A9D92CB446CF002B8706 /* SkyWizard-SwiftUI.app */;
@@ -921,6 +924,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FD1DF3142CEF9CBD0031B319 /* Vortex */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD5F68082CEF8DBF002DA9E2 /* XCRemoteSwiftPackageReference "Vortex" */;
+			productName = Vortex;
+		};
 		FD8574662CD9C572003D9D29 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FD8574652CD9C572003D9D29 /* XCRemoteSwiftPackageReference "lottie-spm" */;

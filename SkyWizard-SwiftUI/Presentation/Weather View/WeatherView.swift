@@ -65,8 +65,11 @@ extension WeatherView {
         ZStack {
             backgroundColorGradient
                 .ignoresSafeArea()
-            HouseView(lightIntensity: weatherDataStore.weatherTypeResource.lightIntensity)
-                .ignoresSafeArea()
+            HouseView(
+                lightIntensity: weatherDataStore.weatherTypeResource.lightIntensity,
+                weatherType: weatherDataStore.currentWeatherType
+            )
+            .ignoresSafeArea()
             weatherIcon
             VStack(alignment: .leading, spacing: 0) {
                 temperatureView
