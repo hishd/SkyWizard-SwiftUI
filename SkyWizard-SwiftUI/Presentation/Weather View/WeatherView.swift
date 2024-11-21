@@ -13,7 +13,6 @@ import SkyWizardEnum
 
 struct WeatherView: View {
     @State private var isPresented: Bool = false
-    @State private var isSceneLoading: Bool = true
     @State private var isGreetingPresented: Bool = false
     @EnvironmentObject private var weatherDataStore: WeatherDataStore
     @Environment(\.navigation) var navigation
@@ -27,10 +26,6 @@ struct WeatherView: View {
     var body: some View {
         ZStack {
             mainContent
-            
-            if isSceneLoading {
-                sceneLoadingView
-            }
             
             if weatherDataStore.weatherLoading {
                 weatherLoadingView
@@ -70,7 +65,7 @@ extension WeatherView {
         ZStack {
             backgroundColorGradient
                 .ignoresSafeArea()
-            houseImage
+            HouseView(lightIntensity: weatherDataStore.weatherTypeResource.lightIntensity)
                 .ignoresSafeArea()
             weatherIcon
             VStack(alignment: .leading, spacing: 0) {
@@ -102,21 +97,6 @@ extension WeatherView {
             }
         }
     }
-    private var houseImage: some View {
-        //Disabled house image
-//        currentWeatherData.currentWeatherType.getWeatherTypeResource().houseIcon
-        var view = HouseViewRepresentable(lightIntensity: weatherDataStore.weatherTypeResource.lightIntensity)
-        view.onRenderFinished = {
-            print("Render finished")
-            withAnimation {
-                isSceneLoading = false
-            }
-        }
-        
-        return view
-            .opacity(isSceneLoading ? 0 : 1)
-            .padding(.top, 30)
-    }
     
     private var temperatureView: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -145,7 +125,9 @@ extension WeatherView {
                 .font(.getFont(type: .medium, size: 26))
                 .padding(.trailing, 5)
             Button {
-                
+                #if DEBUG
+                weatherDataStore.changeWeatherType()
+                #endif
             } label: {
                 Image(systemName: "location.circle")
                     .resizable()
@@ -154,14 +136,6 @@ extension WeatherView {
 
         }
         .foregroundStyle(subTitleColor)
-    }
-    
-    private var sceneLoadingView: some View {
-        ProgressView()
-            .tint(.daySubTitle)
-            .controlSize(.large)
-            .isVisible(isVisible: isSceneLoading)
-            .animation(.easeOut(duration: 0.3), value: isSceneLoading)
     }
     
     private var weatherLoadingView: some View {
