@@ -206,7 +206,6 @@
 				FD32A9F02CB4484D002B8706 /* SkyWizard-SwiftUI */,
 				FD949A572CDC917200F8CF48 /* SkyWizard-SwiftUITests */,
 				FDDCB0BC2CECEFB400052822 /* SkyWizardAPI */,
-				FDDCB0C52CECF57500052822 /* Frameworks */,
 				FD32A9DA2CB446CF002B8706 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -420,13 +419,6 @@
 			path = Representables;
 			sourceTree = "<group>";
 		};
-		FDDCB0C52CECF57500052822 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		FDFD8FA12CE68C9C000B3C18 /* Offline View */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +507,7 @@
 				FD8574652CD9C572003D9D29 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				FDB65E792CDC4F2600E4A52E /* XCRemoteSwiftPackageReference "NetworkingService" */,
 				FDB65E7C2CDC4F4E00E4A52E /* XCRemoteSwiftPackageReference "DependencyInjector" */,
+				FD5F68082CEF8DBF002DA9E2 /* XCRemoteSwiftPackageReference "Vortex" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FD32A9DA2CB446CF002B8706 /* Products */;
@@ -881,6 +874,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FD5F68082CEF8DBF002DA9E2 /* XCRemoteSwiftPackageReference "Vortex" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/Vortex";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
 		FD8574652CD9C572003D9D29 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-spm.git";

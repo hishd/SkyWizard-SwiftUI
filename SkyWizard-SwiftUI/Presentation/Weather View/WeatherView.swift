@@ -39,9 +39,6 @@ struct WeatherView: View {
             if !weatherDataStore.isOnline {
                 OfflineView()
             }
-            
-            weatherGreetingPopup
-                .frame(maxWidth: greetingPopupWidth)
         }
         .navigationTitle("Weather")
         .toolbar(.hidden, for: .navigationBar)
@@ -84,6 +81,9 @@ extension WeatherView {
             
             sheetView
                 .frame(maxWidth: sheetViewWidth)
+            
+            weatherGreetingPopup
+                .frame(maxWidth: greetingPopupWidth)
         }.opacity(isDataReady ? 1 : 0)
     }
     private var weatherIcon: some View {
