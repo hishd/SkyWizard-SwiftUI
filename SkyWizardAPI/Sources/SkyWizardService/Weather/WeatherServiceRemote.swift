@@ -7,8 +7,8 @@
 
 import Foundation
 import CoreLocation
-import NetworkingService
 import SkyWizardEnum
+import NetworkingService
 import SkyWizardModel
 
 public final class WeatherServiceRemote: WeatherService {

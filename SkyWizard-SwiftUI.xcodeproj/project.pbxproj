@@ -96,7 +96,6 @@
 		FD0C62152CE8FF9300BD20EB /* sun_moon.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sun_moon.json; sourceTree = "<group>"; };
 		FD126D172CE76A7300B3654A /* WeatherMessagePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMessagePopup.swift; sourceTree = "<group>"; };
 		FD1DF3112CEF91C90031B319 /* HouseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseView.swift; sourceTree = "<group>"; };
-		FD32A9D92CB446CF002B8706 /* SkyWizard-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "SkyWizard-SwiftUI.app"; path = "/Users/hishd/Desktop/Development/SwiftUI/SkyWizard-SwiftUI/build/Debug-iphoneos/SkyWizard-SwiftUI.app"; sourceTree = "<absolute>"; };
 		FD32A9EB2CB4484D002B8706 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FD32A9ED2CB4484D002B8706 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD32A9EE2CB4484D002B8706 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
@@ -107,6 +106,7 @@
 		FD4B928F2CF0AA0000EA05E7 /* rain_fall.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = rain_fall.sks; sourceTree = "<group>"; };
 		FD4B92922CF0AAD600EA05E7 /* snow_fall.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = snow_fall.sks; sourceTree = "<group>"; };
 		FD4B92942CF0B4E100EA05E7 /* night_cloudy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = night_cloudy.json; sourceTree = "<group>"; };
+		FD4B92982CF0E07000EA05E7 /* SkyWizard-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SkyWizard-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD73C1AF2CD89EE4004DA8A7 /* DailyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherView.swift; sourceTree = "<group>"; };
 		FD8574692CD9C690003D9D29 /* cloudy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cloudy.json; sourceTree = "<group>"; };
 		FD85746A2CD9C690003D9D29 /* cloudy_sun.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cloudy_sun.json; sourceTree = "<group>"; };
@@ -225,6 +225,7 @@
 				FD32A9F02CB4484D002B8706 /* SkyWizard-SwiftUI */,
 				FD949A572CDC917200F8CF48 /* SkyWizard-SwiftUITests */,
 				FD4B92832CF0A82C00EA05E7 /* SkyWizardAPI */,
+				FD4B92982CF0E07000EA05E7 /* SkyWizard-SwiftUI.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -473,7 +474,7 @@
 				FD4B92892CF0A84300EA05E7 /* SkyWizardService */,
 			);
 			productName = "SkyWizard-SwiftUI";
-			productReference = FD32A9D92CB446CF002B8706 /* SkyWizard-SwiftUI.app */;
+			productReference = FD4B92982CF0E07000EA05E7 /* SkyWizard-SwiftUI.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FD949A4C2CDC916900F8CF48 /* SkyWizard-SwiftUITests */ = {
@@ -766,7 +767,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"SkyWizard-SwiftUI/Other/Preview Content\"";
 				DEVELOPMENT_TEAM = ZMV4XYT773;
 				ENABLE_PREVIEWS = YES;
@@ -785,7 +786,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hishd.skywizard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -801,7 +802,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"SkyWizard-SwiftUI/Other/Preview Content\"";
 				DEVELOPMENT_TEAM = ZMV4XYT773;
 				ENABLE_PREVIEWS = YES;
@@ -820,7 +821,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hishd.skywizard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

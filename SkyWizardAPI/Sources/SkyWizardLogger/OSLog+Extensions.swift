@@ -8,8 +8,7 @@
 import Foundation
 import OSLog
 
-import OSLog
-
+#if !os(macOS)
 extension Logger {
     private static let subsystem = Bundle.main.bundleIdentifier!
     
@@ -25,3 +24,4 @@ extension Logger {
     public static let statistics = Logger(subsystem: subsystem, category: "statistics")
 //    Logger.statistics.debug("Statistics example")
 }
+#endif

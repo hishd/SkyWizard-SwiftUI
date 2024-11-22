@@ -9,6 +9,7 @@ import Foundation
 import CoreLocation
 import SkyWizardModel
 
+#if !os(macOS)
 public protocol GeocodingService {
     typealias TaskType = Task<GeocodeData, Error>
     func geocode(with location: CLLocationCoordinate2D) async throws -> TaskType
@@ -30,3 +31,4 @@ public enum GeocodingServiceError: LocalizedError {
         }
     }
 }
+#endif

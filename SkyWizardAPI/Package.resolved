@@ -1,0 +1,15 @@
+{
+  "originHash" : "e390094822c92023f15666b3de1ec8a2504f671c355181fba018c3c88a50d794",
+  "pins" : [
+    {
+      "identity" : "networkingservice",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hishd/NetworkingService",
+      "state" : {
+        "revision" : "6fca3f2b6303201513d112487e1a0b478046cd03",
+        "version" : "1.0.4"
+      }
+    }
+  ],
+  "version" : 3
+}
