@@ -24,16 +24,18 @@ let package = Package(
             targets: ["SkyWizardLogger"]
         )
     ],
+    dependencies: [
+        .package(url: "https://github.com/hishd/NetworkingService", .upToNextMajor(from: "1.0.4")),
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(name: "SkyWizardModel", dependencies: ["SkyWizardEnum"]),
         .target(name: "SkyWizardEnum"),
-        .target(name: "SkyWizardService", dependencies: ["SkyWizardLogger"]),
-        .target(name: "SkyWizardLogger")
-//        .testTarget(
-//            name: "SkyWizardAPITests",
-//            dependencies: ["SkyWizardAPI"]
-//        ),
+        .target(name: "SkyWizardService", dependencies: ["SkyWizardModel", "NetworkingService"]),
+        .target(name: "SkyWizardLogger"),
+        .testTarget(
+            name: "SkyWizardAPITests"
+        ),
     ]
 )

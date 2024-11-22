@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import NetworkingService
 import CoreLocation
+import NetworkingService
 import SkyWizardModel
 
 public final class GeocodingServiceRemote: GeocodingService, @unchecked Sendable {
