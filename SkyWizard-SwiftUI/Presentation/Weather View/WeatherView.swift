@@ -13,7 +13,6 @@ import SkyWizardEnum
 
 struct WeatherView: View {
     @State private var isPresented: Bool = false
-    @State private var isSceneLoading: Bool = true
     @State private var isGreetingPresented: Bool = false
     @EnvironmentObject private var weatherDataStore: WeatherDataStore
     @Environment(\.navigation) var navigation
@@ -28,10 +27,6 @@ struct WeatherView: View {
         ZStack {
             mainContent
             
-            if isSceneLoading {
-                sceneLoadingView
-            }
-            
             if weatherDataStore.weatherLoading {
                 weatherLoadingView
             }
@@ -39,9 +34,6 @@ struct WeatherView: View {
             if !weatherDataStore.isOnline {
                 OfflineView()
             }
-            
-            weatherGreetingPopup
-                .frame(maxWidth: greetingPopupWidth)
         }
         .navigationTitle("Weather")
         .toolbar(.hidden, for: .navigationBar)
@@ -73,8 +65,11 @@ extension WeatherView {
         ZStack {
             backgroundColorGradient
                 .ignoresSafeArea()
-            houseImage
-                .ignoresSafeArea()
+            HouseView(
+                lightIntensity: weatherDataStore.weatherTypeResource.lightIntensity,
+                weatherType: weatherDataStore.currentWeatherType
+            )
+            .ignoresSafeArea()
             weatherIcon
             VStack(alignment: .leading, spacing: 0) {
                 temperatureView
@@ -84,6 +79,9 @@ extension WeatherView {
             
             sheetView
                 .frame(maxWidth: sheetViewWidth)
+            
+            weatherGreetingPopup
+                .frame(maxWidth: greetingPopupWidth)
         }.opacity(isDataReady ? 1 : 0)
     }
     private var weatherIcon: some View {
@@ -101,21 +99,6 @@ extension WeatherView {
                 isGreetingPresented.toggle()
             }
         }
-    }
-    private var houseImage: some View {
-        //Disabled house image
-//        currentWeatherData.currentWeatherType.getWeatherTypeResource().houseIcon
-        var view = HouseViewRepresentable(lightIntensity: weatherDataStore.weatherTypeResource.lightIntensity)
-        view.onRenderFinished = {
-            print("Render finished")
-            withAnimation {
-                isSceneLoading = false
-            }
-        }
-        
-        return view
-            .opacity(isSceneLoading ? 0 : 1)
-            .padding(.top, 30)
     }
     
     private var temperatureView: some View {
@@ -145,7 +128,9 @@ extension WeatherView {
                 .font(.getFont(type: .medium, size: 26))
                 .padding(.trailing, 5)
             Button {
-                
+                #if DEBUG
+                weatherDataStore.changeWeatherType()
+                #endif
             } label: {
                 Image(systemName: "location.circle")
                     .resizable()
@@ -154,14 +139,6 @@ extension WeatherView {
 
         }
         .foregroundStyle(subTitleColor)
-    }
-    
-    private var sceneLoadingView: some View {
-        ProgressView()
-            .tint(.daySubTitle)
-            .controlSize(.large)
-            .isVisible(isVisible: isSceneLoading)
-            .animation(.easeOut(duration: 0.3), value: isSceneLoading)
     }
     
     private var weatherLoadingView: some View {
@@ -303,7 +280,7 @@ extension CurrentWeatherType {
                     backgroundGradient: .init(
                         colors: [
                             .init(hex: "#E5E5E5"),
-                            .init(hex: "#2A2D68")
+                            .init(hex: "#291888")
                         ],
                         startPoint: .topTrailing,
                         endPoint: .bottomLeading
@@ -327,7 +304,7 @@ extension CurrentWeatherType {
                     ),
                     houseIcon: Image(.houseNightCloudy),
                     weatherIcon: Image(.weatherNightCloudy),
-                    weatherIconAnimationName: "cloudy.json",
+                    weatherIconAnimationName: "night_cloudy.json",
                     mainTitleColor: .nightTitle,
                     subTitleColor: .nightSubTitle,
                     lightIntensity: 200

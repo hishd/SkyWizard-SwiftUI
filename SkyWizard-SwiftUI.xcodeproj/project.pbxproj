@@ -19,11 +19,19 @@
 		FD0841B92CD7483A00604BF3 /* HourlyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0841B82CD7483A00604BF3 /* HourlyWeatherView.swift */; };
 		FD0C62162CE8FF9300BD20EB /* sun_moon.json in Resources */ = {isa = PBXBuildFile; fileRef = FD0C62152CE8FF9300BD20EB /* sun_moon.json */; };
 		FD126D182CE76A7300B3654A /* WeatherMessagePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD126D172CE76A7300B3654A /* WeatherMessagePopup.swift */; };
+		FD1DF3122CEF91D10031B319 /* HouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1DF3112CEF91C90031B319 /* HouseView.swift */; };
 		FD32A9F12CB4484D002B8706 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD32A9EB2CB4484D002B8706 /* Preview Assets.xcassets */; };
 		FD32A9F22CB4484D002B8706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD32A9ED2CB4484D002B8706 /* Assets.xcassets */; };
 		FD32A9F32CB4484D002B8706 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD32A9EE2CB4484D002B8706 /* WeatherView.swift */; };
 		FD32A9F42CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD32A9EF2CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift */; };
 		FD3558E02CE52BF600E57013 /* LocationService+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3558DF2CE52BF600E57013 /* LocationService+Dependencies.swift */; };
+		FD4B92862CF0A84300EA05E7 /* SkyWizardEnum in Frameworks */ = {isa = PBXBuildFile; productRef = FD4B92852CF0A84300EA05E7 /* SkyWizardEnum */; };
+		FD4B92882CF0A84300EA05E7 /* SkyWizardModel in Frameworks */ = {isa = PBXBuildFile; productRef = FD4B92872CF0A84300EA05E7 /* SkyWizardModel */; };
+		FD4B928A2CF0A84300EA05E7 /* SkyWizardService in Frameworks */ = {isa = PBXBuildFile; productRef = FD4B92892CF0A84300EA05E7 /* SkyWizardService */; };
+		FD4B92902CF0AA0000EA05E7 /* rain_fall.sks in Resources */ = {isa = PBXBuildFile; fileRef = FD4B928F2CF0AA0000EA05E7 /* rain_fall.sks */; };
+		FD4B92912CF0AA0000EA05E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD4B928E2CF0AA0000EA05E7 /* Assets.xcassets */; };
+		FD4B92932CF0AAD600EA05E7 /* snow_fall.sks in Resources */ = {isa = PBXBuildFile; fileRef = FD4B92922CF0AAD600EA05E7 /* snow_fall.sks */; };
+		FD4B92952CF0B4E100EA05E7 /* night_cloudy.json in Resources */ = {isa = PBXBuildFile; fileRef = FD4B92942CF0B4E100EA05E7 /* night_cloudy.json */; };
 		FD73C1B02CD89EE4004DA8A7 /* DailyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD73C1AF2CD89EE4004DA8A7 /* DailyWeatherView.swift */; };
 		FD8574672CD9C572003D9D29 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FD8574662CD9C572003D9D29 /* Lottie */; };
 		FD8574702CD9C690003D9D29 /* snow.json in Resources */ = {isa = PBXBuildFile; fileRef = FD85746E2CD9C690003D9D29 /* snow.json */; };
@@ -56,9 +64,6 @@
 		FDB65E782CDC28D400E4A52E /* IsVisibleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E772CDC28D400E4A52E /* IsVisibleModifier.swift */; };
 		FDB65E7B2CDC4F2600E4A52E /* NetworkingService in Frameworks */ = {isa = PBXBuildFile; productRef = FDB65E7A2CDC4F2600E4A52E /* NetworkingService */; };
 		FDB65E7E2CDC4F4E00E4A52E /* DependencyInjector in Frameworks */ = {isa = PBXBuildFile; productRef = FDB65E7D2CDC4F4E00E4A52E /* DependencyInjector */; };
-		FDDCB0C22CECF4AD00052822 /* SkyWizardEnum in Frameworks */ = {isa = PBXBuildFile; productRef = FDDCB0C12CECF4AD00052822 /* SkyWizardEnum */; };
-		FDDCB0C72CECF57500052822 /* SkyWizardModel in Frameworks */ = {isa = PBXBuildFile; productRef = FDDCB0C62CECF57500052822 /* SkyWizardModel */; };
-		FDDCB0CB2CECFB4F00052822 /* SkyWizardService in Frameworks */ = {isa = PBXBuildFile; productRef = FDDCB0CA2CECFB4F00052822 /* SkyWizardService */; };
 		FDE0B9662CD8082200017A6B /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE0B9652CD8082200017A6B /* SheetView.swift */; };
 		FDF41DEB2CE37AC8000C4FB4 /* OSLog+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF41DEA2CE37AC8000C4FB4 /* OSLog+Extensions.swift */; };
 		FDF41DED2CE386F0000C4FB4 /* WeatherDataStore+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF41DEC2CE386E5000C4FB4 /* WeatherDataStore+Dependencies.swift */; };
@@ -90,12 +95,18 @@
 		FD0841B82CD7483A00604BF3 /* HourlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherView.swift; sourceTree = "<group>"; };
 		FD0C62152CE8FF9300BD20EB /* sun_moon.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sun_moon.json; sourceTree = "<group>"; };
 		FD126D172CE76A7300B3654A /* WeatherMessagePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMessagePopup.swift; sourceTree = "<group>"; };
+		FD1DF3112CEF91C90031B319 /* HouseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseView.swift; sourceTree = "<group>"; };
 		FD32A9D92CB446CF002B8706 /* SkyWizard-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SkyWizard-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD32A9EB2CB4484D002B8706 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FD32A9ED2CB4484D002B8706 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD32A9EE2CB4484D002B8706 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		FD32A9EF2CB4484D002B8706 /* SkyWizard_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyWizard_SwiftUIApp.swift; sourceTree = "<group>"; };
 		FD3558DF2CE52BF600E57013 /* LocationService+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationService+Dependencies.swift"; sourceTree = "<group>"; };
+		FD4B92832CF0A82C00EA05E7 /* SkyWizardAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SkyWizardAPI; sourceTree = "<group>"; };
+		FD4B928E2CF0AA0000EA05E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FD4B928F2CF0AA0000EA05E7 /* rain_fall.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = rain_fall.sks; sourceTree = "<group>"; };
+		FD4B92922CF0AAD600EA05E7 /* snow_fall.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = snow_fall.sks; sourceTree = "<group>"; };
+		FD4B92942CF0B4E100EA05E7 /* night_cloudy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = night_cloudy.json; sourceTree = "<group>"; };
 		FD73C1AF2CD89EE4004DA8A7 /* DailyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherView.swift; sourceTree = "<group>"; };
 		FD8574692CD9C690003D9D29 /* cloudy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cloudy.json; sourceTree = "<group>"; };
 		FD85746A2CD9C690003D9D29 /* cloudy_sun.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cloudy_sun.json; sourceTree = "<group>"; };
@@ -126,7 +137,6 @@
 		FDB65E722CDC030300E4A52E /* wizard_house.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = wizard_house.scn; sourceTree = "<group>"; };
 		FDB65E752CDC033C00E4A52E /* HouseViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewRepresentable.swift; sourceTree = "<group>"; };
 		FDB65E772CDC28D400E4A52E /* IsVisibleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsVisibleModifier.swift; sourceTree = "<group>"; };
-		FDDCB0BC2CECEFB400052822 /* SkyWizardAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SkyWizardAPI; sourceTree = "<group>"; };
 		FDE0B9652CD8082200017A6B /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		FDF41DEA2CE37AC8000C4FB4 /* OSLog+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+Extensions.swift"; sourceTree = "<group>"; };
 		FDF41DEC2CE386E5000C4FB4 /* WeatherDataStore+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherDataStore+Dependencies.swift"; sourceTree = "<group>"; };
@@ -141,10 +151,10 @@
 			files = (
 				FDB65E7B2CDC4F2600E4A52E /* NetworkingService in Frameworks */,
 				FD8574672CD9C572003D9D29 /* Lottie in Frameworks */,
-				FDDCB0C72CECF57500052822 /* SkyWizardModel in Frameworks */,
-				FDDCB0C22CECF4AD00052822 /* SkyWizardEnum in Frameworks */,
+				FD4B92882CF0A84300EA05E7 /* SkyWizardModel in Frameworks */,
+				FD4B92862CF0A84300EA05E7 /* SkyWizardEnum in Frameworks */,
 				FDB65E7E2CDC4F4E00E4A52E /* DependencyInjector in Frameworks */,
-				FDDCB0CB2CECFB4F00052822 /* SkyWizardService in Frameworks */,
+				FD4B928A2CF0A84300EA05E7 /* SkyWizardService in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +193,7 @@
 		FD0841B72CD7481400604BF3 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				FD1DF3102CEF91B40031B319 /* House View */,
 				FD126D162CE7696800B3654A /* Weather Message */,
 				FDFD8FA12CE68C9C000B3C18 /* Offline View */,
 				FD8574812CD9CF51003D9D29 /* Hourly Weather */,
@@ -200,14 +211,21 @@
 			path = "Weather Message";
 			sourceTree = "<group>";
 		};
+		FD1DF3102CEF91B40031B319 /* House View */ = {
+			isa = PBXGroup;
+			children = (
+				FD1DF3112CEF91C90031B319 /* HouseView.swift */,
+			);
+			path = "House View";
+			sourceTree = "<group>";
+		};
 		FD32A9D02CB446CF002B8706 = {
 			isa = PBXGroup;
 			children = (
 				FD32A9F02CB4484D002B8706 /* SkyWizard-SwiftUI */,
 				FD949A572CDC917200F8CF48 /* SkyWizard-SwiftUITests */,
-				FDDCB0BC2CECEFB400052822 /* SkyWizardAPI */,
-				FDDCB0C52CECF57500052822 /* Frameworks */,
 				FD32A9DA2CB446CF002B8706 /* Products */,
+				FD4B92832CF0A82C00EA05E7 /* SkyWizardAPI */,
 			);
 			sourceTree = "<group>";
 		};
@@ -244,6 +262,7 @@
 		FD32A9F52CB4493E002B8706 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				FD4B928D2CF0A9EF00EA05E7 /* SpriteKit Files */,
 				FDB65E712CDC02FF00E4A52E /* Objects */,
 				FD8574682CD9C5A8003D9D29 /* Animations */,
 				FD0841A42CD7306E00604BF3 /* Fonts */,
@@ -281,9 +300,20 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		FD4B928D2CF0A9EF00EA05E7 /* SpriteKit Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD4B928E2CF0AA0000EA05E7 /* Assets.xcassets */,
+				FD4B928F2CF0AA0000EA05E7 /* rain_fall.sks */,
+				FD4B92922CF0AAD600EA05E7 /* snow_fall.sks */,
+			);
+			path = "SpriteKit Files";
+			sourceTree = "<group>";
+		};
 		FD8574682CD9C5A8003D9D29 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				FD4B92942CF0B4E100EA05E7 /* night_cloudy.json */,
 				FD0C62152CE8FF9300BD20EB /* sun_moon.json */,
 				FDABC38C2CE778CF0085EC95 /* unknown_weather.json */,
 				FD8574692CD9C690003D9D29 /* cloudy.json */,
@@ -420,13 +450,6 @@
 			path = Representables;
 			sourceTree = "<group>";
 		};
-		FDDCB0C52CECF57500052822 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		FDFD8FA12CE68C9C000B3C18 /* Offline View */ = {
 			isa = PBXGroup;
 			children = (
@@ -455,9 +478,9 @@
 				FD8574662CD9C572003D9D29 /* Lottie */,
 				FDB65E7A2CDC4F2600E4A52E /* NetworkingService */,
 				FDB65E7D2CDC4F4E00E4A52E /* DependencyInjector */,
-				FDDCB0C12CECF4AD00052822 /* SkyWizardEnum */,
-				FDDCB0C62CECF57500052822 /* SkyWizardModel */,
-				FDDCB0CA2CECFB4F00052822 /* SkyWizardService */,
+				FD4B92852CF0A84300EA05E7 /* SkyWizardEnum */,
+				FD4B92872CF0A84300EA05E7 /* SkyWizardModel */,
+				FD4B92892CF0A84300EA05E7 /* SkyWizardService */,
 			);
 			productName = "SkyWizard-SwiftUI";
 			productReference = FD32A9D92CB446CF002B8706 /* SkyWizard-SwiftUI.app */;
@@ -537,6 +560,8 @@
 				FD0841AB2CD7307900604BF3 /* Montserrat-Light.ttf in Resources */,
 				FD0841AC2CD7307900604BF3 /* Montserrat-Black.ttf in Resources */,
 				FD0841AD2CD7307900604BF3 /* Montserrat-Bold.ttf in Resources */,
+				FD4B92902CF0AA0000EA05E7 /* rain_fall.sks in Resources */,
+				FD4B92912CF0AA0000EA05E7 /* Assets.xcassets in Resources */,
 				FD0841AE2CD7307900604BF3 /* Montserrat-Medium.ttf in Resources */,
 				FD0841AF2CD7307900604BF3 /* Montserrat-Regular.ttf in Resources */,
 				FDB65E732CDC030300E4A52E /* wizard_house.scn in Resources */,
@@ -545,8 +570,10 @@
 				FD8574702CD9C690003D9D29 /* snow.json in Resources */,
 				FD8574712CD9C690003D9D29 /* rainy.json in Resources */,
 				FD8574722CD9C690003D9D29 /* night_rainy.json in Resources */,
+				FD4B92932CF0AAD600EA05E7 /* snow_fall.sks in Resources */,
 				FD8574732CD9C690003D9D29 /* cloudy.json in Resources */,
 				FD8574742CD9C690003D9D29 /* cloudy_sun.json in Resources */,
+				FD4B92952CF0B4E100EA05E7 /* night_cloudy.json in Resources */,
 				FD8574752CD9C690003D9D29 /* sunny.json in Resources */,
 				FD8574762CD9C690003D9D29 /* night.json in Resources */,
 				FD32A9F22CB4484D002B8706 /* Assets.xcassets in Resources */,
@@ -576,6 +603,7 @@
 				FD126D182CE76A7300B3654A /* WeatherMessagePopup.swift in Sources */,
 				FDABC3A12CE844730085EC95 /* AboutAppView.swift in Sources */,
 				FD8574832CD9CF6A003D9D29 /* HourlyWeatherItem.swift in Sources */,
+				FD1DF3122CEF91D10031B319 /* HouseView.swift in Sources */,
 				FDF41DED2CE386F0000C4FB4 /* WeatherDataStore+Dependencies.swift in Sources */,
 				FDABC3982CE7A6D70085EC95 /* Navigation+EnvironmentKeys.swift in Sources */,
 				FD949A402CDC8C3B00F8CF48 /* WeatherService+Dependencies.swift in Sources */,
@@ -908,6 +936,18 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FD4B92852CF0A84300EA05E7 /* SkyWizardEnum */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SkyWizardEnum;
+		};
+		FD4B92872CF0A84300EA05E7 /* SkyWizardModel */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SkyWizardModel;
+		};
+		FD4B92892CF0A84300EA05E7 /* SkyWizardService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SkyWizardService;
+		};
 		FD8574662CD9C572003D9D29 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FD8574652CD9C572003D9D29 /* XCRemoteSwiftPackageReference "lottie-spm" */;
@@ -922,18 +962,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FDB65E7C2CDC4F4E00E4A52E /* XCRemoteSwiftPackageReference "DependencyInjector" */;
 			productName = DependencyInjector;
-		};
-		FDDCB0C12CECF4AD00052822 /* SkyWizardEnum */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SkyWizardEnum;
-		};
-		FDDCB0C62CECF57500052822 /* SkyWizardModel */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SkyWizardModel;
-		};
-		FDDCB0CA2CECFB4F00052822 /* SkyWizardService */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SkyWizardService;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

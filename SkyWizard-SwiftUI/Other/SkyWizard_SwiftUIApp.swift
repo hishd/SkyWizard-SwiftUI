@@ -10,7 +10,7 @@ import DependencyInjector
 
 @main
 struct SkyWizard_SwiftUIApp: App {
-    @Injectable(\.weatherDataStore) var weatherDataStore: WeatherDataStore
+    @Injectable(\.weatherDataStoreMock) var weatherDataStore: WeatherDataStore
     @State var routes: [AppRoute] = .init()
     
     var body: some Scene {

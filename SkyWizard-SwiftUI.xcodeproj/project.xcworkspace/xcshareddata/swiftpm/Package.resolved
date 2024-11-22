@@ -1,5 +1,5 @@
 {
-  "originHash" : "56b9d420a882eb1e189accb1aef6d2b677776e970a0a934b2e76b87b91d2b61f",
+  "originHash" : "d4edc8d1308db10e2b6437bb822cedca4495743f93ddc480469c434ea26c08c4",
   "pins" : [
     {
       "identity" : "dependencyinjector",
