@@ -27,6 +27,7 @@ struct GlassView: View {
 //            .background(.ultraThinMaterial)
             .clipShape(.rect(cornerRadius: cornerRadius))
             .shadow(color: .gray.opacity(0.4), radius: shadowRadius)
+            .drawingGroup()
     }
 }
 

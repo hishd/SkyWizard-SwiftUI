@@ -19,18 +19,26 @@ public class WeatherServiceMock: WeatherService {
     }
     
     public func getWeatherType(for current: WeatherData.CurrentWeatherData) -> CurrentWeatherType {
-        .day_sunny
+        .night_clear
     }
     
     public func getWeather(for daily: WeatherData.DailyWeatherData) throws -> [DailyWeatherData] {
-        return (0...4).map { _ in
-                .sample
+        let dayName: [String] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+        var startDay: Int = 22
+        return (0...4).map { index in
+            startDay += 1
+            return DailyWeatherData(
+                dateString: "\(startDay) Nov, \(dayName[index])",
+                tempHigh: Int.random(in: 20...25),
+                tempLow: Int.random(in: 10...20),
+                weatherType: DailyWeatherType.allCases.randomElement()!
+            )
         }
     }
     
     public func getWeather(for hourly: WeatherData.HourlyWeatherData) throws -> [HourlyWeatherData] {
-        return (0...12).map { _ in
-                .sample
+        return (16...20).map { index in
+            return HourlyWeatherData(timeText: "\(index) PM", weatherType: .night_clear, temperature: Int.random(in: 20...25))
         }
     }
     
