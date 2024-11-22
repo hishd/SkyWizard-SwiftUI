@@ -78,6 +78,7 @@ The 3D object was downloaded from the sketchfab platform (credits go to the owne
 ### API's used
 
  -  **SceneKit** is used to render the house model.
+ -  **SpriteKit** is used to render snow and rainy weather particle effects.
  - **Lottie** is used to render the animations.
  - **DependencyInjector** is used to manage application dependencies using property wrappers.
  - **NetworkingService** is used to handle http network calls.
