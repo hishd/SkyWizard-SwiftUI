@@ -178,6 +178,7 @@ extension WeatherView {
                         .background(.white)
                         .clipShape(.rect(cornerRadius: 10))
                         .padding(.horizontal, 25)
+                        .drawingGroup()
                 }
             }
         }

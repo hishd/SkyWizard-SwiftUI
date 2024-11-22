@@ -17,6 +17,7 @@ struct HourlyWeatherView: View {
                 .foregroundStyle(.sheetHandle)
                 .frame(width: 56, height: 4.5)
                 .padding(.top, 4)
+                .drawingGroup()
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 20) {
                     ForEach(hourlyData) { data in

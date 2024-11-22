@@ -13,7 +13,7 @@ struct SheetView<Content: View>: View {
     var shadowRadius: CGFloat = 10
     var opacity: Double = 0.1
     var cornerRadius: CGFloat = 30
-    var isHandleVisible: Bool = true
+    var isHandleVisible: Bool = false
     var isBackgroundVisible: Bool = true
     
     @State private var offset: CGFloat = 0
