@@ -32,7 +32,7 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(name: "SkyWizardModel", dependencies: ["SkyWizardEnum"]),
         .target(name: "SkyWizardEnum"),
-        .target(name: "SkyWizardService", dependencies: ["SkyWizardModel", "NetworkingService"]),
+        .target(name: "SkyWizardService", dependencies: ["SkyWizardModel", "NetworkingService", "SkyWizardLogger"]),
         .target(name: "SkyWizardLogger"),
         .testTarget(
             name: "SkyWizardAPITests"
