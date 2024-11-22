@@ -96,7 +96,7 @@
 		FD0C62152CE8FF9300BD20EB /* sun_moon.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sun_moon.json; sourceTree = "<group>"; };
 		FD126D172CE76A7300B3654A /* WeatherMessagePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMessagePopup.swift; sourceTree = "<group>"; };
 		FD1DF3112CEF91C90031B319 /* HouseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseView.swift; sourceTree = "<group>"; };
-		FD32A9D92CB446CF002B8706 /* SkyWizard-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SkyWizard-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD32A9D92CB446CF002B8706 /* SkyWizard-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "SkyWizard-SwiftUI.app"; path = "/Users/hishd/Desktop/Development/SwiftUI/SkyWizard-SwiftUI/build/Debug-iphoneos/SkyWizard-SwiftUI.app"; sourceTree = "<absolute>"; };
 		FD32A9EB2CB4484D002B8706 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FD32A9ED2CB4484D002B8706 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD32A9EE2CB4484D002B8706 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 		FD8574872CD9D040003D9D29 /* SubTemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTemperatureView.swift; sourceTree = "<group>"; };
 		FD949A3F2CDC8C3B00F8CF48 /* WeatherService+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherService+Dependencies.swift"; sourceTree = "<group>"; };
 		FD949A412CDC8DD800F8CF48 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
-		FD949A4D2CDC916900F8CF48 /* SkyWizard-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SkyWizard-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD949A4D2CDC916900F8CF48 /* SkyWizard-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "SkyWizard-SwiftUITests.xctest"; path = "/Users/hishd/Desktop/Development/SwiftUI/SkyWizard-SwiftUI/build/Debug-iphoneos/SkyWizard-SwiftUI.app/PlugIns/SkyWizard-SwiftUITests.xctest"; sourceTree = "<absolute>"; };
 		FD949A5B2CDC935E00F8CF48 /* WeatherServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceTests.swift; sourceTree = "<group>"; };
 		FD949A682CDCA44300F8CF48 /* GeocodingService+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeocodingService+Dependencies.swift"; sourceTree = "<group>"; };
 		FD949A6A2CDCA54500F8CF48 /* GeocodingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingServiceTests.swift; sourceTree = "<group>"; };
@@ -224,18 +224,8 @@
 			children = (
 				FD32A9F02CB4484D002B8706 /* SkyWizard-SwiftUI */,
 				FD949A572CDC917200F8CF48 /* SkyWizard-SwiftUITests */,
-				FD32A9DA2CB446CF002B8706 /* Products */,
 				FD4B92832CF0A82C00EA05E7 /* SkyWizardAPI */,
 			);
-			sourceTree = "<group>";
-		};
-		FD32A9DA2CB446CF002B8706 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FD32A9D92CB446CF002B8706 /* SkyWizard-SwiftUI.app */,
-				FD949A4D2CDC916900F8CF48 /* SkyWizard-SwiftUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		FD32A9EC2CB4484D002B8706 /* Preview Content */ = {
@@ -540,7 +530,7 @@
 				FDB65E7C2CDC4F4E00E4A52E /* XCRemoteSwiftPackageReference "DependencyInjector" */,
 			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = FD32A9DA2CB446CF002B8706 /* Products */;
+			productRefGroup = FD32A9D02CB446CF002B8706;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
