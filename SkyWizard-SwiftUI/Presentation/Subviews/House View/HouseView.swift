@@ -7,6 +7,8 @@
 
 import SwiftUI
 import SkyWizardEnum
+import SpriteKit
+import Lottie
 
 struct HouseView: View {
     var isEffectsEnabled: Bool = true
@@ -18,10 +20,15 @@ struct HouseView: View {
         ZStack {
             houseImage
             
-//            if isEffectsEnabled {
-//                vortexView
-//                    .allowsHitTesting(false)
-//            }
+            if isEffectsEnabled {
+                GeometryReader { proxy in
+                    let height = proxy.frame(in: .local).height
+                    let width = proxy.frame(in: .local).width
+                    createEffect(for: weatherType, width: width, height: height)
+                        .ignoresSafeArea()
+                        .allowsHitTesting(false)
+                }
+            }
 
             if isSceneLoading {
                 sceneLoadingView
@@ -32,8 +39,6 @@ struct HouseView: View {
 
 extension HouseView {
     private var houseImage: some View {
-//        var lastLaunchTime = Date.now
-        
         var view = HouseViewRepresentable(lightIntensity: lightIntensity)
         view.onRenderFinished = {
             print("Render finished")
@@ -58,16 +63,42 @@ extension HouseView {
     }
 }
 
-//extension HouseView {
-//    @ViewBuilder
-//    private var vortexView: some View {
-//        switch weatherType {
-//        case .day_rainy, .night_rainy:
-//            rainVortexView
-//        case .snow:
-//            snowVortexView
-//        default:
-//            EmptyView()
-//        }
-//    }
-//}
+extension HouseView {
+    @ViewBuilder
+    private func createEffect(for weatherType: CurrentWeatherType, width: CGFloat, height: CGFloat) -> some View {
+        switch weatherType {
+        case .day_cloudy, .day_sunny, .night_cloudy, .night_clear, .undefined:
+            EmptyView()
+        case .day_rainy, .night_rainy:
+            SpriteView(scene: RainScene(size: .init(width: width, height: height)), options: [.allowsTransparency])
+        case .snow:
+            SpriteView(scene: SnowScene(size: .init(width: width, height: height)), options: [.allowsTransparency])
+        }
+    }
+}
+
+fileprivate final class RainScene: SKScene {
+    override func sceneDidLoad() {
+        scaleMode = .resizeFill
+        backgroundColor = .clear
+        anchorPoint = .init(x: 0.55, y: 1)
+        
+        let node = SKEmitterNode(fileNamed: "rain_fall")
+        assert(node != nil, "Rainfall Node not found")
+        node!.particlePositionRange.dx = size.width
+        addChild(node!)
+    }
+}
+
+fileprivate final class SnowScene: SKScene {
+    override func sceneDidLoad() {
+        scaleMode = .resizeFill
+        backgroundColor = .clear
+        anchorPoint = .init(x: 0.55, y: 1)
+        
+        let node = SKEmitterNode(fileNamed: "snow_fall")
+        assert(node != nil, "Snowfall Node not found")
+        node!.particlePositionRange.dx = size.width
+        addChild(node!)
+    }
+}

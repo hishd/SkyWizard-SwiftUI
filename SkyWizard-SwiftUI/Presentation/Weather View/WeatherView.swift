@@ -280,7 +280,7 @@ extension CurrentWeatherType {
                     backgroundGradient: .init(
                         colors: [
                             .init(hex: "#E5E5E5"),
-                            .init(hex: "#2A2D68")
+                            .init(hex: "#291888")
                         ],
                         startPoint: .topTrailing,
                         endPoint: .bottomLeading
@@ -304,7 +304,7 @@ extension CurrentWeatherType {
                     ),
                     houseIcon: Image(.houseNightCloudy),
                     weatherIcon: Image(.weatherNightCloudy),
-                    weatherIconAnimationName: "cloudy.json",
+                    weatherIconAnimationName: "night_cloudy.json",
                     mainTitleColor: .nightTitle,
                     subTitleColor: .nightSubTitle,
                     lightIntensity: 200
