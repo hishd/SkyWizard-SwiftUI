@@ -46,6 +46,7 @@ struct WeatherMessagePopup: View {
             .padding(.bottom, 40)
             .padding(.horizontal, 28)
             .shadow(radius: 6)
+            .drawingGroup()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
     }
