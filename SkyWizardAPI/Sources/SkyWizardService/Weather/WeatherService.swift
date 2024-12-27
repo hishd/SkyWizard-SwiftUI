@@ -11,8 +11,7 @@ import SkyWizardEnum
 import SkyWizardModel
 
 public protocol WeatherService {
-    typealias TaskType = Task<WeatherData, Error>
-    func fetchWeather(for location: CLLocationCoordinate2D) async throws -> TaskType
+    func fetchWeather(for location: CLLocationCoordinate2D) async throws -> WeatherData
     func getWeatherType(for current: WeatherData.CurrentWeatherData) -> CurrentWeatherType
     func getWeather(for daily: WeatherData.DailyWeatherData) throws -> [DailyWeatherData]
     func getWeather(for hourly: WeatherData.HourlyWeatherData) throws -> [HourlyWeatherData]
