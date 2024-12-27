@@ -10,7 +10,7 @@ import CoreLocation
 import NetworkingService
 import SkyWizardModel
 
-public final class GeocodingServiceRemote: GeocodingService, @unchecked Sendable {
+public final class GeocodingServiceRemote: GeocodingService {
     
     let dataTransferService: NetworkDataTransferService
     
