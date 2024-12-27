@@ -33,12 +33,10 @@ struct GeocodingServiceTests {
     func geocode() async throws {
         let result = try await sut.geocode(with: CLLocationCoordinate2D(latitude: testingLatitude, longitude: testingLongitude))
         
-        let value = try await result.value
-        
         let expectedCountry: String = "United Kingdom"
         let expectedCity: String = "Northampton"
         
-        #expect(value.country == expectedCountry)
-        #expect(value.city == expectedCity)
+        #expect(result.country == expectedCountry)
+        #expect(result.city == expectedCity)
     }
 }

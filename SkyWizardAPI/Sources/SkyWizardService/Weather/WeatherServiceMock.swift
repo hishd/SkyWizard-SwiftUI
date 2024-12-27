@@ -12,10 +12,8 @@ import SkyWizardModel
 
 #if DEBUG
 public class WeatherServiceMock: WeatherService {
-    public func fetchWeather(for location: CLLocationCoordinate2D) async throws -> TaskType {
-        return Task {
-            .sample
-        }
+    public func fetchWeather(for location: CLLocationCoordinate2D) async throws -> WeatherData {
+        .sample
     }
     
     public func getWeatherType(for current: WeatherData.CurrentWeatherData) -> CurrentWeatherType {
