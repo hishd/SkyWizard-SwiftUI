@@ -7,12 +7,11 @@
 
 import Foundation
 import CoreLocation
+import SkyWizardModel
 
 public class GeocodingServiceMock: GeocodingService {
-    public func geocode(with location: CLLocationCoordinate2D) async throws -> TaskType {
-        return Task {
-            return .init(country: "United Kingdom", city: "Northampton")
-        }
+    public func geocode(with location: CLLocationCoordinate2D) async throws -> GeocodeData {
+        return .init(country: "United Kingdom", city: "Northampton")
     }
     
     public init() {}
