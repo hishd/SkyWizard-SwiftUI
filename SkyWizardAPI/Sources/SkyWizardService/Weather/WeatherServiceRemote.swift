@@ -22,8 +22,8 @@ public final class WeatherServiceRemote: WeatherService {
         //Checking task cancellation
         try Task.checkCancellation()
         
-        let task = await dataTransferService.request(with: WeatherEndpoints.getWeather(latitude: location.latitude, longitude: location.longitude))
-        return try await task.value
+        let result: WeatherData = try await dataTransferService.request(with: WeatherEndpoints.getWeather(latitude: location.latitude, longitude: location.longitude))
+        return result
     }
     
     public func getWeatherType(for current: WeatherData.CurrentWeatherData) -> CurrentWeatherType {

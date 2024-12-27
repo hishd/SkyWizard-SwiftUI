@@ -23,8 +23,8 @@ public final class GeocodingServiceRemote: GeocodingService {
         //Checking task cancellation
         try Task.checkCancellation()
         
-        let task = await dataTransferService.request(with: GeocodingEndpoints.getGeocoding(latitude: location.latitude, longitude: location.longitude))
-        let value: GeocodeData = try await task.value.mapToGeocodeResult()
+        let result: GeocodeResultDTO = try await dataTransferService.request(with: GeocodingEndpoints.getGeocoding(latitude: location.latitude, longitude: location.longitude))
+        let value: GeocodeData = try result.mapToGeocodeResult()
         return value
     }
 }

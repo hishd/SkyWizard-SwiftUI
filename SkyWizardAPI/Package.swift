@@ -25,7 +25,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/hishd/NetworkingService", .upToNextMajor(from: "1.0.4")),
+        .package(url: "https://github.com/hishd/NetworkingService", .upToNextMajor(from: "1.0.7")),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.

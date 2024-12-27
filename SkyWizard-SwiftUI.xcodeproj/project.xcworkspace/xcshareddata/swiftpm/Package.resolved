@@ -1,5 +1,5 @@
 {
-  "originHash" : "9dc365cc0f91ad9c50cc80070b62cf303725fde46a65b4fe4a24d25886a5f051",
+  "originHash" : "f9e3e4545ad7d19d5f4f665807bfe60a77972ec97db1ab8745796e4bbe40d354",
   "pins" : [
     {
       "identity" : "dependencyinjector",
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/hishd/NetworkingService",
       "state" : {
-        "revision" : "0681b4154508f66e4527e19ec37940f4e1b47e57",
-        "version" : "1.0.6"
+        "revision" : "cb6f22ef5e060547c9aa9d46379ffd5ff969583c",
+        "version" : "1.0.7"
       }
     }
   ],
