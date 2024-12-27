@@ -19,6 +19,9 @@ public final class WeatherServiceRemote: WeatherService {
     }
     
     public func fetchWeather(for location: CLLocationCoordinate2D) async throws -> WeatherData {
+        //Checking task cancellation
+        try Task.checkCancellation()
+        
         let task = await dataTransferService.request(with: WeatherEndpoints.getWeather(latitude: location.latitude, longitude: location.longitude))
         return try await task.value
     }
