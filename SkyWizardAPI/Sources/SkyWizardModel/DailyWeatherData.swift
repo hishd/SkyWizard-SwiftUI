@@ -8,7 +8,7 @@
 import Foundation
 import SkyWizardEnum
 
-public struct DailyWeatherData: Identifiable, @unchecked Sendable {
+public struct DailyWeatherData: Identifiable {
     public let id: UUID = UUID()
     public let dateString: String
     public let tempHigh: Int

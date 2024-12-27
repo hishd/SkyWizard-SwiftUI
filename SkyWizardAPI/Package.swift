@@ -37,5 +37,5 @@ let package = Package(
         .testTarget(
             name: "SkyWizardAPITests"
         ),
-    ]
+    ], swiftLanguageModes: [.v5]
 )
