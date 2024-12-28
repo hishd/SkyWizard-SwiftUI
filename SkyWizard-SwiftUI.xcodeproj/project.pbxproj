@@ -62,7 +62,6 @@
 		FDB65E732CDC030300E4A52E /* wizard_house.scn in Resources */ = {isa = PBXBuildFile; fileRef = FDB65E722CDC030300E4A52E /* wizard_house.scn */; };
 		FDB65E762CDC033C00E4A52E /* HouseViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E752CDC033C00E4A52E /* HouseViewRepresentable.swift */; };
 		FDB65E782CDC28D400E4A52E /* IsVisibleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E772CDC28D400E4A52E /* IsVisibleModifier.swift */; };
-		FDB65E7B2CDC4F2600E4A52E /* NetworkingService in Frameworks */ = {isa = PBXBuildFile; productRef = FDB65E7A2CDC4F2600E4A52E /* NetworkingService */; };
 		FDB65E7E2CDC4F4E00E4A52E /* DependencyInjector in Frameworks */ = {isa = PBXBuildFile; productRef = FDB65E7D2CDC4F4E00E4A52E /* DependencyInjector */; };
 		FDE0B9662CD8082200017A6B /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE0B9652CD8082200017A6B /* SheetView.swift */; };
 		FDF41DEB2CE37AC8000C4FB4 /* OSLog+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF41DEA2CE37AC8000C4FB4 /* OSLog+Extensions.swift */; };
@@ -121,7 +120,6 @@
 		FD8574872CD9D040003D9D29 /* SubTemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTemperatureView.swift; sourceTree = "<group>"; };
 		FD949A3F2CDC8C3B00F8CF48 /* WeatherService+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherService+Dependencies.swift"; sourceTree = "<group>"; };
 		FD949A412CDC8DD800F8CF48 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
-		FD949A4D2CDC916900F8CF48 /* SkyWizard-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "SkyWizard-SwiftUITests.xctest"; path = "/Users/hishd/Desktop/Development/SwiftUI/SkyWizard-SwiftUI/build/Debug-iphoneos/SkyWizard-SwiftUI.app/PlugIns/SkyWizard-SwiftUITests.xctest"; sourceTree = "<absolute>"; };
 		FD949A5B2CDC935E00F8CF48 /* WeatherServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceTests.swift; sourceTree = "<group>"; };
 		FD949A682CDCA44300F8CF48 /* GeocodingService+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeocodingService+Dependencies.swift"; sourceTree = "<group>"; };
 		FD949A6A2CDCA54500F8CF48 /* GeocodingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingServiceTests.swift; sourceTree = "<group>"; };
@@ -137,6 +135,7 @@
 		FDB65E722CDC030300E4A52E /* wizard_house.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = wizard_house.scn; sourceTree = "<group>"; };
 		FDB65E752CDC033C00E4A52E /* HouseViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewRepresentable.swift; sourceTree = "<group>"; };
 		FDB65E772CDC28D400E4A52E /* IsVisibleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsVisibleModifier.swift; sourceTree = "<group>"; };
+		FDD1E81D2D21F0BF00B9A1EF /* SkyWizard-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SkyWizard-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDE0B9652CD8082200017A6B /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		FDF41DEA2CE37AC8000C4FB4 /* OSLog+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+Extensions.swift"; sourceTree = "<group>"; };
 		FDF41DEC2CE386E5000C4FB4 /* WeatherDataStore+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherDataStore+Dependencies.swift"; sourceTree = "<group>"; };
@@ -149,7 +148,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDB65E7B2CDC4F2600E4A52E /* NetworkingService in Frameworks */,
 				FD8574672CD9C572003D9D29 /* Lottie in Frameworks */,
 				FD4B92882CF0A84300EA05E7 /* SkyWizardModel in Frameworks */,
 				FD4B92862CF0A84300EA05E7 /* SkyWizardEnum in Frameworks */,
@@ -226,6 +224,7 @@
 				FD949A572CDC917200F8CF48 /* SkyWizard-SwiftUITests */,
 				FD4B92832CF0A82C00EA05E7 /* SkyWizardAPI */,
 				FD4B92982CF0E07000EA05E7 /* SkyWizard-SwiftUI.app */,
+				FDD1E81D2D21F0BF00B9A1EF /* SkyWizard-SwiftUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -467,7 +466,6 @@
 			name = "SkyWizard-SwiftUI";
 			packageProductDependencies = (
 				FD8574662CD9C572003D9D29 /* Lottie */,
-				FDB65E7A2CDC4F2600E4A52E /* NetworkingService */,
 				FDB65E7D2CDC4F4E00E4A52E /* DependencyInjector */,
 				FD4B92852CF0A84300EA05E7 /* SkyWizardEnum */,
 				FD4B92872CF0A84300EA05E7 /* SkyWizardModel */,
@@ -494,7 +492,7 @@
 			packageProductDependencies = (
 			);
 			productName = "SkyWizard-SwiftUITests";
-			productReference = FD949A4D2CDC916900F8CF48 /* SkyWizard-SwiftUITests.xctest */;
+			productReference = FDD1E81D2D21F0BF00B9A1EF /* SkyWizard-SwiftUITests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -527,7 +525,6 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				FD8574652CD9C572003D9D29 /* XCRemoteSwiftPackageReference "lottie-spm" */,
-				FDB65E792CDC4F2600E4A52E /* XCRemoteSwiftPackageReference "NetworkingService" */,
 				FDB65E7C2CDC4F4E00E4A52E /* XCRemoteSwiftPackageReference "DependencyInjector" */,
 			);
 			preferredProjectObjectVersion = 77;
@@ -908,14 +905,6 @@
 				minimumVersion = 4.5.0;
 			};
 		};
-		FDB65E792CDC4F2600E4A52E /* XCRemoteSwiftPackageReference "NetworkingService" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hishd/NetworkingService";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.4;
-			};
-		};
 		FDB65E7C2CDC4F4E00E4A52E /* XCRemoteSwiftPackageReference "DependencyInjector" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hishd/DependencyInjector";
@@ -943,11 +932,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FD8574652CD9C572003D9D29 /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
-		};
-		FDB65E7A2CDC4F2600E4A52E /* NetworkingService */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FDB65E792CDC4F2600E4A52E /* XCRemoteSwiftPackageReference "NetworkingService" */;
-			productName = NetworkingService;
 		};
 		FDB65E7D2CDC4F4E00E4A52E /* DependencyInjector */ = {
 			isa = XCSwiftPackageProductDependency;
