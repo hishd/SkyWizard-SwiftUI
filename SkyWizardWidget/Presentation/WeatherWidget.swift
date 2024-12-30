@@ -57,7 +57,7 @@ struct SkyWizardWidgetEntryView : View {
     }
 }
 
-struct SkyWizardWidget: Widget {
+struct WeatherWidget: Widget {
     let kind: String = "SkyWizard Widget"
 
     var body: some WidgetConfiguration {
@@ -78,7 +78,7 @@ struct SkyWizardWidget: Widget {
 }
 
 #Preview(as: .systemSmall) {
-    SkyWizardWidget()
+    WeatherWidget()
 } timeline: {
     SimpleEntry(date: .now, emoji: "😀")
     SimpleEntry(date: .now, emoji: "🤩")

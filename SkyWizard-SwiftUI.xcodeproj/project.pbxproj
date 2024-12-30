@@ -174,7 +174,7 @@
 		FD04701A2D21F5D900B87D36 /* Exceptions for "SkyWizardWidget" folder in "SkyWizardWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Other/Info.plist,
 			);
 			target = FD0470052D21F5D800B87D36 /* SkyWizardWidgetExtension */;
 		};
@@ -750,7 +750,7 @@
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = ZMV4XYT773;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SkyWizardWidget/Info.plist;
+				INFOPLIST_FILE = SkyWizardWidget/Other/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = SkyWizardWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -778,7 +778,7 @@
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = ZMV4XYT773;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SkyWizardWidget/Info.plist;
+				INFOPLIST_FILE = SkyWizardWidget/Other/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = SkyWizardWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
