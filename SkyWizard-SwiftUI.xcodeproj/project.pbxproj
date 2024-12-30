@@ -64,6 +64,10 @@
 		FDB65E762CDC033C00E4A52E /* HouseViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E752CDC033C00E4A52E /* HouseViewRepresentable.swift */; };
 		FDB65E782CDC28D400E4A52E /* IsVisibleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E772CDC28D400E4A52E /* IsVisibleModifier.swift */; };
 		FDB65E7E2CDC4F4E00E4A52E /* DependencyInjector in Frameworks */ = {isa = PBXBuildFile; productRef = FDB65E7D2CDC4F4E00E4A52E /* DependencyInjector */; };
+		FDD90FA52D235A56006B7615 /* SkyWizardEnum in Frameworks */ = {isa = PBXBuildFile; productRef = FDD90FA42D235A56006B7615 /* SkyWizardEnum */; };
+		FDD90FA72D235A56006B7615 /* SkyWizardLogger in Frameworks */ = {isa = PBXBuildFile; productRef = FDD90FA62D235A56006B7615 /* SkyWizardLogger */; };
+		FDD90FA92D235A56006B7615 /* SkyWizardModel in Frameworks */ = {isa = PBXBuildFile; productRef = FDD90FA82D235A56006B7615 /* SkyWizardModel */; };
+		FDD90FAB2D235A56006B7615 /* SkyWizardService in Frameworks */ = {isa = PBXBuildFile; productRef = FDD90FAA2D235A56006B7615 /* SkyWizardService */; };
 		FDE0B9662CD8082200017A6B /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE0B9652CD8082200017A6B /* SheetView.swift */; };
 		FDF41DEB2CE37AC8000C4FB4 /* OSLog+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF41DEA2CE37AC8000C4FB4 /* OSLog+Extensions.swift */; };
 		FDF41DED2CE386F0000C4FB4 /* WeatherDataStore+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF41DEC2CE386E5000C4FB4 /* WeatherDataStore+Dependencies.swift */; };
@@ -192,8 +196,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDD90FA52D235A56006B7615 /* SkyWizardEnum in Frameworks */,
 				FD04700B2D21F5D800B87D36 /* SwiftUI.framework in Frameworks */,
+				FDD90FA92D235A56006B7615 /* SkyWizardModel in Frameworks */,
 				FD0470092D21F5D800B87D36 /* WidgetKit.framework in Frameworks */,
+				FDD90FA72D235A56006B7615 /* SkyWizardLogger in Frameworks */,
+				FDD90FAB2D235A56006B7615 /* SkyWizardService in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +523,10 @@
 			);
 			name = SkyWizardWidgetExtension;
 			packageProductDependencies = (
+				FDD90FA42D235A56006B7615 /* SkyWizardEnum */,
+				FDD90FA62D235A56006B7615 /* SkyWizardLogger */,
+				FDD90FA82D235A56006B7615 /* SkyWizardModel */,
+				FDD90FAA2D235A56006B7615 /* SkyWizardService */,
 			);
 			productName = SkyWizardWidgetExtension;
 			productReference = FD0470062D21F5D800B87D36 /* SkyWizardWidgetExtension.appex */;
@@ -1093,6 +1105,22 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FDB65E7C2CDC4F4E00E4A52E /* XCRemoteSwiftPackageReference "DependencyInjector" */;
 			productName = DependencyInjector;
+		};
+		FDD90FA42D235A56006B7615 /* SkyWizardEnum */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SkyWizardEnum;
+		};
+		FDD90FA62D235A56006B7615 /* SkyWizardLogger */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SkyWizardLogger;
+		};
+		FDD90FA82D235A56006B7615 /* SkyWizardModel */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SkyWizardModel;
+		};
+		FDD90FAA2D235A56006B7615 /* SkyWizardService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SkyWizardService;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
