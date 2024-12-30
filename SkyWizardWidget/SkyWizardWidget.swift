@@ -58,7 +58,7 @@ struct SkyWizardWidgetEntryView : View {
 }
 
 struct SkyWizardWidget: Widget {
-    let kind: String = "SkyWizardWidget"
+    let kind: String = "SkyWizard Widget"
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
@@ -71,6 +71,7 @@ struct SkyWizardWidget: Widget {
                     .background()
             }
         }
+        .supportedFamilies([.systemMedium])
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
     }
