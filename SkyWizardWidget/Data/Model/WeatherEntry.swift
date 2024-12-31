@@ -11,6 +11,7 @@ import SkyWizardEnum
 
 struct WeatherEntry: TimelineEntry {
     let date: Date = .init()
+    let resultType: ResultType
     let weatherType: CurrentWeatherType
     let temperature: Int
     let city: String
@@ -20,6 +21,7 @@ struct WeatherEntry: TimelineEntry {
 #if DEBUG
 extension WeatherEntry {
     static let sample: WeatherEntry = .init(
+        resultType: .latest,
         weatherType: .day_cloudy,
         temperature: 20,
         city: "Colombo",
@@ -27,3 +29,8 @@ extension WeatherEntry {
     )
 }
 #endif
+
+enum ResultType {
+    case latest
+    case historical(Date)
+}
