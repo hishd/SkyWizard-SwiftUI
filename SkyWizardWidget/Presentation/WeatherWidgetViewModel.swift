@@ -6,3 +6,9 @@
 //
 
 import Foundation
+import SkyWizardService
+import SkyWizardModel
+
+class WeatherWidgetViewModel: ObservableObject {
+    
+}
