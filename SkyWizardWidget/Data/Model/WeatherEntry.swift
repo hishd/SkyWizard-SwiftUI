@@ -22,7 +22,7 @@ struct WeatherEntry: TimelineEntry {
 extension WeatherEntry {
     static let sample: WeatherEntry = .init(
         resultType: .latest,
-        weatherType: .day_cloudy,
+        weatherType: .night_clear,
         temperature: 20,
         city: "Colombo",
         realFeel: 25
