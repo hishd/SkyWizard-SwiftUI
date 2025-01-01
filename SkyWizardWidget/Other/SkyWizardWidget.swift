@@ -18,7 +18,7 @@ struct Provider: TimelineProvider {
         completion(entry)
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<WeatherEntry>) -> ()) {
         var entries: [WeatherEntry] = []
 
         let timeline = Timeline(entries: entries, policy: .atEnd)
