@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SkyWizardWidgetEntryView : View {
-    var entry: Provider.Entry
+    var entry: WeatherDataProvider.Entry
 
     var body: some View {
         VStack {
