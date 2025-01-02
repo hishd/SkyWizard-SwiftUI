@@ -12,7 +12,7 @@ struct WeatherDataServiceLocalRemoteFallback: WeatherDataService {
     let localDataService: WeatherDataService
     let remoteDataService: WeatherDataService
     
-    func getWeatherData() throws(WeatherServiceError) -> WeatherEntry {
+    func getWeatherData() -> WeatherEntry {
         //if connection available -> remote
         //else -> local
         //if error -> throw unavailable

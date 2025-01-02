@@ -8,7 +8,7 @@
 import Foundation
 
 struct WeatherDataServiceRemote: WeatherDataService {
-    func getWeatherData() throws(WeatherServiceError) -> WeatherEntry {
+    func getWeatherData() -> WeatherEntry {
         .sample
     }
 }

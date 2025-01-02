@@ -7,11 +7,6 @@
 
 import Foundation
 
-enum WeatherServiceError: Error {
-    case error(message: String)
-    case dataUnavailable
-}
-
 protocol WeatherDataService {
-    func getWeatherData() throws(WeatherServiceError) -> WeatherEntry
+    func getWeatherData() -> WeatherEntry
 }

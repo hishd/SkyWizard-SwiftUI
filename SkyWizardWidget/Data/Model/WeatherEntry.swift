@@ -33,4 +33,5 @@ extension WeatherEntry {
 enum ResultType {
     case latest
     case historical(Date)
+    case error(message: String)
 }

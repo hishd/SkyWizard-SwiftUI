@@ -24,20 +24,11 @@ struct WeatherDataProvider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<WeatherEntry>) -> ()) {
-//        var entries: [WeatherEntry] = []
-//
-//        let timeline = Timeline(entries: entries, policy: .atEnd)
-//        completion(timeline)
-        
         let currentDate = Date()
         
-        do {
-            let weatherData = try service.getWeatherData()
-            let nextUpdateDate = Calendar.current.date(byAdding: .minute, value: 15, to: currentDate)!
-            let timeline = Timeline(entries: [weatherData], policy: .after(nextUpdateDate))
-            completion(timeline)
-        } catch {
-            print(error)
-        }
+        let weatherData = service.getWeatherData()
+        let nextUpdateDate = Calendar.current.date(byAdding: .minute, value: 15, to: currentDate)!
+        let timeline = Timeline(entries: [weatherData], policy: .after(nextUpdateDate))
+        completion(timeline)
     }
 }
