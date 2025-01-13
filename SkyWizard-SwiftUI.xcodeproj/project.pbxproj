@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD0470092D21F5D800B87D36 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0470082D21F5D800B87D36 /* WidgetKit.framework */; };
+		FD04700B2D21F5D800B87D36 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD04700A2D21F5D800B87D36 /* SwiftUI.framework */; };
+		FD0470162D21F5D900B87D36 /* SkyWizardWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FD0470062D21F5D800B87D36 /* SkyWizardWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FD0841A32CD7202D00604BF3 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0841A22CD7202D00604BF3 /* Color+Extensions.swift */; };
 		FD0841AB2CD7307900604BF3 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD0841A72CD7307900604BF3 /* Montserrat-Light.ttf */; };
 		FD0841AC2CD7307900604BF3 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD0841A52CD7307900604BF3 /* Montserrat-Black.ttf */; };
@@ -61,6 +64,11 @@
 		FDB65E762CDC033C00E4A52E /* HouseViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E752CDC033C00E4A52E /* HouseViewRepresentable.swift */; };
 		FDB65E782CDC28D400E4A52E /* IsVisibleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB65E772CDC28D400E4A52E /* IsVisibleModifier.swift */; };
 		FDB65E7E2CDC4F4E00E4A52E /* DependencyInjector in Frameworks */ = {isa = PBXBuildFile; productRef = FDB65E7D2CDC4F4E00E4A52E /* DependencyInjector */; };
+		FDD90FA52D235A56006B7615 /* SkyWizardEnum in Frameworks */ = {isa = PBXBuildFile; productRef = FDD90FA42D235A56006B7615 /* SkyWizardEnum */; };
+		FDD90FA72D235A56006B7615 /* SkyWizardLogger in Frameworks */ = {isa = PBXBuildFile; productRef = FDD90FA62D235A56006B7615 /* SkyWizardLogger */; };
+		FDD90FA92D235A56006B7615 /* SkyWizardModel in Frameworks */ = {isa = PBXBuildFile; productRef = FDD90FA82D235A56006B7615 /* SkyWizardModel */; };
+		FDD90FAB2D235A56006B7615 /* SkyWizardService in Frameworks */ = {isa = PBXBuildFile; productRef = FDD90FAA2D235A56006B7615 /* SkyWizardService */; };
+		FDD90FCC2D26A06C006B7615 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = FDD90FCB2D26A06C006B7615 /* Factory */; };
 		FDE0B9662CD8082200017A6B /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE0B9652CD8082200017A6B /* SheetView.swift */; };
 		FDF41DEB2CE37AC8000C4FB4 /* OSLog+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF41DEA2CE37AC8000C4FB4 /* OSLog+Extensions.swift */; };
 		FDF41DED2CE386F0000C4FB4 /* WeatherDataStore+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF41DEC2CE386E5000C4FB4 /* WeatherDataStore+Dependencies.swift */; };
@@ -69,6 +77,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FD0470142D21F5D900B87D36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD32A9D12CB446CF002B8706 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD0470052D21F5D800B87D36;
+			remoteInfo = SkyWizardWidgetExtension;
+		};
 		FD949A512CDC916900F8CF48 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FD32A9D12CB446CF002B8706 /* Project object */;
@@ -78,7 +93,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FD0470172D21F5D900B87D36 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FD0470162D21F5D900B87D36 /* SkyWizardWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		FD0470002D21F59500B87D36 /* SkyWizard-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SkyWizard-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD0470012D21F59500B87D36 /* SkyWizard-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SkyWizard-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD0470062D21F5D800B87D36 /* SkyWizardWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SkyWizardWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD0470082D21F5D800B87D36 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		FD04700A2D21F5D800B87D36 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		FD0841A22CD7202D00604BF3 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		FD0841A52CD7307900604BF3 /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
 		FD0841A62CD7307900604BF3 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
@@ -103,7 +137,6 @@
 		FD4B928F2CF0AA0000EA05E7 /* rain_fall.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = rain_fall.sks; sourceTree = "<group>"; };
 		FD4B92922CF0AAD600EA05E7 /* snow_fall.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = snow_fall.sks; sourceTree = "<group>"; };
 		FD4B92942CF0B4E100EA05E7 /* night_cloudy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = night_cloudy.json; sourceTree = "<group>"; };
-		FD4B92982CF0E07000EA05E7 /* SkyWizard-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "SkyWizard-SwiftUI.app"; path = "/Users/hishd/Desktop/Development/PROJECTS/SkyWizard-SwiftUI/build/Debug-iphoneos/SkyWizard-SwiftUI.app"; sourceTree = "<absolute>"; };
 		FD73C1AF2CD89EE4004DA8A7 /* DailyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherView.swift; sourceTree = "<group>"; };
 		FD8574692CD9C690003D9D29 /* cloudy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cloudy.json; sourceTree = "<group>"; };
 		FD85746A2CD9C690003D9D29 /* cloudy_sun.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cloudy_sun.json; sourceTree = "<group>"; };
@@ -131,7 +164,6 @@
 		FDB65E722CDC030300E4A52E /* wizard_house.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = wizard_house.scn; sourceTree = "<group>"; };
 		FDB65E752CDC033C00E4A52E /* HouseViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewRepresentable.swift; sourceTree = "<group>"; };
 		FDB65E772CDC28D400E4A52E /* IsVisibleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsVisibleModifier.swift; sourceTree = "<group>"; };
-		FDD1E81D2D21F0BF00B9A1EF /* SkyWizard-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "SkyWizard-SwiftUITests.xctest"; path = "/Users/hishd/Desktop/Development/PROJECTS/SkyWizard-SwiftUI/build/Debug-iphoneos/SkyWizard-SwiftUI.app/PlugIns/SkyWizard-SwiftUITests.xctest"; sourceTree = "<absolute>"; };
 		FDE0B9652CD8082200017A6B /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		FDF41DEA2CE37AC8000C4FB4 /* OSLog+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+Extensions.swift"; sourceTree = "<group>"; };
 		FDF41DEC2CE386E5000C4FB4 /* WeatherDataStore+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherDataStore+Dependencies.swift"; sourceTree = "<group>"; };
@@ -139,7 +171,42 @@
 		FDFD8FA22CE68CAB000B3C18 /* OfflineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FD04701A2D21F5D900B87D36 /* Exceptions for "SkyWizardWidget" folder in "SkyWizardWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Other/Info.plist,
+			);
+			target = FD0470052D21F5D800B87D36 /* SkyWizardWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		FD04700C2D21F5D800B87D36 /* SkyWizardWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FD04701A2D21F5D900B87D36 /* Exceptions for "SkyWizardWidget" folder in "SkyWizardWidgetExtension" target */,
+			);
+			path = SkyWizardWidget;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		FD0470032D21F5D800B87D36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDD90FA52D235A56006B7615 /* SkyWizardEnum in Frameworks */,
+				FD04700B2D21F5D800B87D36 /* SwiftUI.framework in Frameworks */,
+				FDD90FCC2D26A06C006B7615 /* Factory in Frameworks */,
+				FDD90FA92D235A56006B7615 /* SkyWizardModel in Frameworks */,
+				FD0470092D21F5D800B87D36 /* WidgetKit.framework in Frameworks */,
+				FDD90FA72D235A56006B7615 /* SkyWizardLogger in Frameworks */,
+				FDD90FAB2D235A56006B7615 /* SkyWizardService in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD32A9D62CB446CF002B8706 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -162,6 +229,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD0470072D21F5D800B87D36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD0470082D21F5D800B87D36 /* WidgetKit.framework */,
+				FD04700A2D21F5D800B87D36 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FD0841A42CD7306E00604BF3 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +295,11 @@
 				FD32A9F02CB4484D002B8706 /* SkyWizard-SwiftUI */,
 				FD949A572CDC917200F8CF48 /* SkyWizard-SwiftUITests */,
 				FD4B92832CF0A82C00EA05E7 /* SkyWizardAPI */,
+				FD0470002D21F59500B87D36 /* SkyWizard-SwiftUI.app */,
+				FD0470012D21F59500B87D36 /* SkyWizard-SwiftUITests.xctest */,
+				FD0470062D21F5D800B87D36 /* SkyWizardWidgetExtension.appex */,
+				FD04700C2D21F5D800B87D36 /* SkyWizardWidget */,
+				FD0470072D21F5D800B87D36 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -427,6 +508,33 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FD0470052D21F5D800B87D36 /* SkyWizardWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD04701B2D21F5D900B87D36 /* Build configuration list for PBXNativeTarget "SkyWizardWidgetExtension" */;
+			buildPhases = (
+				FD0470022D21F5D800B87D36 /* Sources */,
+				FD0470032D21F5D800B87D36 /* Frameworks */,
+				FD0470042D21F5D800B87D36 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				FD04700C2D21F5D800B87D36 /* SkyWizardWidget */,
+			);
+			name = SkyWizardWidgetExtension;
+			packageProductDependencies = (
+				FDD90FA42D235A56006B7615 /* SkyWizardEnum */,
+				FDD90FA62D235A56006B7615 /* SkyWizardLogger */,
+				FDD90FA82D235A56006B7615 /* SkyWizardModel */,
+				FDD90FAA2D235A56006B7615 /* SkyWizardService */,
+				FDD90FCB2D26A06C006B7615 /* Factory */,
+			);
+			productName = SkyWizardWidgetExtension;
+			productReference = FD0470062D21F5D800B87D36 /* SkyWizardWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		FD32A9D82CB446CF002B8706 /* SkyWizard-SwiftUI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD32A9E72CB446D1002B8706 /* Build configuration list for PBXNativeTarget "SkyWizard-SwiftUI" */;
@@ -434,10 +542,12 @@
 				FD32A9D52CB446CF002B8706 /* Sources */,
 				FD32A9D62CB446CF002B8706 /* Frameworks */,
 				FD32A9D72CB446CF002B8706 /* Resources */,
+				FD0470172D21F5D900B87D36 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FD0470152D21F5D900B87D36 /* PBXTargetDependency */,
 			);
 			name = "SkyWizard-SwiftUI";
 			packageProductDependencies = (
@@ -448,7 +558,7 @@
 				FD4B92892CF0A84300EA05E7 /* SkyWizardService */,
 			);
 			productName = "SkyWizard-SwiftUI";
-			productReference = FD4B92982CF0E07000EA05E7 /* SkyWizard-SwiftUI.app */;
+			productReference = FD0470002D21F59500B87D36 /* SkyWizard-SwiftUI.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FD949A4C2CDC916900F8CF48 /* SkyWizard-SwiftUITests */ = {
@@ -468,7 +578,7 @@
 			packageProductDependencies = (
 			);
 			productName = "SkyWizard-SwiftUITests";
-			productReference = FDD1E81D2D21F0BF00B9A1EF /* SkyWizard-SwiftUITests.xctest */;
+			productReference = FD0470012D21F59500B87D36 /* SkyWizard-SwiftUITests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -481,6 +591,9 @@
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
+					FD0470052D21F5D800B87D36 = {
+						CreatedOnToolsVersion = 16.0;
+					};
 					FD32A9D82CB446CF002B8706 = {
 						CreatedOnToolsVersion = 16.0;
 					};
@@ -502,6 +615,7 @@
 			packageReferences = (
 				FD8574652CD9C572003D9D29 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				FDB65E7C2CDC4F4E00E4A52E /* XCRemoteSwiftPackageReference "DependencyInjector" */,
+				FDD90FCA2D26A06B006B7615 /* XCRemoteSwiftPackageReference "Factory" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FD32A9D02CB446CF002B8706;
@@ -510,11 +624,19 @@
 			targets = (
 				FD32A9D82CB446CF002B8706 /* SkyWizard-SwiftUI */,
 				FD949A4C2CDC916900F8CF48 /* SkyWizard-SwiftUITests */,
+				FD0470052D21F5D800B87D36 /* SkyWizardWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FD0470042D21F5D800B87D36 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD32A9D72CB446CF002B8706 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -554,6 +676,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FD0470022D21F5D800B87D36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD32A9D52CB446CF002B8706 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -603,6 +732,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FD0470152D21F5D900B87D36 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD0470052D21F5D800B87D36 /* SkyWizardWidgetExtension */;
+			targetProxy = FD0470142D21F5D900B87D36 /* PBXContainerItemProxy */;
+		};
 		FD949A522CDC916900F8CF48 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FD32A9D82CB446CF002B8706 /* SkyWizard-SwiftUI */;
@@ -611,6 +745,61 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		FD0470182D21F5D900B87D36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_TEAM = ZMV4XYT773;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SkyWizardWidget/Other/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SkyWizardWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hishd.skywizard.SkyWizardWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FD0470192D21F5D900B87D36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_TEAM = ZMV4XYT773;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SkyWizardWidget/Other/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SkyWizardWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hishd.skywizard.SkyWizardWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		FD32A9E52CB446D1002B8706 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -841,6 +1030,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FD04701B2D21F5D900B87D36 /* Build configuration list for PBXNativeTarget "SkyWizardWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD0470182D21F5D900B87D36 /* Debug */,
+				FD0470192D21F5D900B87D36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FD32A9D42CB446CF002B8706 /* Build configuration list for PBXProject "SkyWizard-SwiftUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -887,6 +1085,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		FDD90FCA2D26A06B006B7615 /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -911,6 +1117,27 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FDB65E7C2CDC4F4E00E4A52E /* XCRemoteSwiftPackageReference "DependencyInjector" */;
 			productName = DependencyInjector;
+		};
+		FDD90FA42D235A56006B7615 /* SkyWizardEnum */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SkyWizardEnum;
+		};
+		FDD90FA62D235A56006B7615 /* SkyWizardLogger */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SkyWizardLogger;
+		};
+		FDD90FA82D235A56006B7615 /* SkyWizardModel */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SkyWizardModel;
+		};
+		FDD90FAA2D235A56006B7615 /* SkyWizardService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SkyWizardService;
+		};
+		FDD90FCB2D26A06C006B7615 /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FDD90FCA2D26A06B006B7615 /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
